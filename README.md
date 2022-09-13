@@ -1,2 +1,2 @@
 # ProyectoISPC
-Bienvenidos a todos ♥ 
+Bienvenidos ♥
