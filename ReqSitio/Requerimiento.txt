@@ -1,0 +1,45 @@
+Roles:
+- Usuario: Se registra.
+-----------------------------------------
+Notificaciones: Push.
+
+Panel de control personal.
+
+El usuario (alumno o profesor) puede cargar sus rutinas.
+Registro: Datos necesarios para el registro.
+Nombre:
+Apellido:
+Usuario (Requerido):
+Contraseña (Requerido):
+DNI:
+Mail:
+Peso: kg/lb
+Edad:
+Sexo:
+Fecha de nacimiento:
+Datos de contacto:
+Altura: cm / inches
+IMC: 
+-----------------
+Alimentación:
+Tipo de dieta (Vegano, Vegetariano):
+Requerimiento calórico:
+-------------------
+Logros:
+Medallas de tiempo:
+Medallas de racha de días:
+Medallas de logro por peso.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
