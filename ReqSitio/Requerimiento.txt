@@ -31,6 +31,13 @@ Medallas de racha de días:
 Medallas de logro por peso.
 
 
+--------------------------------------------
+Andrés Agregó 
+- Sugerencias:
+Estaria bueno que se crearan una o dos historias de usuario copada de la parte visual del proyecto, pienso que podria ser el primer sprint para entregar, y tendria alto impacto. Habia dos compañeros que manifestaron interes en esa cuestión, podrian concentrarse en eso talvez.
+
+En la teoria se manifiesta con énfasis la cuaestion de la problematica a resolver, deberiamos pensar tambien, en que problema resuelve nuestro desarrollo.
+
 
 
 
