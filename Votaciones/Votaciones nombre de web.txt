@@ -20,3 +20,6 @@ Votacion:estebanmartins
 MyProgressFit
 Agenda Fitness
 RuFitness
+
+Votación: PaylemanC
+IdealFit
