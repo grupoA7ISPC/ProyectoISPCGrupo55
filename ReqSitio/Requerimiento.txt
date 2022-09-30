@@ -38,8 +38,14 @@ Estaria bueno que se crearan una o dos historias de usuario copada de la parte v
 
 En la teoria se manifiesta con énfasis la cuaestion de la problematica a resolver, deberiamos pensar tambien, en que problema resuelve nuestro desarrollo.
 
+Recuerden que piden esto (una pagina de inicio):
 
+Generar un Sitio web Institucional Inicio con presentación de Propuesta a desarrollar,
+Sección Quienes Somos (presentación del equipo) y formulario de contacto con los
+conocimientos que se vayan adquiriendo en Sistemas de Gestión de Contenidos. (en
+español e Inglés).
 
+---------------------------------------------
 
 
 
