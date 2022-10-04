@@ -34,3 +34,8 @@ My Fitness Diary
 
 Votacion: Guillermo Dario Arias
 MisRutinas.fit
+
+Votación: Verónica Torres
+RoutineFit
+FitHealth/FHealth
+TrainingFit/FitTraining
