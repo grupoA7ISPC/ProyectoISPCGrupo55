@@ -3,10 +3,6 @@ body {
 	font-family: "Roboto", sans-serif;
 }
 
-.main-content {
-	background-color: #E0E0E0;
-}
-
 .titulo_nosotros{
 	color:#262632;
 	text-align: center;
@@ -24,6 +20,8 @@ body {
 .main-content {
 	padding-top: 100px;
 	padding-bottom: 100px;
+	background-color: #E0E0E0;
+
 }
 
 .profile-card{
@@ -58,4 +56,11 @@ body {
 }
 .social-links a:hover {
 	transform: translateY(-3px);
+}
+
+.logo_ispc{
+	width: 400px;
+	height: 300px;
+	margin-top: 0px;
+	
 }
