@@ -13,7 +13,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background:url("registro2.JPG");
+    background:url("../assets/registro2.jpg");
     background-size: cover;
 }
 
