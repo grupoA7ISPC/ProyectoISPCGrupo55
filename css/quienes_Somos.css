@@ -7,6 +7,15 @@ body {
 	background-color: #E0E0E0;
 }
 
+.titulo_nosotros{
+	color:#262632;
+	text-align: center;
+}
+
+.texto_nosotros{
+	color:#262632;
+	text-align:center;
+}
 
 .shadow {
 	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06) !important;
