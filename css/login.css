@@ -170,3 +170,23 @@ fieldset {
         transform: scaleX(1);
     }
 }
+
+@media (max-width: 915px) {
+    .contenedor-1 {
+        width: 0%;
+    }
+
+    .contenedor-2 {
+        width: 100%;
+    }
+
+    .img-login {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo {
+        display: none;
+    }
+}
