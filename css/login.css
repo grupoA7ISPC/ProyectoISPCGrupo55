@@ -8,7 +8,6 @@
 }
 
 :root {
-    /*Colores:*/
     --oscuro: #262632; 
     --naranja-intenso: #FF6005;
     --naranja-soft: #FF8E28;
@@ -17,6 +16,10 @@
     --lchico: 1.1em;
     --lmediano: 2.1em;
     --lgrande: 3.1em;
+    --duration: 1s;
+    --delay: .5s;
+    --delay: .8s;
+    --total: calc(var(--duration) + var(--delay));
 }
 
 
@@ -27,7 +30,6 @@
     height: 100vh;
     color: var(--gris);
 }
-
 
 .contenedor-1 {
     width: 40%;
@@ -56,15 +58,37 @@
     font-weight: bold;
     margin: 20px;
     font-size: var(--lgrande);
+    position: relative;
+    overflow: hidden;
+    color: transparent;
+    animation: revelar 1s var(--total) forwards;
+}
+
+.titulo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: var(--naranja-soft);
+    animation:
+        cinta2 var(--duration) var(--delay) forwards,
+        cinta1 var(--duration) var(--total) forwards;
 }
 
 .logo {
-    margin-right: 2em;
+    margin-right: 1em;
+    width: 8%;
 }
 
 form {
     margin: 1em;
     margin-left: 40px;
+    position: relative;
+    left: 10%;
 }
 
 fieldset {
@@ -75,6 +99,7 @@ fieldset {
 
 .legend-inicia {
     font-size: var(--lmediano);
+    color: #f5923b;
 }
 
 .info {
@@ -91,9 +116,18 @@ fieldset {
     color: var(--blanco);
 }
 
+.user-icon, .lock-icon {
+    width: 1em;
+}
+
+.salida {
+    margin-top: 20px;
+    display: flex;
+    align-items: stretch;
+}
+
 .btn-ingresar {
     padding: 12px 24px;
-    margin: 12px;
     border-radius: 9px;
     border: none; 
     background-color: var(--naranja-intenso);
@@ -110,4 +144,30 @@ fieldset {
 }
 .olvido:hover {
     color: var(--naranja-intenso);
+}
+
+@keyframes revelar {
+    to {
+        color: var(--blanco);
+    }
+}
+
+@keyframes cinta1 {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(105%);
+    }
+}
+
+@keyframes cinta2 {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
 }
