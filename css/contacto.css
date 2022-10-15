@@ -36,14 +36,16 @@ h1{
 }
 
 .form-contact form .textarea {
-   width: 200px;
-   height:  100px;
+   width: 270px;
+   height:  110px;
    padding-bottom: 80px;
    border:none;
    outline:none;
    background-color: transparent;
    border-bottom: 2px solid #ffffff;
    margin-top:30px;
+   color: #ffffff;
+   caret-color: #ff8e28;
 }
 .form-contact form .input-field {
     margin-bottom:15px;
@@ -53,6 +55,8 @@ h1{
     outline:none;
     background-color: transparent;
     border-bottom: 2px solid #ffffff;
+    color: #ffffff;
+    caret-color: #ff8e28;
 }
 .contenedor {
     background-color: #262632;
