@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+* {
+    padding: 0;
+    margin: auto;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --oscuro: #262632; 
+    --naranja-intenso: #FF6005;
+    --naranja-soft: #FF8E28;
+    --gris: #E0E0E0;
+    --blanco: #FFFFFF;
+    --lchico: 1.1em;
+    --lmediano: 2.1em;
+    --lgrande: 3.1em;
+    --duration: 1s;
+    --delay: .5s;
+    --delay: .8s;
+    --total: calc(var(--duration) + var(--delay));
+}
+
+
+
+.principal {
+    display: flex; 
+    width: 100%;
+    height: 100vh;
+    color: var(--gris);
+}
+
+.contenedor-1 {
+    width: 40%;
+    height: 100%;
+    background: linear-gradient(var(--naranja-intenso), var(--naranja-soft));
+}
+
+.img-login {
+    height: 100%;
+    width: 350px;
+    opacity: 90%;
+}
+
+
+.contenedor-2 {
+    width: 60%;
+    height: 100%;
+    background-color: var(--oscuro);
+}
+
+.bienvenido {
+    display: flex;
+}
+
+.titulo {
+    font-weight: bold;
+    margin: 20px;
+    font-size: var(--lgrande);
+    position: relative;
+    overflow: hidden;
+    color: transparent;
+    animation: revelar 1s var(--total) forwards;
+}
+
+.titulo::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    background: var(--naranja-soft);
+    animation:
+        cinta2 var(--duration) var(--delay) forwards,
+        cinta1 var(--duration) var(--total) forwards;
+}
+
+.logo {
+    margin-right: 1em;
+    width: 8%;
+}
+
+form {
+    margin: 1em;
+    margin-left: 40px;
+    position: relative;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    font-size: var(--lchico);
+}
+
+.legend-inicia {
+    font-size: var(--lmediano);
+    color: #f5923b;
+}
+
+.info {
+    margin: 12px;
+}
+
+#username, #password {
+    width: 65%;
+    padding: 8px;
+    background-color: transparent; 
+    border: none; 
+    outline: none; 
+    border-bottom: 2px solid var(--naranja-soft);
+    color: var(--blanco);
+}
+
+.user-icon, .lock-icon {
+    width: 1em;
+}
+
+.salida {
+    margin-top: 20px;
+    display: flex;
+    align-items: stretch;
+}
+
+.btn-ingresar {
+    padding: 12px 24px;
+    border-radius: 9px;
+    border: none; 
+    background-color: var(--naranja-intenso);
+    box-shadow: 2px 2px 12px #1d1919;
+    font-weight: bold;
+    color:#1d1919;
+}
+.btn-ingresar:hover {
+    background-color: var(--naranja-soft);
+}
+
+.olvido {
+    color: var(--gris);
+}
+.olvido:hover {
+    color: var(--naranja-intenso);
+}
+
+@keyframes revelar {
+    to {
+        color: var(--blanco);
+    }
+}
+
+@keyframes cinta1 {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(105%);
+    }
+}
+
+@keyframes cinta2 {
+    from {
+        transform: scaleX(0);
+    }
+
+    to {
+        transform: scaleX(1);
+    }
+}
