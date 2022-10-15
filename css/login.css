@@ -14,6 +14,9 @@
     --naranja-soft: #FF8E28;
     --gris: #E0E0E0;
     --blanco: #FFFFFF;
+    --lchico: 1.1em;
+    --lmediano: 2.1em;
+    --lgrande: 3.1em;
 }
 
 
@@ -52,33 +55,59 @@
 .titulo {
     font-weight: bold;
     margin: 20px;
+    font-size: var(--lgrande);
 }
 
 .logo {
-    margin-right: 10px;
+    margin-right: 2em;
 }
 
-
 form {
-    margin: 3em;
+    margin: 1em;
+    margin-left: 40px;
 }
 
 fieldset {
     display: flex;
     flex-direction: column;
+    font-size: var(--lchico);
 }
 
-label {
-    margin-left: 1px;
+.legend-inicia {
+    font-size: var(--lmediano);
 }
 
-/* .btn-ingresar{
-    padding: 10px 20px;
-    border-radius: 13px;
-    border:none;
-    background-color:#FF6600;
-    box-shadow: 2px 2px 10px black;
-    font-size: 15px;
-    font-weight:bold;
-    margin-top: 30px;
-} */
+.info {
+    margin: 12px;
+}
+
+#username, #password {
+    width: 65%;
+    padding: 8px;
+    background-color: transparent; 
+    border: none; 
+    outline: none; 
+    border-bottom: 2px solid var(--naranja-soft);
+    color: var(--blanco);
+}
+
+.btn-ingresar {
+    padding: 12px 24px;
+    margin: 12px;
+    border-radius: 9px;
+    border: none; 
+    background-color: var(--naranja-intenso);
+    box-shadow: 2px 2px 12px #1d1919;
+    font-weight: bold;
+    color:#1d1919;
+}
+.btn-ingresar:hover {
+    background-color: var(--naranja-soft);
+}
+
+.olvido {
+    color: var(--gris);
+}
+.olvido:hover {
+    color: var(--naranja-intenso);
+}
