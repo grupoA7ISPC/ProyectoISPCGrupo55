@@ -140,6 +140,7 @@ fieldset {
 
 .olvido {
     color: var(--gris);
+    margin-left: 10px;
 }
 .olvido:hover {
     color: var(--naranja-intenso);
@@ -168,5 +169,31 @@ fieldset {
 
     to {
         transform: scaleX(1);
+    }
+}
+
+@media (max-width: 915px) {
+    .contenedor-1 {
+        width: 0%;
+    }
+
+    .contenedor-2 {
+        width: 100%;
+        text-align: center;
+    }
+
+    .form, #username, #password, .btn-ingresar {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .img-login {
+        display: none;
+    }
+}
+
+@media (max-width: 400px) {
+    .logo {
+        display: none;
     }
 }
