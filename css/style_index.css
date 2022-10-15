@@ -1,18 +1,23 @@
 /* Compañeron, fijense que a cada .html corresponde un .css distinto */
 .icon {
-    width: 3vw;
-    height: 3vw;
+    width: 25px;
+    height: 25px;
     background-color: #ff6600;
     border-radius: 25%;
     padding: 2px;
-    margin-right: 8px;
+    margin-right: 4px;
 
 }
-.icon-log{
-  width: 25px;
-  height: 25px;
-}
 
+.carousel-item {
+    
+    width: 100vw;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
 .navbar{
     background-color: black !important;
   }
@@ -23,7 +28,9 @@
     opacity: 0.9;
     margin-right: 1.5vw;
   }
-
+  .nav-item .icon{
+    height: 3.5vh;
+  }
   #nav-item{
     display: none;
   }
@@ -67,26 +74,4 @@
   .nav-link:hover::after{
     transform: scaleX(1);
   }
-
-  .carousel-item {
-    
-    width: 100vw;
-    background: no-repeat center center scroll;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
   
-
-  @media only screen and (max-width: 767px){
-
-    .carousel-caption, .caption{
-      display: block !important;
-      font-size: 2vw;
-      line-height: 4%;
-    }
-    .caption{
-      margin-bottom: 3.5vh;
-    }
-  }
