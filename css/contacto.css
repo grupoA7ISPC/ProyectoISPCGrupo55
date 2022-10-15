@@ -72,9 +72,11 @@ h1{
 }
 
 .requerido {
-    margin-top: 10px; 
-    opacity: 60%;
+    margin-top: 20px;
+    margin-left: 4px; 
+    opacity: 30%;
     font-style: italic;
+    font-size: smaller;
 }
 
 .contenedor .info-contact{
