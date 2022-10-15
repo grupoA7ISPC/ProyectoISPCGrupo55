@@ -13,7 +13,7 @@
 
 <body>
      <!-- Barra de navegacion    [Guillermo Arias]-->
-     <nav class="navbar navbar-dark navbar-expand-md bg-dark  sticky-top ">
+    <nav class="navbar navbar-dark navbar-expand-md bg-dark  sticky-top ">
         <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><span><img class="icon" src="img/iconol.png" alt="icono"></span><span>MisRutinas</span></a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div id="navcol-5" class="collapse navbar-collapse">
                 <ul class="navbar-nav ms-auto">
@@ -34,32 +34,36 @@
     <main class="principal">
 
         <section class="contenedor-1">
-            <img src="" alt="MisRutinas, fitness"> 
+            <img src="/img/img-login.jpg" alt="MisRutinas, fitness" class="img-login"> 
         </section>
 
         <section class="contenedor-2">
             <div class="bienvenido">
-                <h1>BIENVENIDO</h1>
-                <img src="" alt="logo-misrutinas">
+                <h1 class="titulo">BIENVENIDO</h1>
+                <img src="" alt="logo-misrutinas" class="logo">
             </div>
 
             <form method="post" action="#">
                 <fieldset>
-                    <legend>Inicia Sesión</legend>
+                    <legend class="legend-inicia">Inicia Sesión</legend>
 
-                    <img src="logo-usuario">
-                    <label for="username"> Nombre de Usuario o E-mail:</label>
-                    <input type="text" id="username">
-
-                    <img src="logo-password">
-                    <label for="password">Contraseña:</label>
-                    <input type="password" id="password">
+                    <div class="info">
+                        <img src="logo-usuario">
+                        <label for="username"> Nombre de Usuario o E-mail:</label>
+                    </div>                    
+                    <input type="text" id="username" placeholder="misrutinas@ejemplo.com">
+                    
+                    <div class="info">
+                        <img src="logo-password">
+                        <label for="password">Contraseña:</label>
+                    </div>
+                    
+                    <input type="password" id="password" placeholder="*********">
                 </fieldset>
 
-                <input type="submit" value="Ingresar">
+                <input type="submit" value="Ingresar" class="btn-ingresar">
             </form>
         </section>
-
     </main>
 
 
