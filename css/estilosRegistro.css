@@ -18,9 +18,6 @@ main {
     align-items: center;
     background-image:linear-gradient( rgba(0,0,0,0.6),rgba(0,0,0,0.5)),url("../assets/registro2.jpg");
     background-size: cover;
-   
-    
-    
 }
 
 
@@ -29,7 +26,6 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    
 }
 
 
@@ -42,9 +38,6 @@ form {
     border-radius: 10px;
     box-shadow:0 5px 30px black;
     padding: 15px;
-    
-   
-    
 }
 
 
@@ -175,8 +168,6 @@ form .return a:hover{
     main{
         display: flex;
         background-position: center center;
-        height: 100vh;
-      
     }
 
 }
@@ -205,9 +196,6 @@ form .return a:hover{
 
     main {
         background-position: center ;
-       
-       
-        
     } 
 
     form h1 {
@@ -268,4 +256,3 @@ form .return a:hover{
         margin-top:2px;
      }
 }
-
