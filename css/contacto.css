@@ -2,7 +2,7 @@
 
 *{
     padding: 0;
-    margin: auto;
+    margin: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
@@ -26,51 +26,25 @@ h1{
     background: linear-gradient(83deg, rgba(38,38,50,1) 0%, rgba(255,96,5,1) 50%);
     color: #ffffff;
 }
-.form-contact {
-    width: 50%;
-    padding-top: 40px;
+.link-container{
+    padding: 20px;
 }
-.form-contact form{
-    display: flex;
-    flex-direction: column;
+.link-container i {
+    color:#ff8e28;
+    font-size:20px;
+}
+.discord{
+    text-decoration: none !important;
+}
+.sombra{
+    box-shadow: 5px 5px 10px #262632;
 }
 
-.form-contact form .textarea {
-   width: 270px;
-   height:  110px;
-   padding-bottom: 80px;
-   border:none;
-   outline:none;
-   background-color: transparent;
-   border-bottom: 2px solid #ffffff;
-   margin-top:30px;
-   color: #ffffff;
-   caret-color: #ff8e28;
-}
-.form-contact form .input-field {
-    margin-bottom:15px;
-    width: 200px;
-    padding: 6px;
-    border: none;
-    outline:none;
+form div .transparencia{
     background-color: transparent;
+    border: none;
     border-bottom: 2px solid #ffffff;
-    color: #ffffff;
-    caret-color: #ff8e28;
 }
-.contenedor {
-    background-color: #262632;
-    display: flex;
-    width: 800px;
-    padding: 30px;
-    box-shadow: 4px 4px 14px #262632;
-    border-radius: 10px; 
-}
-
-.contenedor section {
-    margin: 50px;
-}
-
 .requerido {
     margin-top: 20px;
     margin-left: 4px; 
@@ -78,46 +52,5 @@ h1{
     font-style: italic;
     font-size: smaller;
 }
-
-.contenedor .info-contact{
-    width: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-}
-
-.link-container{
-    padding: 20px;
-}
-
- .info-contact .datos-contact .link-container a {
-    text-decoration: none;
-    padding: 5px;
-    color:#ffffff
-    
-}
-
-.info-contact .datos-contact .link-container a:hover {
-    color:#ff8e28;
-}
-
- .link-container i {
-    color:#ff8e28;
-    font-size:20px;
-}
-
-.btn-contact {
-    padding: 10px 35px;
-    border: none;
-    background-color: #ffffff;
-    color: #262632;
-    margin-top:30px;
-}
-
-.btn-contact:hover {
-   background-color: #ff8e28;
-   transition:ease-in-out 0.5s;
-   
-}
+  
 
