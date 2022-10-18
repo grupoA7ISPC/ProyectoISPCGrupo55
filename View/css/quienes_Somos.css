@@ -1,0 +1,63 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+body {
+	font-family: "Roboto", sans-serif;
+}
+
+.titulo_nosotros{
+	color:#262632;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.texto_nosotros{
+	color:#262632;
+	text-align:center;
+}
+
+.shadow {
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+.main-content {
+	padding-top: 30px;
+	padding-bottom: 5px;
+	background-color: #E0E0E0;
+
+}
+
+.banner {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 125px;
+	background-image: url("../assets/banner2.jpg");
+	background-position: center;
+	background-size: cover;
+}
+
+.img-circle {
+	height: 150px;
+	width: 150px;
+	border-radius: 150px;
+	border: 3px solid #262632;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+	z-index: 1;
+}
+
+.social-links a {
+	transition: all 0.2s;
+}
+.social-links a img {
+	height: 30px;
+}
+.social-links a:hover {
+	transform: translateY(-3px);
+}
+
+.logo_ispc{
+	width: 400px;
+	height: 300px;
+	margin-top: 0px;
+	
+}

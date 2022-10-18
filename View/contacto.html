@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style_index.css">
+    <title>Contactanos</title>
+</head>
+
+<body>
+ <!-- Barra de navegacion    [Guillermo Arias]-->
+ <nav class="navbar navbar-dark navbar-expand-md bg-dark  sticky-top ">
+    <div class="container"><a class="navbar-brand d-flex align-items-center" href="index.html"><span><img class="icon" src="img/iconol.png" alt="icono"></span><span>MisRutinas</span></a><button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navcol-5"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div id="navcol-5" class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link " href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contacto.html">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link" href="quienes-somos.html">¿Quienes Somos?</a></li>
+            </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item"><a class="nav-link " href="registro.html">Registro</a></li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html"><img class="icon" src="img/usuario.png" alt="icon registración"></a>
+                  </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="principal">
+    <section class="sombra position-relative py-4 py-xl-5 rounded" style="background: #262632;">
+        <div class="container position-relative">
+            <div class="row mb-5">
+                <div class="col-md-8 col-xl-6 text-center mx-auto">
+                    <h2 style="color: #FFFFFF;">Contáctanos</h2>
+                </div>
+            </div>
+            <div class="row d-flex justify-content-center">
+                <div class="col-md-6 col-lg-6 col-xl-6">
+                    <form class="p-3 p-xl-4" method="post">
+                        <div class="mb-3"><input id="name-1" class="transparencia form-control" type="text" name="name" placeholder="Nombre" /></div>
+                        <div class="mb-3"><input id="email-1" class="transparencia form-control" type="email" name="email" placeholder="Correo electrónico*" /></div>
+                        <div class="mb-3"><input id="name-2" class="transparencia form-control" type="text" name="asunto" placeholder="Asunto*"></div>
+                        <div class="mb-3"><textarea id="message-1" class="transparencia form-control" name="message" rows="4" placeholder="Mensaje" style="margin: 0px;margin-top: 18px;"></textarea></div>
+                        <p class="requerido">*Campos requeridos</p>
+                        <div>
+                            <button class="transparencia btn btn-primary d-block w-50 border-0" type="submit"
+                            style="background:#ff8e28" onMouseOver="this.style.background='#fff'; this.style.color='#0a0a0a'"
+                            onMouseOut="this.style.background='#ff8e28'; this.style.color='#fdfdfd'" id="boton">Enviar</button>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-6">
+                    <div class="link-container d-flex flex-column justify-content-start align-items-start h-100">
+                        <div class="d-flex align-items-center p-3">
+                            <div class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon"><i class="fa-brands fa-github icon2"></i>
+                            </div>
+                            <div class="px-2">
+                                <h6 class="mb-0"><a href="#" style="color: #ffffff;">ProyectoISPCGrupo55</a></h6>
+                                <p class="mb-0"></p>
+                            </div>
+                        </div>
+                        <div class="link-container d-flex align-items-center p-3"><i class="fa-solid fa-envelope icon2" ></i>
+                            <div class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-center align-items-center d-inline-block bs-icon">
+                            </div>
+                            <div class="px-2">
+                                <h6 class="mb-0"><a href="#" style="color: #FFFFFF;">grupo55@gmail.com</a></h6>
+                            </div>
+                        </div>
+                        <div class="link-container d-flex align-items-center p-3"><i class="fa-brands fa-discord icon2"></i>
+                            <div class="bs-icon-md bs-icon-rounded bs-icon-primary d-flex flex-shrink-0 justify-content-start align-items-center d-inline-block bs-icon">
+                            </div>
+                            <div class="px-2">
+                                <h6 class="mb-0"><a href="#"style="color: #FFFFFF">Canal de Discord</a></h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+ 
+</div>
+   
+    <!-- La siguiente linea siempre debe quedar al último [Andrés]-->
+    <script src="https://kit.fontawesome.com/e1b028532b.js" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+    <script src="js/bootstrap.bundle.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>

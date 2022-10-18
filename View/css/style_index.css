@@ -1,0 +1,148 @@
+/* Compañeron, fijense que a cada .html corresponde un .css distinto */
+:root {
+  --fuenteT: 'Anton', sans-serif;
+  --fuenteP: 'Inter Tight', sans-serif;
+  }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1 rem = 10px */    
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  font-family: var(--fuenteP);
+  font-size: 1.6rem;
+  line-height: 2;
+  background-color: #ff6600;
+}
+
+/** Globales **/
+
+a {
+  text-decoration: none;
+}
+h1, h2, h3, h4 {
+  font-family: var(--fuenteH);
+  line-height: 1.2;
+}
+h1 {
+  font-size: 4.8rem;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 3.2rem;
+}
+h4 {
+  font-size: 2.8rem;
+}
+img {
+  max-width: 100%;
+}
+.fondogra{
+  background-color: rgb(0 0 0 / 70%);
+}
+
+
+
+
+.icon {
+  width: 3vw;
+  height: 3vw;
+  background-color: #ff6600;
+  border-radius: 25%;
+  padding: 2px;
+  margin-right: 8px;
+
+}
+
+.icon-log{
+width: 25px;
+height: 25px;
+}
+
+.navbar{
+  background-color: black !important;
+}
+
+
+.nav-item a{
+  color: #fff;
+  opacity: 0.9;
+  margin-right: 1.5vw;
+}
+
+#nav-item{
+  display: none;
+}
+
+.nav-item{
+  list-style: none;
+  text-align: center;
+}
+
+.nav-link{
+  display: inline-block;
+  margin-block: 2px;
+  text-decoration: none;
+  color: #fff;
+  position: relative;
+  font-family: 'Roboto', sans-serif;
+}
+
+.nav-link:hover{
+  color: #fff;
+}
+
+.nav-link:visited{
+  color: #fff;
+  }
+
+.nav-link::after{
+  content: '';
+  width: 100%;
+  height: 2px;
+  background-color: #ff6600;
+  border-radius: 4px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .50s ease;
+}
+
+.nav-link:hover::after{
+  transform: scaleX(1);
+}
+
+.carousel-item {
+  
+  width: 100%;
+ 
+  justify-content: center;
+  background: no-repeat center center scroll;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+
+@media only screen and (max-width: 767px){
+
+  .carousel-caption, .caption{
+    display: block !important;
+    font-size: 2vw;
+    line-height: 4%;
+  }
+  .caption{
+    margin-bottom: 3.5vh;
+  }
+}
+.fondo{
+  background-color: black;
+}
