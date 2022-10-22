@@ -79,8 +79,10 @@
 }
 
 .logo {
+    margin-top: 1em;
     margin-right: 1em;
     width: 8%;
+    height: 8%;
 }
 
 form {
