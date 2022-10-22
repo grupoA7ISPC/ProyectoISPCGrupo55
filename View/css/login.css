@@ -22,7 +22,10 @@
 }
 
 
-
+.mis-rutinas{
+    font-size: 1.5rem;
+  }
+  
 .principal {
     display: flex; 
     width: 100%;
@@ -145,6 +148,9 @@ fieldset {
 }
 .olvido:hover {
     color: var(--naranja-intenso);
+}
+.mis-rutinas{
+  font-size: 1.5rem;
 }
 
 @keyframes revelar {

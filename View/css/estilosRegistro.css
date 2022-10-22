@@ -20,7 +20,10 @@ main {
     background-size: cover;
 }
 
-
+.mis-rutinas{
+    font-size: 1.5rem;
+  }
+  
 .form-container {
     display: flex;
     justify-content: center;

@@ -23,7 +23,7 @@ body {
 a {
   text-decoration: none;
 }
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5{
   font-family: var(--fuenteH);
   line-height: 1.2;
 }
@@ -42,6 +42,7 @@ h4 {
 h5 {
   font-size: 2rem;
 }
+
 img {
   max-width: 100%;
 }
@@ -60,6 +61,10 @@ img {
   padding: 5px;
   margin-right: 8px;
 
+}
+
+.mis-rutinas{
+  font-size: 1.5rem;
 }
 
 .navbar{

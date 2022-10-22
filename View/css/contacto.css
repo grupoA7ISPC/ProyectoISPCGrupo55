@@ -26,6 +26,10 @@ h1{
     background: linear-gradient(83deg, rgba(38,38,50,1) 0%, rgba(255,96,5,1) 50%);
     color: #ffffff;
 }
+.mis-rutinas{
+    font-size: 1.5rem;
+  }
+  
 .link-container{
     padding: 20px;
 }
