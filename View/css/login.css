@@ -3,7 +3,7 @@
 * {
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Inter Tight', sans-serif;
 }
 
 :root {
@@ -22,10 +22,11 @@
 }
 
 
-.mis-rutinas{
+h6.mis-rutinas{
     font-size: 1.5rem;
+    font-family: 'Inter Tight', sans-serif;
+    font-weight: 500;
   }
-  
 .principal {
     display: flex; 
     width: 100%;

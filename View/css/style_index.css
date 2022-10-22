@@ -63,8 +63,10 @@ img {
 
 }
 
-.mis-rutinas{
+h6.mis-rutinas{
   font-size: 1.5rem;
+  font-family: 'Inter Tight', sans-serif;
+  font-weight: 500;
 }
 
 .navbar{
