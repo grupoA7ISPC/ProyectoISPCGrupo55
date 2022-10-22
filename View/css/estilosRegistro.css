@@ -53,14 +53,14 @@ form {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding:20px;
-    width: 400px;
+    padding:8px;
+    width: 260px;
 }
 
 
 .input-container input {
-    width: 300px;
-    padding:7px;
+    width: 230px;
+    padding:0px;
     border: none;
     outline:none;
     border-bottom: 2px solid #FF6600;
@@ -110,7 +110,7 @@ form .form-footer .agree {
 
 
 form h1 {
-    font-size: 40px;
+    font-size: 25px;
     padding-bottom: 20px;
     color:#ffffff;
 }
@@ -169,6 +169,37 @@ form .return a:hover{
     font-weight: 500;
 }
 
+.input-container, input:focus {
+    outline: none;
+
+}
+
+/* Funcionalidad JS */
+
+.input-container.ok input{
+    border-bottom: 0.1px solid rgb(54, 242, 21);
+    
+}
+.input-container.falla input{
+    border-bottom :0.1px solid red;
+   
+}
+.input-container p{
+    visibility: hidden;
+    padding:0;
+    margin:0;
+    color: red;
+    font-weight: lighter;
+    font-style: italic;
+    font-size: 12px;
+}
+
+.input-container.falla p{
+    visibility:visible;
+    color: red;
+
+}
+
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 2000px)
@@ -176,16 +207,13 @@ form .return a:hover{
     main{
         display: flex;
         background-position: center center;
+        height: 100vh;
     }
 
 }
 @media (max-width: 950px) {
 
-    /* ::-webkit-scrollbar {
-        display: none;
-    } */
-
-   
+    
     main{
         display: flex;
         background-position: center center;
