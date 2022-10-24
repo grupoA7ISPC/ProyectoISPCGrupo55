@@ -174,7 +174,7 @@ form .return a:hover{
 
 }
 
-/* Funcionalidad JS */
+/********** Funcionalidad JS *********/
 
 .input-container.ok input{
     border-bottom: 0.1px solid rgb(54, 242, 21);
@@ -239,7 +239,6 @@ form .return a:hover{
      }
      
      .form-container form .input-container{
-        
         width: 260px;
      }
 
@@ -288,7 +287,6 @@ form .return a:hover{
     }
 
     .button-register {
-       
         margin-top:2px;
      }
 }
