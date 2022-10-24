@@ -63,4 +63,29 @@ form div .transparencia{
     font-size: smaller;
 }
   
+/* Fomulario eventos */
+ 
+.error {
+    background-color: rgb(185, 0, 0);
+    text-align: center;
+    padding: 1rem;
+    color: white;
+    text-transform:uppercase;
+    margin-top: 2rem;
+    color:#ff8e28;
+    
+    
+    
+}
+.correcto{
+    
+    background-color: green;
+    text-align: center;
+    padding: 1rem;
+    
+    margin-top: 2rem;
+    color:#ff8e28;
+    text-transform: uppercase;
+    
 
+}
