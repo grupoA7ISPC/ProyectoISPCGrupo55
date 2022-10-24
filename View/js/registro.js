@@ -1,3 +1,13 @@
+/*CONSIDERACIONES PARA LA VALIDACIÓN DE LOS CAMPOS: 
+•Ningún campo puede estar vacío. 
+•Estructura de correo electrónico: nombre usuario + @ + servidor + dominio.
+•Fecha de nacimiento: +13 años. 
+•El nombre de usuario no puede tener espacios, mínimo 4 caracteres. 
+•Ambas contraseñas deben coincidir.
+•La contraseña debe tener un mínimo de 8 caracteres, un máximo de 16, 1 número, 1 minúscula, 1 mayúscula.
+•La casilla de "términos y condiciones" debe estar aceptada. 
+*/
+
 
 
 //window load para que todos los recursos terminen de cargar antes
