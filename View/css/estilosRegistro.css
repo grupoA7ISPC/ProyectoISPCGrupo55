@@ -174,6 +174,10 @@ form .return a:hover{
 
 }
 
+.terminos:hover {
+    color: #FF6600;
+}
+
 /********** Funcionalidad JS *********/
 
 .input-container.ok input{
