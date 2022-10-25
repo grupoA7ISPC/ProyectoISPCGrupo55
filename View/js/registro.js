@@ -9,10 +9,13 @@
 */
 
 
-//window load para que todos los recursos terminen de cargar antes
-window.addEventListener('load', ()=>{ 
-//capturarando elementos del html mediante ID para interactuar con el DOM
+
 const form = document.getElementById('formulario');
+//Prevención para que los elementos terminen de cargar antes: 
+window.addEventListener('load', ()=>{ 
+    form.addEventListener('submit', validaCampos)
+})
+
 const nombre = document.getElementById('nombre');
 const apellido = document.getElementById('apellido');
 const usuario = document.getElementById('usuario');
@@ -22,129 +25,120 @@ const pass2 = document.getElementById('password2');
 const fecha = document.getElementById('date');
 const checkbox = document.getElementById('checkbox');
 
-
-   
-form.addEventListener('submit', (e)=>{
-    //preventDefault cancela el evento por defecto (enviarse).
-    e.preventDefault();
-    validaCampos()
-})
-    
-
-//creacion de funcion para validar cada campo
-    const validaCampos = ()=> {
-        //capturar valores ingresados por el usuario
-        let nombreValor = nombre.value.trim();
-        let apellidoValor = apellido.value.trim();
-        const usuarioValor = usuario.value.trim();
-        const emailValor = email.value.trim();
-        const pass1Valor = pass1.value.trim();
-        const pass2Valor = pass2.value.trim();
-        const fechaValor = fecha.value.trim();
+//Función para validar cada campo. 
+function validaCampos (evento) {
+    evento.preventDefault(); //Evitar que el formulario se envíe sin pasar por toda la verificación.
+    //Capturar valores ingresados por el usuario. 
+    const nombreValor = nombre.value.trim();
+    let apellidoValor = apellido.value.trim();
+    const usuarioValor = usuario.value.trim();
+    const emailValor = email.value.trim();
+    const pass1Valor = pass1.value.trim();
+    const pass2Valor = pass2.value.trim();
+    const fechaValor = fecha.value.trim();
             
 
-        // validando campo nombre 
-        // (!nombreValor) equivale a (nombreValor === '') para los campos vacios
-            if(!nombreValor){
-                validaFalla(nombre, 'Campo obligatorio*')
-            }else{
-                validaOk(nombre)
-            }
+    // Validando campo NOMBRE.
+    if(!nombreValor){
+        validaFalla(nombre, 'Campo obligatorio*')
+        return;
+    }else{
+        validaOk(nombre)
+    }
+
+    // Validando campo APELLIDO.
+    if(!apellidoValor){
+        validaFalla(apellido, 'Campo obligatorio*')
+        return;
+    }else{
+        validaOk(apellido)
+    }
+
+    // Validando campo USUARIO.
+    if(!usuarioValor){
+        validaFalla(usuario, 'Campo obligatorio*')
+        return;
+    }else{
+        validaOk(usuario)
+    }
+
+    //Validando campo EMAIL.
+    if(!emailValor){
+        validaFalla(email, 'Campo obligatorio*')
+        return;
+    }else if(!validaEmail(emailValor)){
+        validaFalla(email, 'El email no es valido')
+        return;
+    }else {
+        validaOk(email)
+    }
+
+    //Validando campo PASSWORD.
+    const patronPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
+    if(!pass1Valor){
+        validaFalla(pass1, 'Campo obligatorio*')
+            return;
+    }else if (!pass1Valor.match(patronPass)){ 
+        validaFalla(pass1, 'Debe tener entre 8 y 16 caracteres y al  menos una may, una min y un num.')
+        return;
+    }else {
+        validaOk(pass1)
+    }
+
+    // validando campo CONFIRMACIÓN PASSWORD. 
+    if(!pass2Valor){
+        validaFalla(pass2, 'Confirme su contraseña')
+        return;
+    }else if (pass1Valor !== pass2Valor){
+        validaFalla(pass2,'Las contraseñas no coinciden')
+        return;
+    } else {
+        validaOk(pass2)
+    }
 
 
-        // validando campo apellido
-            if(!apellidoValor){
-                validaFalla(apellido, 'Campo obligatorio*')
-            }else{
-                validaOk(apellido)
-            }
-
-
-        // validando campo usuario
-            if(!usuarioValor){
-                validaFalla(usuario, 'Campo obligatorio*')
-            }else{
-                validaOk(usuario)
-            }
-
-
-        // validando campo email
-            if(!emailValor){
-                validaFalla(email, 'Campo obligatorio*')
-            }else if(!validaEmail(emailValor)){
-                validaFalla(email, 'El email no es valido')
-                
-            }else {
-                validaOk(email)
-            }
-
-        // validando campo password
-            const patronPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
-
-            if(!pass1Valor){
-                validaFalla(pass1, 'Campo obligatorio*')
-           
-            }else if (!pass1Valor.match(patronPass)){ 
-             validaFalla(pass1, 'Debe tener entre 8 y 16 caracteres y al  menos una may, una min y un num.')
-            }else {
-                validaOk(pass1)
-            }
-
-
-        // validando campo confirmacion password
-            if(!pass2Valor){
-                validaFalla(pass2, 'Confirme su contraseña')
-            }else if (pass1Valor !== pass2Valor){
-                validaFalla(pass2,'Las contraseñas no coinciden')
-            } else {
-                validaOk(pass2)
-            }
-
-
-        // validando campo confirmacion fecha (este codigo valida fechas en formato dd/mm/aaaa entre 1900 y fecha actual)
-            let fechaMenor= new Date('01/01/1900');
-            if(!fechaValor){
-                validaFalla(fecha, 'Ingrese su fecha de nacimiento')
-            }
-
-            else if(new Date(fechaValor) > new Date() ) {
-                validaFalla(fecha, 'Ingrese una fecha Valida')
-              
-            } else if (new Date(fechaValor) < fechaMenor){
-                validaFalla(fecha, 'Ingrese una fecha Valida')
-                
-            } else {
-                validaOk(fecha)
-                
-            }
-
-        // validando boton checkbox
-        //Falta mostrar mensaje de error****
-            if(!checkbox.checked == true){
-                console.log('debe aceptar terminos y condiciones')
-            }else{
-                console.log('chequeo valido ');
-            }
-                
+    //Validando campo FECHA (formato dd/mm/aaaa entre 1900 y fecha actual)
+        let fechaMenor= new Date('01/01/1900');
+        if(!fechaValor){
+            validaFalla(fecha, 'Ingrese su fecha de nacimiento')
+        return;
+        }
+        else if(new Date(fechaValor) > new Date() ) {
+            validaFalla(fecha, 'Ingrese una fecha Valida')
+            return;  
+        } else if (new Date(fechaValor) < fechaMenor){
+            validaFalla(fecha, 'Ingrese una fecha Valida')
+            return;     
+        } else {
+            validaOk(fecha)  
         }
 
-        //Creacion funciones de validación:
+    //Validando boton checkbox
+    //Falta mostrar mensaje de error****
+    if(!checkbox.checked == true){
+        console.log('debe aceptar terminos y condiciones')
+    }else{
+        console.log('chequeo valido ');
+    }
 
-        const validaFalla = (input,msje) => {
-            const inputContainer = input.parentElement
-            const aviso = inputContainer.querySelector('p')
-            aviso.innerText = msje
-            inputContainer.className = 'input-container falla'
-        }
 
-        const validaOk = (input,msje) => {
-            const inputContainer = input.parentElement
-            inputContainer.className = 'input-container ok'
-        }
+    this.submit(); //Enviar el formulario si todo está ok. 
+}
+    
+//Creacion funciones de validación:
+const validaFalla = (input,msje) => {
+    const inputContainer = input.parentElement
+    const aviso = inputContainer.querySelector('p')
+    aviso.innerText = msje
+    inputContainer.className = 'input-container falla'
+    // return;
+}
 
-        const validaEmail = (email) =>{
-            return /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(email)
-        }
-        
+const validaOk = (input,msje) => {
+    const inputContainer = input.parentElement
+    inputContainer.className = 'input-container ok'
+}
 
-    });
+const validaEmail = (email) =>{
+    return /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(email)
+}
