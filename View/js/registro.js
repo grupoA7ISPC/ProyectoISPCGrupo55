@@ -94,12 +94,9 @@ function validaCampos (evento) {
             validaFalla(fecha, 'Ingrese su fecha de nacimiento')
             return;
         }
-        else if(new Date(fechaValor) > new Date() ) {
+        else if(new Date(fechaValor) > new Date() || new Date(fechaValor) < fechaMinima) {
             validaFalla(fecha, 'Ingrese una fecha válida')
-            return;  
-        } else if (new Date(fechaValor) < fechaMinima){
-            validaFalla(fecha, 'Ingrese una fecha válida')
-            return;     
+            return;   
         } else {
             validaOk(fecha)  
         }
