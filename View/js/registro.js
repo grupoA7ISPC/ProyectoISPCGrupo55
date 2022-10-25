@@ -53,15 +53,26 @@ function validaCampos (evento) {
     }
 
     //Validando campo EMAIL.
-    if(!emailValor){
-        validaFalla(email, 'Campo obligatorio*')
+    const patronEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    if (!emailValor) {
+        validaFalla(email, 'Campo obligatorio*');
         return;
-    }else if(!validaEmail(emailValor)){
-        validaFalla(email, 'El email no es valido')
+    } else if (!emailValor.match(patronEmail)) {
+        validaFalla(email, 'El email no es válido');
         return;
-    }else {
-        validaOk(email)
+    } else {
+        validaOk(email);
     }
+    
+    // if(!emailValor){
+    //     validaFalla(email, 'Campo obligatorio*')
+    //     return;
+    // }else if(!validaEmail(emailValor)){
+    //     validaFalla(email, 'El email no es valido')
+    //     return;
+    // }else {
+    //     validaOk(email)
+    // }
 
     //Validando campo PASSWORD.
     const patronPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
@@ -129,6 +140,6 @@ const validaOk = (input,msje) => {
     inputContainer.className = 'input-container ok'
 }
 
-const validaEmail = (email) =>{
-    return /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(email)
-}
+// function validaEmail (email) {
+//     return /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(email)
+// }
