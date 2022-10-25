@@ -37,9 +37,12 @@ function validaCampos (evento) {
     const pass2Valor = pass2.value.trim();
     const fechaValor = fecha.value.trim();
     
+    //Array 1: VALORES en NOMBRE, APELLIDO y USUARIO. Salida sencilla. 
     const array1 = [nombreValor, apellidoValor, usuarioValor]; 
+    //Array 2: CAMPOS de NOMBRE, APELLIDO y USUARIO. Salida sencilla. 
     const array2 = [nombre, apellido, usuario];
 
+    //Se itera por cada valor y campo, con ayuda de los arreglos UNO(1) y DOS(2), para identificar si NOMBRE, APELLIDO o USUARIO están en blanco: 
     for (i in array1) {
         if (!array1[i]) {
             validaFalla(array2[i], 'Campo obligatorio*');
@@ -48,30 +51,6 @@ function validaCampos (evento) {
             validaOk(array2[i]);
         }
     }
-
-    // // Validando campo NOMBRE.
-    // if(!nombreValor){
-    //     validaFalla(nombre, 'Campo obligatorio*')
-    //     return;
-    // }else{
-    //     validaOk(nombre)
-    // }
-
-    // // Validando campo APELLIDO.
-    // if(!apellidoValor){
-    //     validaFalla(apellido, 'Campo obligatorio*')
-    //     return;
-    // }else{
-    //     validaOk(apellido)
-    // }
-
-    // // Validando campo USUARIO.
-    // if(!usuarioValor){
-    //     validaFalla(usuario, 'Campo obligatorio*')
-    //     return;
-    // }else{
-    //     validaOk(usuario)
-    // }
 
     //Validando campo EMAIL.
     if(!emailValor){
