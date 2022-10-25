@@ -30,37 +30,48 @@ function validaCampos (evento) {
     evento.preventDefault(); //Evitar que el formulario se envíe sin pasar por toda la verificación.
     //Capturar valores ingresados por el usuario. 
     const nombreValor = nombre.value.trim();
-    let apellidoValor = apellido.value.trim();
+    const apellidoValor = apellido.value.trim();
     const usuarioValor = usuario.value.trim();
     const emailValor = email.value.trim();
     const pass1Valor = pass1.value.trim();
     const pass2Valor = pass2.value.trim();
     const fechaValor = fecha.value.trim();
-            
+    
+    const array1 = [nombreValor, apellidoValor, usuarioValor]; 
+    const array2 = [nombre, apellido, usuario];
 
-    // Validando campo NOMBRE.
-    if(!nombreValor){
-        validaFalla(nombre, 'Campo obligatorio*')
-        return;
-    }else{
-        validaOk(nombre)
+    for (i in array1) {
+        if (!array1[i]) {
+            validaFalla(array2[i], 'Campo obligatorio*');
+            return;
+        } else {
+            validaOk(array2[i]);
+        }
     }
 
-    // Validando campo APELLIDO.
-    if(!apellidoValor){
-        validaFalla(apellido, 'Campo obligatorio*')
-        return;
-    }else{
-        validaOk(apellido)
-    }
+    // // Validando campo NOMBRE.
+    // if(!nombreValor){
+    //     validaFalla(nombre, 'Campo obligatorio*')
+    //     return;
+    // }else{
+    //     validaOk(nombre)
+    // }
 
-    // Validando campo USUARIO.
-    if(!usuarioValor){
-        validaFalla(usuario, 'Campo obligatorio*')
-        return;
-    }else{
-        validaOk(usuario)
-    }
+    // // Validando campo APELLIDO.
+    // if(!apellidoValor){
+    //     validaFalla(apellido, 'Campo obligatorio*')
+    //     return;
+    // }else{
+    //     validaOk(apellido)
+    // }
+
+    // // Validando campo USUARIO.
+    // if(!usuarioValor){
+    //     validaFalla(usuario, 'Campo obligatorio*')
+    //     return;
+    // }else{
+    //     validaOk(usuario)
+    // }
 
     //Validando campo EMAIL.
     if(!emailValor){
