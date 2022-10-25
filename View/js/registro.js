@@ -27,8 +27,8 @@ const checkbox = document.getElementById('checkbox');
 
 //Función para validar cada campo. 
 function validaCampos (evento) {
-    evento.preventDefault(); //Evitar que el formulario se envíe sin pasar por toda la verificación.
-    //Capturar valores ingresados por el usuario. 
+    evento.preventDefault(); //Evita que el formulario se envíe sin pasar por toda la verificación.
+    //Capturar valores ingresados por el usuario:
     const nombreValor = nombre.value.trim();
     const apellidoValor = apellido.value.trim();
     const usuarioValor = usuario.value.trim();
@@ -52,7 +52,7 @@ function validaCampos (evento) {
         }
     }
 
-    //Validando campo EMAIL.
+    //Validando campo EMAIL. Salida compleja. 
     const patronEmail = /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
     if (!emailValor) {
         validaFalla(email, 'Campo obligatorio*');
@@ -63,16 +63,6 @@ function validaCampos (evento) {
     } else {
         validaOk(email);
     }
-    
-    // if(!emailValor){
-    //     validaFalla(email, 'Campo obligatorio*')
-    //     return;
-    // }else if(!validaEmail(emailValor)){
-    //     validaFalla(email, 'El email no es valido')
-    //     return;
-    // }else {
-    //     validaOk(email)
-    // }
 
     //Validando campo PASSWORD.
     const patronPass = /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
@@ -86,7 +76,7 @@ function validaCampos (evento) {
         validaOk(pass1)
     }
 
-    // validando campo CONFIRMACIÓN PASSWORD. 
+    //Validando campo CONFIRMACIÓN PASSWORD. 
     if(!pass2Valor){
         validaFalla(pass2, 'Confirme su contraseña')
         return;
@@ -99,22 +89,22 @@ function validaCampos (evento) {
 
 
     //Validando campo FECHA (formato dd/mm/aaaa entre 1900 y fecha actual)
-        let fechaMenor= new Date('01/01/1900');
+        let fechaMinima= new Date('01/01/1900'); //Nueva instancia. 
         if(!fechaValor){
             validaFalla(fecha, 'Ingrese su fecha de nacimiento')
-        return;
+            return;
         }
         else if(new Date(fechaValor) > new Date() ) {
-            validaFalla(fecha, 'Ingrese una fecha Valida')
+            validaFalla(fecha, 'Ingrese una fecha válida')
             return;  
-        } else if (new Date(fechaValor) < fechaMenor){
-            validaFalla(fecha, 'Ingrese una fecha Valida')
+        } else if (new Date(fechaValor) < fechaMinima){
+            validaFalla(fecha, 'Ingrese una fecha válida')
             return;     
         } else {
             validaOk(fecha)  
         }
 
-    //Validando boton checkbox
+    //Validando botón checkbox
     //Falta mostrar mensaje de error****
     if(!checkbox.checked == true){
         console.log('debe aceptar terminos y condiciones')
@@ -123,23 +113,18 @@ function validaCampos (evento) {
     }
 
 
-    this.submit(); //Enviar el formulario si todo está ok. 
+    this.submit(); //Envía el formulario si todo está ok. 
 }
     
-//Creacion funciones de validación:
+//Funciones de validación:
 const validaFalla = (input,msje) => {
     const inputContainer = input.parentElement
     const aviso = inputContainer.querySelector('p')
     aviso.innerText = msje
     inputContainer.className = 'input-container falla'
-    // return;
 }
 
 const validaOk = (input,msje) => {
     const inputContainer = input.parentElement
     inputContainer.className = 'input-container ok'
 }
-
-// function validaEmail (email) {
-//     return /^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/.test(email)
-// }
