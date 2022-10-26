@@ -125,3 +125,8 @@ const validaOk = (input,msje) => {
     const inputContainer = input.parentElement
     inputContainer.className = 'input-container ok'
 }
+
+/* no me funcionó.
+ function goToLogin(){
+    location.href = "login.html";
+} */
