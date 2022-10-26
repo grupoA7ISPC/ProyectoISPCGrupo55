@@ -1,3 +1,4 @@
+/*Vero*/
 CREATE DATABASE mis_rutinas;
 USE mis_rutinas;
 
@@ -12,7 +13,7 @@ CREATE TABLE usuario(
     fec_ing date,
     IMC float
 );
-
+/*Arias Guillermo*/
 CREATE TABLE rut_usuario(
 	id_rut_usuario INT primary key not null,
 );
@@ -24,7 +25,7 @@ CREATE TABLE rutina(
 CREATE TABLE rut_ejercicio(
 	id_rut_ejerc INT primary key not null,
 );
-
+/*Andrés*/
 CREATE TABLE ejercicio(
 	id_ejerc INT primary key not null,
 );
@@ -36,7 +37,7 @@ CREATE TABLE logro(
 CREATE TABLE plan_alimentacion(
 	id_plan INT primary key not null,
 );
-
+/*Horacio*/
 CREATE TABLE calendario(
 	id_calen INT primary key not null,
 );
