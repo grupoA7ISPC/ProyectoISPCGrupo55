@@ -88,15 +88,26 @@ function validaCampos (evento) {
     }
 
 
-    //Validando campo FECHA (formato dd/mm/aaaa entre 1900 y fecha actual)
-        let fechaMinima= new Date('01/01/1900'); //Nueva instancia. 
+    //Validando campo FECHA (formato dd/mm/aaaa entre 1900 y fecha actual). Se valida que la fecha de nacimiento corresponda al menos a 13 años de la fecha actual. 
+        //Nuevas instancias:
+        let fechaMinima= new Date('01/01/1900'); 
+        const fechaNacimiento = new Date (fechaValor); 
+        let fechaActual = new Date(); 
+        const diferenciaFechas = new Date(
+            fechaNacimiento.getUTCFullYear() + 13, 
+            fechaNacimiento.getUTCMonth(), 
+            fechaNacimiento.getUTCDate()
+        );
+
         if(!fechaValor){
             validaFalla(fecha, 'Ingrese su fecha de nacimiento')
             return;
-        }
-        else if(new Date(fechaValor) > new Date() || new Date(fechaValor) < fechaMinima) {
+        } else if(new Date(fechaValor) > new Date() || new Date(fechaValor) < fechaMinima) {
             validaFalla(fecha, 'Ingrese una fecha válida')
             return;   
+        } else if (diferenciaFechas >= fechaActual) {
+            validaFalla(fecha, "Debes tener al menos 13 años");
+            return; 
         } else {
             validaOk(fecha)  
         }
