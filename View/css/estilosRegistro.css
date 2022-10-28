@@ -57,6 +57,15 @@ form {
     width: 260px;
 }
 
+/*Cambiar el estilo del autocompletado*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {  
+    -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
 
 .input-container input {
     width: 230px;
@@ -148,6 +157,10 @@ form h1 {
     box-shadow: none;
  }
 
+ .button-register a:hover {
+    color: #262632;
+ }
+
 
 form .return {
     font-size: 15px;
@@ -182,8 +195,8 @@ form .return a:hover{
 
 .input-container.ok input{
     border-bottom: 0.1px solid rgb(54, 242, 21);
-    
 }
+
 .input-container.falla input{
     border-bottom :0.1px solid red;
    
@@ -204,6 +217,13 @@ form .return a:hover{
 
 }
 
+#check-error {
+    color:red; 
+    font-size: 12px;
+    font-style: italic;
+    font-weight: lighter; 
+    align-self: center;
+}
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 2000px)
