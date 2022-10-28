@@ -115,13 +115,19 @@ function validaCampos (evento) {
     //Validando botón checkbox
     //Falta mostrar mensaje de error****
     if(!checkbox.checked == true){
-        console.log('debe aceptar terminos y condiciones')
+        fallaCheckbox();
+        return;
     }else{
-        console.log('chequeo valido ');
+        validaOk(checkbox);
     }
 
 
     this.submit(); //Envía el formulario si todo está ok. 
+}
+
+document.getElementById("check-error").style.display = "none";
+const fallaCheckbox = () => {
+    document.getElementById("check-error").style.display = "flex";
 }
     
 //Funciones de validación:

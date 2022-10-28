@@ -191,8 +191,8 @@ form .return a:hover{
 
 .input-container.ok input{
     border-bottom: 0.1px solid rgb(54, 242, 21);
-    
 }
+
 .input-container.falla input{
     border-bottom :0.1px solid red;
    
@@ -213,6 +213,12 @@ form .return a:hover{
 
 }
 
+#check-error {
+    color:red; 
+    font-size: 12px;
+    font-style: italic;
+    font-weight: lighter; 
+}
 
 /* RESPONSIVE DESIGN */
 @media (max-width: 2000px)
