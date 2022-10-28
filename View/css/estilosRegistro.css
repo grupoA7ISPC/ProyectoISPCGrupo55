@@ -157,6 +157,10 @@ form h1 {
     box-shadow: none;
  }
 
+ .button-register a:hover {
+    color: #262632;
+ }
+
 
 form .return {
     font-size: 15px;
@@ -218,6 +222,7 @@ form .return a:hover{
     font-size: 12px;
     font-style: italic;
     font-weight: lighter; 
+    align-self: center;
 }
 
 /* RESPONSIVE DESIGN */

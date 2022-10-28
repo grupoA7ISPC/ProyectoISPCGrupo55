@@ -113,7 +113,7 @@ function validaCampos (evento) {
         }
 
     //Validando botón checkbox
-    //Falta mostrar mensaje de error****
+   
     if(!checkbox.checked == true){
         fallaCheckbox();
         return;
@@ -143,7 +143,3 @@ const validaOk = (input,msje) => {
     inputContainer.className = 'input-container ok'
 }
 
-/* no me funcionó.
- function goToLogin(){
-    location.href = "login.html";
-} */
