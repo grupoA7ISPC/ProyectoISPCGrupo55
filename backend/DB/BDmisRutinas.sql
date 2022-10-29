@@ -50,14 +50,14 @@ CREATE TABLE ejercicio(
 CREATE TABLE logro(
 	id_logro INT primary key not null,
 	medalla VARCHAR(45),
-	constraint fk_rutina_id foreign key (id_rutina) references rutina(id_rutina)  /*Deberiamos conservar los nombres, yo lo hice según grafico*/ 
+	constraint fk_rutina_id foreign key (id_rutina) references rutina(id_rutina)
 );
 
-CREATE TABLE plan_alimentacion(		/*Problemas con con pk y fk*/
+CREATE TABLE plan_alimentacion(
 	id_plan INT primary key not null,
 	archivo VARCHAR (45),
 	req_agua VARCHAR(45),
-	user_plan_id INT
+	constraint fk_id_user foreign key (id_user) references usuario(id_user)
 );
 
 /*Horacio*/
