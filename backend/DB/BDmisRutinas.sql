@@ -43,15 +43,23 @@ CREATE TABLE rut_ejercicio(
 /*Andrés*/
 CREATE TABLE ejercicio(
 	id_ejerc INT primary key not null,
+	nombre VARCHAR(45),
+	zona_cuerpo VARCHAR(45)
 );
 
 CREATE TABLE logro(
 	id_logro INT primary key not null,
+	medalla VARCHAR(45),
+	constraint fk_rutina_id foreign key (id_rutina) references rutina(id_rutina)  /*Deberiamos conservar los nombres, yo lo hice según grafico*/ 
 );
 
-CREATE TABLE plan_alimentacion(
+CREATE TABLE plan_alimentacion(		/*Problemas con con pk y fk*/
 	id_plan INT primary key not null,
+	archivo VARCHAR (45),
+	req_agua VARCHAR(45),
+	user_plan_id INT
 );
+
 /*Horacio*/
 CREATE TABLE calendario(
 	id_calen INT primary key not null,
