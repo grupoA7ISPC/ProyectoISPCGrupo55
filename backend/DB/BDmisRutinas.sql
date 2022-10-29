@@ -13,18 +13,33 @@ CREATE TABLE usuario(
     fec_ing date,
     IMC float
 );
-/*Arias Guillermo*/
+//*Arias Guillermo*/
 CREATE TABLE rut_usuario(
 	id_rut_usuario INT primary key not null,
+    rut_id INT,
+    usuario_id INT,
+    rutina_id_rutina INT, 
+    constraint  fk_uid foreign key (usuario_id) references usuario (id_user),
+    constraint  fk_rir foreign key (rutina_id_rutina) references rutina (id_rutina)
 );
 
 CREATE TABLE rutina(
 	id_rutina INT primary key not null,
+    nombre date
 );
 
 CREATE TABLE rut_ejercicio(
 	id_rut_ejerc INT primary key not null,
+    serie INT,
+    repeticiones INT,
+    duracion INT,
+    descanso varchar(45),
+    rutina_id INT,
+    ejercicio_id INT,
+    constraint fk_ri foreign key (rutina_id) references rutina (id_rutina),
+    constraint fk_ei foreign key (ejercicio_id) references ejercicio (id_ejerc)
 );
+
 /*Andrés*/
 CREATE TABLE ejercicio(
 	id_ejerc INT primary key not null,
