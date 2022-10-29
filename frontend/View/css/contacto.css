@@ -64,7 +64,7 @@ form div .transparencia{
 }
   
 /* Fomulario eventos */
- 
+/*  
 .error {
     background-color: rgb(185, 0, 0);
     text-align: center;
@@ -88,4 +88,81 @@ form div .transparencia{
     text-transform: uppercase;
     
 
+} */
+
+.formulario__grupo-input{
+    position: relative;
+}
+
+.formulario__input{
+    color: #ffffff;
+    font-size: small;
+}
+
+.formulario__input:focus{
+    border: none;
+    border-bottom: 2px solid #FF8E28;
+    outline: none;
+    padding: 2px;
+}
+
+.formulario__input-error{
+    font-size: 10px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.formulario__input-error-activo{
+    display: block;
+}
+
+.formulario__validacion-estado{
+    position: absolute;
+    left: 150px;
+    bottom: 15px;
+    z-index: 100;
+    font-size: 16px;
+    opacity: 0;
+}
+.formulario__error{
+    font-size: 10px;
+    height: 26px;
+    background-color: #CC0000;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.formulario__error-activo{
+	display: block;
+}
+.formulario__error p{
+    margin: 0;
+}
+
+.formulario__enviado{
+    font-size: 11px;
+    height: 26px;
+    background-color: #1ed12d;
+    padding: 0 15px;
+    border-radius: 3px;
+    display: none;
+    margin-bottom: 5px;
+    text-align: center;
+}
+.formulario__enviado-activo{
+	display: block;
+}
+.formulario__enviado p{
+    margin: 0;
+}
+.formulario__grupo-correcto .formulario__validacion-estado{
+    color: #1ed12d;
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto  .formulario__validacion-estado{
+    color: #ff6600;
+    opacity: 1;
 }

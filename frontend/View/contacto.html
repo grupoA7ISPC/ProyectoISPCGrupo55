@@ -42,14 +42,44 @@
             </div>
             <div class="row d-flex justify-content-center">
                 <div class="col-md-6 col-lg-6 col-xl-6">
-                    <form class="p-3 p-xl-4  formulario" method="post">
-                        <div class="mb-3"><input id="nombre" class="transparencia form-control" type="text" name="name" placeholder="Nombre" /></div>
-                        <div class="mb-3"><input id="email" class="transparencia form-control" type="email" name="email" placeholder="Correo electrónico*" /></div>
-                        <div class="mb-3"><input id="asunto" class="transparencia form-control" type="text" name="asunto" placeholder="Asunto*"></div>
-                        <div class="mb-3"><textarea id="mensage" class="transparencia form-control" name="message" rows="4" placeholder="Mensaje" style="margin: 0px;margin-top: 18px;"></textarea></div>
+                    <form action="" id="formulario" class="p-3 p-xl-4  formulario" method="post">
+                        <div class="formulario__grupo" id="grupo__nombre">
+                             <div class="mb-3 formulario__grupo-input">
+                                <input id="nombre" class="transparencia formulario-control formulario__input" type="text" name="nombre" placeholder="Nombre" />
+                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                            </div>
+                            <p class="formulario__input-error">El nombre debe tener de 4 a 16 dígitos.</p>
+                        </div>
+                        <div class="formulario__grupo" id="grupo__email">
+                            <div class="mb-3 formulario__grupo-input">
+                                <input id="email" class="transparencia formulario-control formulario__input" type="email" name="email" placeholder="Correo electrónico*" />
+                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                            </div>
+                            <p class="formulario__input-error">Ingrese un correo valido.</p>
+                        </div>
+                        <div class="formulario__grupo" id="grupo__asunto">
+                            <div class="mb-3 formulario__grupo-input">
+                                <input id="asunto" class="transparencia formulario-control formulario__input" type="text" name="asunto" placeholder="Asunto*">
+                                <i class="formulario__validacion-estado fas fa-times-circle"></i>
+                            </div>
+                            <p class="formulario__input-error"></p>
+                        </div>
+                        <div class="formulario__grupo" id="grupo__mensaje">
+                            <div class="mb-3 formulario__grupo-input">
+                                <textarea id="mensaje" class="transparencia formulario-control formulario__input" name="mensaje" rows="4" placeholder="Mensaje" style="margin: 0px;margin-top: 18px;"></textarea>
+                            </div>
+                            <p  class="formulario__input-error"></p>
+                        </div>
+                        
                         <p class="requerido">*Campos requeridos</p>
+                        <div class="formulario__error" id="formulario__error">
+                            <p><i class="fas fa-exclamation-triangle"></i> Rellena el formulario. </p>
+                        </div>
+                        <div class="formulario__enviado" id="formulario__enviado">
+                            <p><i class="fas fa-check-circle"></i>  Enviado. </p>
+                        </div>
                         <div>
-                            <button class="transparencia btn btn-primary d-block w-50 border-0" type="submit"
+                            <button class="transparencia btn btn-primary d-block w-50 border-0 formulario__grupo formulario__grupo-btn-enviar" type="submit"
                             style="background:#ff6600" onMouseOver="this.style.background='#FF8E28'; this.style.color='#262632'"
                             onMouseOut="this.style.background='#ff6600'; this.style.color='#fdfdfd'" id="boton">Enviar</button>
                         </div>
