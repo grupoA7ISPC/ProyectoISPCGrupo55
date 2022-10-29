@@ -1,6 +1,8 @@
 CREATE DATABASE mis_rutinas;
 USE mis_rutinas;
 
+
+
 CREATE TABLE usuario(
 	id_user INT primary key not null,
 	nombre varchar(45),
@@ -72,7 +74,7 @@ CREATE TABLE historial(
 CREATE TABLE calendario(
 	id_calen INT primary key not null,
 	fecha DATE,
-	hora VARCHAR(45),
+	hora TIME,
 	descripcion VARCHAR(45),
 	historial_user_id INT,
 	rut_ejerc_id INT,
