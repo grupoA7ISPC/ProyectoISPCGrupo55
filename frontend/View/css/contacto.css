@@ -54,6 +54,7 @@ form div .transparencia{
     background-color: transparent;
     border: none;
     border-bottom: 2px solid #ffffff;
+    color: aliceblue;
 }
 .requerido {
     margin-top: 20px;
@@ -119,9 +120,9 @@ form div .transparencia{
 .formulario__validacion-estado{
     position: absolute;
     left: 150px;
-    bottom: 15px;
+    bottom: 10px;
     z-index: 100;
-    font-size: 16px;
+    font-size: 1.2rem;
     opacity: 0;
 }
 .formulario__error{
@@ -157,12 +158,19 @@ form div .transparencia{
 .formulario__enviado p{
     margin: 0;
 }
+
+.formulario__grupo-incorrecto .formulario__input {
+	border-bottom: 3px solid #bb2929;
+}
+
 .formulario__grupo-correcto .formulario__validacion-estado{
     color: #1ed12d;
     opacity: 1;
 }
-
+.formulario__grupo-correcto .formulario__input  {
+    border-bottom: 3px solid #1ed12d;
+}
 .formulario__grupo-incorrecto  .formulario__validacion-estado{
-    color: #ff6600;
+    color: #ca1313;
     opacity: 1;
 }
