@@ -154,6 +154,16 @@ fieldset {
   font-size: 1.5rem;
 }
 
+/*Cambiar el estilo del autocompletado*/
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus {  
+    -webkit-text-fill-color: white;
+  -webkit-box-shadow: 0 0 0px 1000px transparent inset;
+  box-shadow: 0 0 0px 1000px transparent inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 @keyframes revelar {
     to {
         color: var(--blanco);
