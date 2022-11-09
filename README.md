@@ -1,3 +1,3 @@
 # ProyectoISPC
 Bienvenidos ♥
-Nuestro proyecto es MisRutinas, un APP para administrar tus rutinas de ejercicios.
+Nuestro proyecto es MisRutinas, una APP para administrar tus rutinas de ejercicios.
