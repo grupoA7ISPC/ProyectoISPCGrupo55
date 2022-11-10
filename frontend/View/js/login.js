@@ -28,8 +28,16 @@ function iniciar(){
     }
     // Mensaje del que el usuario es incorrecto
     else{
-        alert("Usuario y/o contraseña incorrectos")
-
+        /* alert("Usuario y/o contraseña incorrectos") */
+      accesoDenegado();
     }
-    
+    function accesoDenegado (){
+      /* alert("Usuario y/o contraseña incorrectos"); */
+      const contenedor = document.getElementById('form-container');
+      let mensaje = document.createElement('p');
+      mensaje.innerText = 'Usuario y/o contraseña incorrectos';
+      mensaje.className = 'denegado';
+      contenedor.appendChild(mensaje);
+    } 
 }
+
