@@ -174,7 +174,9 @@ funcionalidad JS
     margin: 4px;
 }
 
-
+#form-container .input-denegado{
+    border-bottom :0.1px solid red;
+}
 
 
 
