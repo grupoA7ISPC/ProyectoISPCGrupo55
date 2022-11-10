@@ -8,7 +8,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style_index.css">
-    <title>Login</title>
+    <title>Iniciar Sesión</title>
 </head>
 
 <body>
@@ -46,17 +46,20 @@
                 <fieldset>
                     <legend class="legend-inicia">Inicia Sesión</legend>
 
-                    <div class="info">
-                        <img src="../View/img/user-icon.svg" class="user-icon">
-                        <label for="username"> Nombre de Usuario o E-mail:</label>
-                    </div>                    
-                    <input type="email" id="username" placeholder="misrutinas@ejemplo.com">
-                    
-                    <div class="info">
-                        <img src="../View/img/lock-icon.svg" class="lock-icon">
-                        <label for="password">Contraseña:</label>
-                    </div>                    
-                    <input type="password" id="password" placeholder="*********">
+                    <div id="form-container">
+                        <div class="info">
+                            <img src="../View/img/user-icon.svg" class="user-icon">
+                            <label for="username"> Nombre de Usuario o E-mail:</label>
+                        </div>                    
+                        <input type="email" id="username" placeholder="misrutinas@ejemplo.com">
+                        
+                        <div class="info">
+                            <img src="../View/img/lock-icon.svg" class="lock-icon">
+                            <label for="password">Contraseña:</label>
+                        </div>                    
+                        <input type="password" id="password" placeholder="*********">
+                        <!-- <p class="denegado">Usuario y/o contraseña incorrectos</p> --> 
+                    </div>
                 </fieldset>
 
                 <div class="salida">
