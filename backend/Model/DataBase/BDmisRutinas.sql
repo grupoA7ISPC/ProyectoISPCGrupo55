@@ -84,4 +84,28 @@ CREATE TABLE calendario(
 	CONSTRAINT fk_lri FOREIGN KEY (logro_rutina_id) REFERENCES logro(id_logro)
 );
 
-/* Consultas */
+/* Consultas  INSERT , UPDATE, SALECT , JOIN */
+SELECT * FROM usuario;
+SELECT * FROM ejercicio;
+SELECT * FROM rut_ejercicio;
+SELECT * FROM rutina;
+
+INSERT INTO usuario VALUE (01,"guillermo","arias",'1992-02-09',"misterio07","darioguille92@gmail.com","nhybubmju",'2022-04-06',null);
+INSERT INTO ejercicio VALUE(01,"abdomen","media");
+INSERT INTO rutina VALUE (1,"abdominales");
+INSERT INTO rut_ejercicio VALUE (1,3,10,'00:00:10','00:00:01:',1,1);
+INSERT INTO rut_usuario VALUE (1,1,1);
+
+UPDATE rut_ejercicio 
+SET duracion = '00:05:00'
+WHERE id_rut_ejerc = 1;
+
+UPDATE rut_ejercicio
+SET descanso = '00:00:59'
+WHERE id_rut_ejerc = 1;
+
+SELECT usuario.nombre, usuario.apellido,rut_ejercicio.serie ,rut_ejercicio.repeticiones,rut_ejercicio.duracion,rut_ejercicio.descanso
+FROM  usuario 
+INNER JOIN rut_usuario on usuario.id_user=rut_usuario.usuario_id
+INNER JOIN rutina on rutina.id_rutina=usuario.id_user
+INNER JOIN rut_ejercicio on rut_ejercicio.rutina_id=rutina.id_rutina;
