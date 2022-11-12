@@ -1,8 +1,6 @@
 CREATE DATABASE mis_rutinas;
 USE mis_rutinas;
 
-
-
 CREATE TABLE usuario(
 	id_user INT PRIMARY KEY NOT NULL,
 	nombre VARCHAR(45),
@@ -109,3 +107,17 @@ FROM  usuario
 INNER JOIN rut_usuario on usuario.id_user=rut_usuario.usuario_id
 INNER JOIN rutina on rutina.id_rutina=usuario.id_user
 INNER JOIN rut_ejercicio on rut_ejercicio.rutina_id=rutina.id_rutina;
+
+INSERT INTO usuario VALUE (2,"andres","luna",'1979-01-01',"andrus","andresito@luna.com","sdbuj43g5677",'2022-11-01',null);
+INSERT INTO ejercicio VALUE(2,"cuadriceps","piernas");
+INSERT INTO rutina VALUE (2,"piernas");
+INSERT INTO rut_ejercicio VALUE (2,4,4,'00:15:00','00:10:00:',2,02);
+INSERT INTO rut_usuario VALUE (2,2,2);
+
+UPDATE rut_ejercicio 
+SET duracion = '00:10:00'
+WHERE id_rut_ejerc = 2;
+
+UPDATE rut_ejercicio
+SET descanso = '00:08:33'
+WHERE id_rut_ejerc = 1;
