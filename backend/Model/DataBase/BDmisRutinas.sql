@@ -83,3 +83,5 @@ CREATE TABLE calendario(
 	CONSTRAINT fk_rei FOREIGN KEY (rut_ejerc_id) REFERENCES rut_ejercicio(id_rut_ejerc),
 	CONSTRAINT fk_lri FOREIGN KEY (logro_rutina_id) REFERENCES logro(id_logro)
 );
+
+/* Consultas */
