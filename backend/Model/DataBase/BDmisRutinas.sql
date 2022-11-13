@@ -113,6 +113,9 @@ INSERT INTO ejercicio VALUE(2,"cuadriceps","piernas");
 INSERT INTO rutina VALUE (2,"piernas");
 INSERT INTO rut_ejercicio VALUE (2,4,4,'00:15:00','00:10:00:',2,02);
 INSERT INTO rut_usuario VALUE (2,2,2);
+INSERT INTO logro VALUE (2,"Comienzo",2);
+INSERT INTO  historial VALUE (2,100,1.9,0,2);
+INSERT INTO calendario VALUE (2,'2023-02-01','10:00:00',"Dias que voy al Gym",2,2,2);
 
 UPDATE rut_ejercicio 
 SET duracion = '00:10:00'
@@ -121,6 +124,17 @@ WHERE id_rut_ejerc = 2;
 UPDATE rut_ejercicio
 SET descanso = '00:08:33'
 WHERE id_rut_ejerc = 2;
+
+select usuario.* ,rutina.*,ejercicio.*,calendario.*,logro.*,historial.*
+from  usuario 
+inner join rut_usuario on usuario.id_user=rut_usuario.usuario_id
+inner join rutina on rutina.id_rutina=usuario.id_user
+inner join rut_ejercicio on rut_ejercicio.rutina_id=rutina.id_rutina
+inner join ejercicio on ejercicio.id_ejerc=rut_ejercicio.ejercicio_id
+inner join calendario on calendario.rut_ejerc_id=rut_ejercicio.id_rut_ejerc
+inner join logro on logro.id_logro=logro_rutina_id
+inner join historial on historial.id_historial=calendario.historial_user_id;
+
 
 INSERT INTO usuario VALUE (03,"Horacio","Quiroga",'1977-04-05',"Horacio2022","horacio2022@quiroga.com","HHEEQQ2022",'2022-11-01',null);
 INSERT INTO ejercicio VALUE(03,"pectorales","hombros");
