@@ -120,4 +120,18 @@ WHERE id_rut_ejerc = 2;
 
 UPDATE rut_ejercicio
 SET descanso = '00:08:33'
-WHERE id_rut_ejerc = 1;
+WHERE id_rut_ejerc = 2;
+
+INSERT INTO usuario VALUE (03,"Horacio","Quiroga",'1977-04-05',"Horacio2022","horacio2022@quiroga.com","HHEEQQ2022",'2022-11-01',null);
+INSERT INTO ejercicio VALUE(03,"pectorales","hombros");
+INSERT INTO rutina VALUE (3,"pecho_espalda");
+INSERT INTO rut_ejercicio VALUE (8,10,10,'00:20:00','00:15:00:',3,03);
+INSERT INTO rut_usuario VALUE (3,3,3);
+
+UPDATE rut_ejercicio 
+SET duracion = '00:20:00'
+WHERE id_rut_ejerc = 3;
+
+UPDATE rut_ejercicio
+SET descanso = '00:15:00'
+WHERE id_rut_ejerc = 3;
