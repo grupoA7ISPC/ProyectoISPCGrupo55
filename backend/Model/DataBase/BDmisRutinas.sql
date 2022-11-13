@@ -138,9 +138,12 @@ inner join historial on historial.id_historial=calendario.historial_user_id;
 
 INSERT INTO usuario VALUE (03,"Horacio","Quiroga",'1977-04-05',"Horacio2022","horacio2022@quiroga.com","HHEEQQ2022",'2022-11-01',null);
 INSERT INTO ejercicio VALUE(03,"pectorales","hombros");
-INSERT INTO rutina VALUE (3,"pecho_espalda");
-INSERT INTO rut_ejercicio VALUE (8,10,10,'00:20:00','00:15:00:',3,03);
+INSERT INTO rutina VALUE (3,"pecho espalda");
+INSERT INTO rut_ejercicio VALUE (3,10,10,'00:20:00','00:15:00',3,03);
 INSERT INTO rut_usuario VALUE (3,3,3);
+INSERT INTO logro VALUE (3,"Comienzo",3);
+INSERT INTO historial VALUE (3,200,2.7,1,3);
+INSERT INTO calendario VALUE (3,'2023-02-20','10:00:00',"Dias que voy al Gym",3,3,3);
 
 UPDATE rut_ejercicio 
 SET duracion = '00:20:00'
