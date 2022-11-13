@@ -146,15 +146,18 @@ fieldset {
 .olvido {
     color: var(--gris);
     margin-left: 10px;
+    display: flex; 
+    align-items: center;
 }
 .olvido:hover {
     color: var(--naranja-intenso);
 }
+
 .mis-rutinas{
   font-size: 1.5rem;
 }
 
-/*Cambiar el estilo del autocompletado*/
+/*Cambia el estilo del autocompletado*/
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
 input:-webkit-autofill:focus {  
@@ -166,16 +169,14 @@ input:-webkit-autofill:focus {
 
 
 
-/*
-funcionalidad JS
-*/
+/******* FUNCIONALIDAD JS ******/
 .denegado{
     color: rgb(255, 30, 30);
     margin: 4px;
 }
 
 #form-container .input-denegado{
-    border-bottom :0.1px solid red;
+    border-bottom: 2px solid red;
 }
 
 
