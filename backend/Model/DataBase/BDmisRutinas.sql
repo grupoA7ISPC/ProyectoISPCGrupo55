@@ -132,7 +132,7 @@ inner join rutina on rutina.id_rutina=usuario.id_user
 inner join rut_ejercicio on rut_ejercicio.rutina_id=rutina.id_rutina
 inner join ejercicio on ejercicio.id_ejerc=rut_ejercicio.ejercicio_id
 inner join calendario on calendario.rut_ejerc_id=rut_ejercicio.id_rut_ejerc
-inner join logro on logro.id_logro=logro_rutina_id
+inner join logro on logro.id_logro=calendario.logro_rutina_id
 inner join historial on historial.id_historial=calendario.historial_user_id;
 
 
