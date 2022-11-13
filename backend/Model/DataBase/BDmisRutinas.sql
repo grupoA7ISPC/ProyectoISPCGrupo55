@@ -152,3 +152,27 @@ WHERE id_rut_ejerc = 3;
 UPDATE rut_ejercicio
 SET descanso = '00:15:00'
 WHERE id_rut_ejerc = 3;
+
+INSERT INTO usuario VALUE (4,"Verónica","Torres",'1984-07-08',"verofx","verofxianeca@gmail.com","V3r0N1c4",'2022-11-10',null);
+INSERT INTO ejercicio VALUE(4,"abdomen lateral","media"),(5,"gluteos","media");
+INSERT INTO rutina VALUE (4,"ABS y glúteos");
+INSERT INTO logro VALUE (4,"ABS básico",4);
+INSERT INTO historial VALUE (4,64,1.64,0,4);
+INSERT INTO rut_usuario VALUE (4,4,4);
+INSERT INTO rut_ejercicio VALUE (4,4,3,'00:30:00','00:00:05',4,4);
+INSERT INTO calendario VALUE (4,'2022-11-10','00:10:00',"Inicio de entrenamiento",4,4,4);
+
+
+UPDATE historial
+SET peso = 63
+WHERE id_historial = 4;
+
+UPDATE rut_ejercicio
+SET descanso = '00:00:07'
+WHERE id_rut_ejerc = 4;
+
+SELECT usuario.nombre, usuario.apellido, usuario.fec_ing ,rutina.nombre as "nombre de rutina",logro.medalla, logro.fk_id_rutina as "Nro de rutina"
+FROM  usuario
+INNER JOIN rut_usuario on rut_usuario.usuario_id=usuario.id_user
+INNER JOIN rutina on rutina.id_rutina=rut_usuario.rutina_id_rutina
+INNER JOIN logro on logro.fk_id_rutina=rutina.id_rutina
