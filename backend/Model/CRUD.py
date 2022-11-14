@@ -59,4 +59,15 @@ class Conectar():
             except:
                 print("No se pudo concectar a la base de datos")
 
- 
+ #CUARTA OPERACION DEL CRUD: DELETE O ELIMINAR
+    def EliminarObjeto(self,ID):
+        if self.conexion.is_connected():
+            try:
+                cursor = self.conexion.cursor()
+                sentenciaSQL = "DELETE FROM usuario WHERE id = '%s'"
+                data= (ID)
+                cursor.execute(sentenciaSQL, data)                
+                self.conexion.commit()                
+                self.conexion.close()
+            except:
+                print("No se pudo concectar a la base de datos")
