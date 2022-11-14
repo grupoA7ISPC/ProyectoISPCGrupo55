@@ -104,9 +104,9 @@ WHERE id_rut_ejerc = 1;
 
 SELECT usuario.nombre, usuario.apellido,rut_ejercicio.serie ,rut_ejercicio.repeticiones,rut_ejercicio.duracion,rut_ejercicio.descanso
 FROM  usuario 
-INNER JOIN rut_usuario on usuario.id_user=rut_usuario.usuario_id
-INNER JOIN rutina on rutina.id_rutina=usuario.id_user
-INNER JOIN rut_ejercicio on rut_ejercicio.rutina_id=rutina.id_rutina;
+INNER JOIN rut_usuario ON usuario.id_user=rut_usuario.usuario_id
+INNER JOIN rutina ON rutina.id_rutina=usuario.id_user
+INNER JOIN rut_ejercicio ON rut_ejercicio.rutina_id=rutina.id_rutina;
 
 INSERT INTO usuario VALUE (2,"andres","luna",'1979-01-01',"andrus","andresito@luna.com","sdbuj43g5677",'2022-11-01',null);
 INSERT INTO ejercicio VALUE(2,"cuadriceps","piernas");
@@ -125,15 +125,15 @@ UPDATE rut_ejercicio
 SET descanso = '00:08:33'
 WHERE id_rut_ejerc = 2;
 
-select usuario.* ,rutina.*,ejercicio.*,calendario.*,logro.*,historial.*
-from  usuario 
-inner join rut_usuario on usuario.id_user=rut_usuario.usuario_id
-inner join rutina on rutina.id_rutina=usuario.id_user
-inner join rut_ejercicio on rut_ejercicio.rutina_id=rutina.id_rutina
-inner join ejercicio on ejercicio.id_ejerc=rut_ejercicio.ejercicio_id
-inner join calendario on calendario.rut_ejerc_id=rut_ejercicio.id_rut_ejerc
-inner join logro on logro.id_logro=calendario.logro_rutina_id
-inner join historial on historial.id_historial=calendario.historial_user_id;
+SELECT usuario.* ,rutina.*,ejercicio.*,calendario.*,logro.*,historial.*
+FROM  usuario 
+INNER JOIN rut_usuario ON usuario.id_user=rut_usuario.usuario_id
+INNER JOIN rutina ON rutina.id_rutina=usuario.id_user
+INNER JOIN rut_ejercicio ON rut_ejercicio.rutina_id=rutina.id_rutina
+INNER JOIN ejercicio ON ejercicio.id_ejerc=rut_ejercicio.ejercicio_id
+INNER JOIN calendario ON calendario.rut_ejerc_id=rut_ejercicio.id_rut_ejerc
+INNER JOIN logro ON logro.id_logro=calendario.logro_rutina_id
+INNER JOIN historial ON historial.id_historial=calendario.historial_user_id;
 
 
 INSERT INTO usuario VALUE (03,"Horacio","Quiroga",'1977-04-05',"Horacio2022","horacio2022@quiroga.com","HHEEQQ2022",'2022-11-01',null);
@@ -173,6 +173,6 @@ WHERE id_rut_ejerc = 4;
 
 SELECT usuario.nombre, usuario.apellido, usuario.fec_ing ,rutina.nombre as "nombre de rutina",logro.medalla, logro.fk_id_rutina as "Nro de rutina"
 FROM  usuario
-INNER JOIN rut_usuario on rut_usuario.usuario_id=usuario.id_user
-INNER JOIN rutina on rutina.id_rutina=rut_usuario.rutina_id_rutina
-INNER JOIN logro on logro.fk_id_rutina=rutina.id_rutina
+INNER JOIN rut_usuario ON rut_usuario.usuario_id=usuario.id_user
+INNER JOIN rutina ON rutina.id_rutina=rut_usuario.rutina_id_rutina
+INNER JOIN logro ON logro.fk_id_rutina=rutina.id_rutina
