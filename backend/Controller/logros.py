@@ -1,14 +1,7 @@
-class Logros:
-    def __init__(self,idLogros,medalla):
-        self.__idLogros=idLogros
-        self.__medalla=medalla
-      
+ #regularidad(self)
 
-    def regularidad(self):
-        pass
+#rutinasCompletadas()
+    
 
-    def rutinasCompletadas(self):
-        pass
+#ejerciciosCompletados()
 
-    def ejerciciosCompletados(self):
-        pass

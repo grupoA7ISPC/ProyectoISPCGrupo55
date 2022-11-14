@@ -1,15 +1,5 @@
-class Ejercicios:
-    def __init__(self,nombre,zonaCuerpo,idEjercicio):
-        self.__nombre=nombre
-        self.zonaCuerpo=zonaCuerpo
-        self.idEjercicio=idEjercicio
-       
+#agregarEjercicio()
 
-    def agregarEjercicio(self):
-        pass
+# eliminarEjercicio()
 
-    def eliminarEjercicio(self):
-        pass
-
-    def modificarEjercicio(self):
-        pass
+# modificarEjercicio()

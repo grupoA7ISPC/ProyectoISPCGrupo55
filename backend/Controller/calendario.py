@@ -1,17 +1,11 @@
-class Calendario:
-    def __init__(self,fecha,):
-        self.__fecha=fecha
+# agregarEvento()
 
-    def agregarEvento(self):
-        pass
+#eliminarEvento()
 
-    def eliminarEvento(self):
-        pass
 
-    def modificarEvento(self):
-        pass
+# modificarEvento()
 
-    def notificaciones(self):
-        pass
+# notificaciones()
+        
 
 
