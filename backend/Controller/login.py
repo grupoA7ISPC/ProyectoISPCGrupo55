@@ -1,7 +1,7 @@
 class Login:
     def __init__(self,idUsuario,password):
-        self.idUsuario=idUsuario
-        self.password=password
+        self.__idUsuario=idUsuario
+        self.__password=password
 
     def acceso(self):
         pass

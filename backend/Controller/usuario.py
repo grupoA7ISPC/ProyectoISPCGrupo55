@@ -1,7 +1,12 @@
 class Usuario:
     def __init__(self,nombre,apellido,fechNac,email,idUsuario,password,fechaIng):
         self.__nombre=nombre
-        ##### seguir/completar
+        self.__apellido=apellido
+        self.fechNac=fechNac
+        self.__email=email
+        self.__idUsuario=idUsuario
+        self.__password=password
+        self.fechaIng=fechaIng
         
     def cargarEjercicio(self):
         pass
