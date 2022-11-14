@@ -43,4 +43,20 @@ class Conectar():
 
             except:
                 print("No se pudo concectar a la base de datos")
+
+#TERCERA OPERACION DEL CRUD: UPDATE o ACTUALIZAR
+    def BuscarObjeto(self, dato, ID):
+        if self.conexion.is_connected():
+            try:
+                cursor = self.conexion.cursor()
+                sentenciaSQL= "UPDATE usuario SET nombre = '%s' WHERE id_user = '%s'"
+                data= (dato, ID)
+                cursor.execute(sentenciaSQL, data)
+                resultadoREAD = cursor.fetchall()
+                self.conexion.close()
+                return resultadoREAD
+
+            except:
+                print("No se pudo concectar a la base de datos")
+
  
