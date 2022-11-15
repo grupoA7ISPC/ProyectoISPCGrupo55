@@ -1,0 +1,7 @@
+ #regularidad(self)
+
+#rutinasCompletadas()
+    
+
+#ejerciciosCompletados()
+

@@ -1,0 +1,48 @@
+/*Esta página es solo de MUESTRA. Más adelante se renovará al inicio de la app*/
+
+* {
+    margin: 0 auto;
+    padding: 0 auto;
+    box-sizing: border-box;
+    font-family: 'Poppins', 'Inter Tight', sans-serif;
+} 
+ 
+body {
+    background-color: #262632;
+}
+
+main {
+    margin-top: 15vh;
+    min-height: 85vh;
+    text-align: center;
+}
+
+.titulo {
+    color: #E0E0E0;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 2.5em;
+}
+
+img {
+    width: 12em;
+}
+
+.regreso {
+    padding: 20px;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 16px 32px;
+    border-radius: 9px;
+    border: none; 
+    background-color: #FF8E28;
+    box-shadow: 2px 2px 12px #1d1919;
+    font-weight: bold;
+    color:#1d1919;
+    font-size: 1em;
+}
+.btn:hover {
+    background-color: #FF6005;
+}
