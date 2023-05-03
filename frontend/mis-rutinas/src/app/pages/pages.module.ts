@@ -12,6 +12,7 @@ import { ComponenteContactoComponent } from './componente-contacto/componente-co
   ],
   imports: [
     CommonModule
-  ]
+  ],
+  exports: [ComponenteContactoComponent, ComponenteQuienesSomosComponent],
 })
 export class PagesModule { }
