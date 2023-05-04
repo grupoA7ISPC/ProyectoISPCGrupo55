@@ -9,6 +9,7 @@ import { RegistroComponent } from './registro/registro.component';
 
 
 
+
 @NgModule({
   declarations: [
     ComponenteQuienesSomosComponent,
@@ -21,6 +22,7 @@ import { RegistroComponent } from './registro/registro.component';
   imports: [
     CommonModule
   ],
-  exports: [ComponenteContactoComponent, ComponenteQuienesSomosComponent,ComponenteLoginComponent,ComponenteLoginExitosoComponent ],
+  exports: [ComponenteContactoComponent, ComponenteQuienesSomosComponent,ComponenteLoginComponent,ComponenteLoginExitosoComponent, HomeComponent,
+    RegistroComponent ],
 })
 export class PagesModule { }
