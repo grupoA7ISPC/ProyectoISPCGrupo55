@@ -4,6 +4,7 @@ import { ComponenteQuienesSomosComponent } from './componente-quienes-somos/comp
 import { ComponenteContactoComponent } from './componente-contacto/componente-contacto.component';
 import { ComponenteLoginComponent } from './componente-login/componente-login.component';
 import { ComponenteLoginExitosoComponent } from './componente-login-exitoso/componente-login-exitoso.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -12,7 +13,8 @@ import { ComponenteLoginExitosoComponent } from './componente-login-exitoso/comp
     ComponenteQuienesSomosComponent,
     ComponenteContactoComponent,
     ComponenteLoginComponent,
-    ComponenteLoginExitosoComponent
+    ComponenteLoginExitosoComponent,
+    HomeComponent
   ],
   imports: [
     CommonModule
