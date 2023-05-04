@@ -1,4 +1,6 @@
+@import '~bootstrap-icons/font/bootstrap-icons.css';
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&display=swap');
+
 /* :root {
 	--fuenteT: 'Anton', sans-serif;
 	--fuenteP: 'Inter Tight', sans-serif;
@@ -175,3 +177,4 @@ form div .transparencia{
     color: #ca1313;
     opacity: 1;
 }
+
