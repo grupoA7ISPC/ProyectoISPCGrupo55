@@ -5,6 +5,7 @@ import { ComponenteContactoComponent } from './componente-contacto/componente-co
 import { ComponenteLoginComponent } from './componente-login/componente-login.component';
 import { ComponenteLoginExitosoComponent } from './componente-login-exitoso/componente-login-exitoso.component';
 import { HomeComponent } from './home/home.component';
+import { RegistroComponent } from './registro/registro.component';
 
 
 
@@ -14,7 +15,8 @@ import { HomeComponent } from './home/home.component';
     ComponenteContactoComponent,
     ComponenteLoginComponent,
     ComponenteLoginExitosoComponent,
-    HomeComponent
+    HomeComponent,
+    RegistroComponent
   ],
   imports: [
     CommonModule
