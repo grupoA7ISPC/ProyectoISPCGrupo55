@@ -6,6 +6,7 @@ import { ComponenteLoginComponent } from './componente-login/componente-login.co
 import { ComponenteLoginExitosoComponent } from './componente-login-exitoso/componente-login-exitoso.component';
 import { HomeComponent } from './home/home.component';
 import { RegistroComponent } from './registro/registro.component';
+import { TarjetasIntegrantesComponent } from './componente-quienes-somos/tarjetas-integrantes/tarjetas-integrantes.component';
 
 
 
@@ -17,12 +18,13 @@ import { RegistroComponent } from './registro/registro.component';
     ComponenteLoginComponent,
     ComponenteLoginExitosoComponent,
     HomeComponent,
-    RegistroComponent
+    RegistroComponent,
+    TarjetasIntegrantesComponent
   ],
   imports: [
     CommonModule
   ],
   exports: [ComponenteContactoComponent, ComponenteQuienesSomosComponent,ComponenteLoginComponent,ComponenteLoginExitosoComponent, HomeComponent,
-    RegistroComponent ],
+    RegistroComponent, ],
 })
 export class PagesModule { }
