@@ -20,7 +20,12 @@
     --fuenteP: 'Inter Tight', sans-serif;
     --fuentePoppins: 'Poppins', sans-serif;
 }
-
+body {
+  
+  font-size: 1.6rem;
+  line-height: 2;
+  background-color: #ff6600;
+}
 html {
   font-size: 62.5%; /* 1 rem = 10px */
 }
@@ -50,3 +55,4 @@ h5 {
 img {
   max-width: 100%;
 }
+

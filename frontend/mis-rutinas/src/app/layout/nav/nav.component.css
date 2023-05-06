@@ -52,3 +52,12 @@
     transform: scaleX(1);
   }
   
+.icon {
+  width: 3vw;
+  height: 3vw;
+  background-color: #ff6600;
+  border-radius: 25%;
+  padding: 5px;
+  margin-right: 8px;
+
+}
