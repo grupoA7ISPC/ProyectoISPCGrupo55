@@ -11,7 +11,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
+/* body {
     background-color: #262632;
 }
 
@@ -19,22 +19,24 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image:linear-gradient( rgba(0,0,0,0.6),rgba(0,0,0,0.5));
+    background-image:linear-gradient( rgba(0,0,0,0.6),rgba(0,0,0,0.5), url('../../../assets/registro2.jpg'));
     background-size: cover;
-}
+} */
 
 h6.mis-rutinas{
     font-size: 1.5rem;
     font-family: 'Inter Tight', sans-serif;
     font-weight: 500;
   }
-  
+
 .form-container {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-}
+    background-image:linear-gradient( rgba(0,0,0,0.6),rgba(0,0,0,0.5)),url("../../../assets/registro2.jpg");
+    background-size: cover;
+  }
 
 
 form {
@@ -59,8 +61,8 @@ form {
 
 /*Cambiar el estilo del autocompletado*/
 input:-webkit-autofill,
-input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus {  
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
     -webkit-text-fill-color: white;
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
   box-shadow: 0 0 0px 1000px transparent inset;
@@ -78,7 +80,7 @@ input:-webkit-autofill:focus {
     color:#ffffff;
 }
 
-::placeholder { color:#E0E0E0; 
+::placeholder { color:#E0E0E0;
 }
 
 label{
@@ -113,8 +115,8 @@ form .form-footer label  {
 }
 
 form .form-footer .agree {
-    color:#E0E0E0; 
-    font-weight: bold;  
+    color:#E0E0E0;
+    font-weight: bold;
 }
 
 
@@ -199,7 +201,7 @@ form .return a:hover{
 
 .input-container.falla input{
     border-bottom :0.1px solid red;
-   
+
 }
 .input-container p{
     visibility: hidden;
@@ -218,10 +220,10 @@ form .return a:hover{
 }
 
 #check-error {
-    color:red; 
+    color:red;
     font-size: 12px;
     font-style: italic;
-    font-weight: lighter; 
+    font-weight: lighter;
     align-self: center;
 }
 
@@ -237,12 +239,12 @@ form .return a:hover{
 }
 @media (max-width: 950px) {
 
-    
+
     main{
         display: flex;
         background-position: center center;
         height: 100vh;
-      
+
     }
 
     .form-header .icon1 {
@@ -256,12 +258,12 @@ form .return a:hover{
 
     main {
         background-position: center ;
-    } 
+    }
 
     form h1 {
         font-size: 25px;
      }
-     
+
      .form-container form .input-container{
         width: 260px;
      }
@@ -305,7 +307,7 @@ form .return a:hover{
         font-size: 14px;
     }
 
-    
+
     .form-header .icon1 {
         display: none;
     }
