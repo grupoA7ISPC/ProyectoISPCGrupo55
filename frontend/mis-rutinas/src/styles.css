@@ -1,0 +1,58 @@
+/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,500;0,600;0,700;1,400&display=swap%27');
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap%22");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Sigmar&display=swap');
+
+:root {
+    --oscuro: #262632;
+    --naranja-intenso: #FF6005;
+    --naranja-soft: #FF8E28;
+    --gris: #E0E0E0;
+    --blanco: #FFFFFF;
+    --lchico: 1.1em;
+    --lmediano: 2.1em;
+    --lgrande: 3.1em;
+    --duration: 1s;
+    --delay: .5s;
+    --delay: .8s;
+    --total: calc(var(--duration) + var(--delay));
+    --fuenteT: 'Anton', sans-serif;
+    --fuenteP: 'Inter Tight', sans-serif;
+    --fuentePoppins: 'Poppins', sans-serif;
+}
+body {
+  
+  font-size: 1.6rem;
+  line-height: 2;
+  background-color: #ff6600;
+}
+html {
+  font-size: 62.5%; /* 1 rem = 10px */
+}
+a {
+  text-decoration: none;
+}
+h1, h2, h3, h4, h5{
+  font-family: var(--fuenteT);
+  line-height: 1.2;
+}
+h1 {
+  font-size: 4.8rem;
+}
+h2 {
+  font-size: 4rem;
+}
+h3 {
+  font-size: 3.2rem;
+}
+h4 {
+  font-size: 2.8rem;
+}
+h5 {
+  font-size: 2rem;
+}
+
+img {
+  max-width: 100%;
+}
+

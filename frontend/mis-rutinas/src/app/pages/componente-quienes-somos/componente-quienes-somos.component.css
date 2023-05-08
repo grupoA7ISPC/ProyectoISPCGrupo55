@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap");
+
+:root {
+	--fuenteT: 'Anton', sans-serif;
+	--fuenteP: 'Inter Tight', sans-serif;
+	}
+body {
+	font-family: "Roboto", sans-serif;
+}
+
+.titulo_nosotros{
+	color:#262632;
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.texto_nosotros{
+	color:#262632;
+	text-align:center;
+}
+
+.shadow {
+	box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06) !important;
+}
+
+.main-content {
+	padding-top: 30px;
+	padding-bottom: 5px;
+	background-color: #E0E0E0;
+
+}
+
+.logo_ispc{
+	width: 400px;
+	height: 300px;
+	margin-top: 0px;
+	
+}
+h6.mis-rutinas{
+	font-size: 1.5rem;
+	font-family: 'Inter Tight', sans-serif;
+	font-weight: 500;
+  }
