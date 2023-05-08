@@ -8,6 +8,7 @@ import { ComponenteLoginExitosoComponent } from './componente-login-exitoso/comp
 import { HomeComponent } from './home/home.component';
 import { RegistroComponent } from './registro/registro.component';
 import { TarjetasIntegrantesComponent } from './componente-quienes-somos/tarjetas-integrantes/tarjetas-integrantes.component';
+import { SuscripcionComponent } from './suscripcion/suscripcion.component';
 
 @NgModule({
   declarations: [
@@ -17,13 +18,14 @@ import { TarjetasIntegrantesComponent } from './componente-quienes-somos/tarjeta
     ComponenteLoginExitosoComponent,
     HomeComponent,
     RegistroComponent,
-    TarjetasIntegrantesComponent
+    TarjetasIntegrantesComponent,
+    SuscripcionComponent
   ],
   imports: [
     CommonModule,
     RouterModule
   ],
   exports: [ComponenteContactoComponent, ComponenteQuienesSomosComponent,ComponenteLoginComponent,ComponenteLoginExitosoComponent, HomeComponent,
-    RegistroComponent, ],
+    RegistroComponent,SuscripcionComponent ],
 })
 export class PagesModule { }

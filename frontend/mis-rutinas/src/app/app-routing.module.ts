@@ -6,7 +6,7 @@ import { ComponenteLoginComponent } from './pages/componente-login/componente-lo
 import { ComponenteLoginExitosoComponent } from './pages/componente-login-exitoso/componente-login-exitoso.component';
 import { RegistroComponent } from './pages/registro/registro.component';
 import { ComponenteQuienesSomosComponent } from './pages/componente-quienes-somos/componente-quienes-somos.component';
-
+import { SuscripcionComponent } from './pages/suscripcion/suscripcion.component';
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
@@ -14,7 +14,8 @@ const routes: Routes = [
   {path: 'login', component: ComponenteLoginComponent},
   // {path: 'login-exitoso', component: ComponenteLoginExitosoComponent},
   {path: 'registro', component: RegistroComponent},
-  {path: 'quienes-somos', component: ComponenteQuienesSomosComponent}
+  {path: 'quienes-somos', component: ComponenteQuienesSomosComponent},
+  {path: 'suscripcion', component: SuscripcionComponent}
 ];
 
 @NgModule({
