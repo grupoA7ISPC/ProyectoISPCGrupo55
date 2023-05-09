@@ -97,6 +97,20 @@ CREATE TABLE pago(
     periodo INT
 );
 
+CREATE TABLE factura(
+    id_factura INT PRIMARY KEY NOT NULL,
+    total FLOAT,
+    tipo VARCHAR(1),
+    fecha_inicio_fact DATE,
+    fecha_cierre_fac DATE,
+    fk_id_user INT,
+    fk_id_suscripcion INT,
+    fk_id_pago INT,
+    CONSTRAINT FK_factura_pago FOREIGN KEY (fk_id_pago) REFERENCES pago (id_pago),
+    CONSTRAINT FK_factura_suscripcion FOREIGN KEY (fk_id_suscripcion) REFERENCES suscripcion (id_suscripcion),
+    CONSTRAINT FK_factura_usuario FOREIGN KEY (fk_id_user) REFERENCES usuario (id_user)
+);
+
 /* Consultas  INSERT , UPDATE, SALECT , JOIN */
 SELECT * FROM usuario;
 SELECT * FROM ejercicio;
