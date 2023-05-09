@@ -82,6 +82,21 @@ CREATE TABLE calendario(
 	CONSTRAINT fk_lri FOREIGN KEY (logro_rutina_id) REFERENCES logro(id_logro)
 );
 
+CREATE TABLE suscripcion(
+    id_suscripcion INT PRIMARY KEY NOT NULL,
+    nombre VARCHAR(45),
+    descripcion VARCHAR(45),
+    precio FLOAT,
+    estado_susc VARCHAR(45),
+    periodo INT
+);
+
+CREATE TABLE pago(
+    id_pago INT PRIMARY KEY NOT NULL,
+    fecha DATE,
+    periodo INT
+);
+
 /* Consultas  INSERT , UPDATE, SALECT , JOIN */
 SELECT * FROM usuario;
 SELECT * FROM ejercicio;
