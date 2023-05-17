@@ -1,11 +1,15 @@
 
 <div class="container">
-    <div class="box basic">
+    <div *ngFor="let suscripcion of suscripciones" class="box basic">
         <div>
-        <h2>Suscripción</h2>
+        <h2>{{suscripcion.name}}</h2>
         </div>
-        <p>Acceso a contenido exclusivo</p>
-        <p>Soporte por correo electrónico</p>
-        <p>Precio: $500/mes</p>
+            <ul>
+                 <li *ngFor="let benefit of suscripcion.benefits">{{ benefit }}</li>
+          </ul>
+        <p>{{suscripcion.duration}}</p>
+        <p>Precio: {{ suscripcion.price |currency }}</p>
+        <button class="subscribe-button">Suscribirse</button>
     </div>  
+   
 </div>
