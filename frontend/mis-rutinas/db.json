@@ -1,19 +1,39 @@
 {
-  "posts": [
+  "suscripciones": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "Básica",
+      "benefits": [
+        "Acceso a funcionalidades básicas de nuestra plataforma"
+      ],
+      "duration": "mensual",
+      "price": 0
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "id": 2,
+      "name": "Premium Mensual",
+      "benefits": [
+        "Acceso completo a nuestra plataforma",
+        "Vídeos explicativos de ejercicios con objetivos acordes a tus necesidades",
+        "Seguimiento de progreso",
+        "Tips de alimentación por nuestros expertos",
+        "Descuentos y ofertas especiales en tiendas deportivas"
+      ],
+      "duration": "mensual",
+      "price": 1000
+    },
+    {
+      "id": 3,
+      "name": "Premium Anual",
+      "benefits": [
+        "Acceso completo a nuestra plataforma",
+        "Vídeos explicativos de ejercicios con objetivos acordes a tus necesidades",
+        "Seguimiento de progreso",
+        "Tips de alimentación por nuestros expertos",
+        "Descuentos y ofertas especiales en tiendas deportivas"
+      ],
+      "duration": "anual",
+      "price": 8000
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
