@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Suscripcion } from 'src/app/models/suscripcion';
-
+import { SuscripcionService } from 'src/app/service/suscripcion.service';
 
 @Component({
   selector: 'app-suscripcion',
@@ -9,6 +9,9 @@ import { Suscripcion } from 'src/app/models/suscripcion';
 })
 export class SuscripcionComponent {
   // Provisorio
+  constructor (private suscripcion:SuscripcionService) {
+
+  }
   suscripciones: Suscripcion[] = [
     {
       id: 1,
