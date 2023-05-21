@@ -100,5 +100,50 @@ p {
     margin-bottom:40px;
   }
 
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: auto;
+  }
 
+  .box {
+    width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .box:nth-child(1) h2 {
+    margin-bottom: 20px;
+  }
+
+  .box:nth-child(1) .subscribe-button {
+    margin-top: 40px;
+  }
+
+  .box:nth-child(3) h2 {
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    flex-wrap: nowrap;
+  }
+
+  .box {
+    width: 45%;
+    height: auto;
+    margin-bottom: 20px;
+  }
+
+  .box:nth-child(1) .subscribe-button {
+    margin-top: 80px;
+  }
+  
+  .box:nth-child(3) h2 {
+    margin-bottom: 40px;
+  }
+}
   
