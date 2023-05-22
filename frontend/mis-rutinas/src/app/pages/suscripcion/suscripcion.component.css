@@ -106,6 +106,7 @@ p {
     justify-content: flex-start;
     align-items: center;
     height: auto;
+    
   }
 
   .box {
@@ -130,6 +131,7 @@ p {
 @media (min-width: 769px) and (max-width: 1024px) {
   .container {
     flex-wrap: nowrap;
+    gap: 32px;
   }
 
   .box {
