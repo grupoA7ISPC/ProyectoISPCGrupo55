@@ -10,50 +10,52 @@ import { SuscripcionService } from 'src/app/service/suscripcion.service';
 })
 export class SuscripcionComponent {
   // Provisorio
-  constructor (private suscripcion:SuscripcionService) {
+  constructor (private suscripcionService:SuscripcionService) {
 
   }
+  suscripciones: Suscripcion[] = [];
   ngOnInit() {
-    this.suscripcion.getAllSubscriptions() 
+    this.suscripcionService.getAllSubscriptions() 
     .subscribe(data => {
-     console.log(data); //Cambiar para renderizado luego. 
+     console.log(data);
+     this.suscripciones = data //Cambiar para renderizado luego. 
   });
 }
-  suscripciones: Suscripcion[] = [
-    {
-      id: 1,
-      name: "Suscripcion Básica",
-      benefits: [
-        "Acceso a funcionalidades básicas de nuestra plataforma"
-      ],
-      duration: "Membresia Mensual",
-      price: 0
-    },
-    {
-      id: 2,
-      name: "Premium Mensual",
-      benefits: [
-        "Acceso completo a nuestra plataforma",
-        "Vídeos explicativos de ejercicios con objetivos acordes a tus necesidades",
-        "Seguimiento de progreso",
-        "Tips de alimentación por nuestros expertos",
-        "Descuentos y ofertas especiales en tiendas deportivas"
-      ],
-      duration: "Membresia Mensual",
-      price: 1000
-    },
-    {
-      id: 3,
-      name: "Premium Anual",
-      benefits: [
-        "Acceso completo a nuestra plataforma",
-        "Vídeos explicativos de ejercicios con objetivos acordes a tus necesidades",
-        "Seguimiento de progreso",
-        "Tips de alimentación por nuestros expertos",
-        "Descuentos y ofertas especiales en tiendas deportivas"
-      ],
-      duration: "Membresia Anual",
-      price: 8000
-    }
-  ]
+  // suscripciones: Suscripcion[] = [
+  //   {
+  //     id: 1,
+  //     name: "Suscripcion Básica",
+  //     benefits: [
+  //       "Acceso a funcionalidades básicas de nuestra plataforma"
+  //     ],
+  //     duration: "Membresia Mensual",
+  //     price: 0
+  //   },
+  //   {
+  //     id: 2,
+  //     name: "Premium Mensual",
+  //     benefits: [
+  //       "Acceso completo a nuestra plataforma",
+  //       "Vídeos explicativos de ejercicios con objetivos acordes a tus necesidades",
+  //       "Seguimiento de progreso",
+  //       "Tips de alimentación por nuestros expertos",
+  //       "Descuentos y ofertas especiales en tiendas deportivas"
+  //     ],
+  //     duration: "Membresia Mensual",
+  //     price: 1000
+  //   },
+  //   {
+  //     id: 3,
+  //     name: "Premium Anual",
+  //     benefits: [
+  //       "Acceso completo a nuestra plataforma",
+  //       "Vídeos explicativos de ejercicios con objetivos acordes a tus necesidades",
+  //       "Seguimiento de progreso",
+  //       "Tips de alimentación por nuestros expertos",
+  //       "Descuentos y ofertas especiales en tiendas deportivas"
+  //     ],
+  //     duration: "Membresia Anual",
+  //     price: 8000
+  //   }
+  // ]
 }
