@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Suscripcion } from 'src/app/models/suscripcion';
 import { SuscripcionService } from 'src/app/service/suscripcion.service';
+
 
 @Component({
   selector: 'app-suscripcion',
@@ -12,6 +13,12 @@ export class SuscripcionComponent {
   constructor (private suscripcion:SuscripcionService) {
 
   }
+  ngOnInit() {
+    this.suscripcion.getAllSubscriptions() 
+    .subscribe(data => {
+     console.log(data); //Cambiar para renderizado luego. 
+  });
+}
   suscripciones: Suscripcion[] = [
     {
       id: 1,
