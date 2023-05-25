@@ -1,0 +1,7 @@
+*Pipfile
+*.lock
+*__pycache__
+*.env
+local.py
+proyectoMisRutinas
+
