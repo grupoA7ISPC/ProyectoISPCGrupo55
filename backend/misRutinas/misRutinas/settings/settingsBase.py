@@ -73,10 +73,10 @@ WSGI_APPLICATION = 'misRutinas.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-try:
-    from .local import *
-except ImportError:
-    pass
+# try:
+#     from .local import *
+# except ImportError:
+#     pass
 
 
 # Password validation
