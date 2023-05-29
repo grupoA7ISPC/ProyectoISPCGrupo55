@@ -16,29 +16,20 @@ export class TarjetasIntegrantesComponent {
       rol: 'Desarrollador',
       foto: 'facu.jpg',
       github: 'facuezeperalta',
-      linkedin: 'facundo-peralta-702306a2',
+      linkedin: 'https://www.linkedin.com/in/facu-peralta/',
       info: ''
     },
     {
       id: 2,
-      nombre: 'Andres Luna',
-      foto: 'andres.jpg',
-      rol: 'Desarrollador',
-      github: 'andresito-luna',
-      linkedin: 'andres-luna-arg',
+      nombre:'Carina Payleman',
+      rol: 'Desarrolladora',
+      foto: 'carina.jpg',
+      github: 'PaylemanC',
+      linkedin: 'https://www.linkedin.com/in/carina-rocio-payleman/',
       info: ''
     },
     {
       id: 3,
-      nombre:'Carina Payleman',
-      rol: 'Desarrollador',
-      foto: 'carina.jpg',
-      github: 'PaylemanC',
-      linkedin: 'carina-rocio-payleman-6a12b124b',
-      info: ''
-    },
-    {
-      id: 4,
       nombre:'Esteban Martins',
       rol: 'Desarrollador',
       foto: 'esteban.jpg',
@@ -47,7 +38,7 @@ export class TarjetasIntegrantesComponent {
       info: ''
     },
     {
-      id: 5,
+      id: 4,
       nombre:'Horacio Quiroga',
       rol: 'Desarrollador',
       foto: 'horacio.jpg',
@@ -56,7 +47,7 @@ export class TarjetasIntegrantesComponent {
       info: ''
     },
     {
-      id: 6,
+      id: 5,
       nombre:'Federico Ocaranza',
       rol: 'Desarrollador',
       foto: 'fede.jpg',
@@ -65,7 +56,7 @@ export class TarjetasIntegrantesComponent {
       info: ''
     },
     {
-      id: 7,
+      id: 6,
       nombre:'Guillermo Arias',
       rol: 'Desarrollador',
       foto: 'guille.jpg',
@@ -74,9 +65,9 @@ export class TarjetasIntegrantesComponent {
       info: ''
     },
     {
-      id: 8,
+      id: 7,
       nombre:'Veronica Torres',
-      rol: 'Desarrollador',
+      rol: 'Desarrolladora',
       foto: 'vero.jpg',
       github: 'verofx',
       linkedin: '',
