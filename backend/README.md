@@ -12,10 +12,10 @@ Crea una carpeta para el entorno virtual. Se recomienda en la raíz del director
 Dentro de ella, crea el entorno ejecutando el comando:
 
 ```bash
-python -m venv nombre-proyecto
+python -m venv nombre-entorno-virtual
 ```
 
-Activa el entorno virtual moviéndote con 'cd' a tu carpeta **nombre-proyecto** y ejecuta el comando:
+Activa el entorno virtual moviéndote con 'cd' a tu carpeta **nombre-entorno-virtual** y ejecuta el comando:
 
 ```bash
 Scripts/activate
@@ -68,7 +68,7 @@ Recuerden la Base de Datos ('NAME') con MySQL utilizando herramientas como PhpMy
 
 ## Uso del server
 
-Ejecutar el servidor local con el comando:
+Ejecutar el servidor local (backendo/misrutinas) con el comando:
 
 ```bash
 $ python manage.py runserver
