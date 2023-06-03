@@ -22,3 +22,20 @@ class Usuario(models.Model):
     
     def __str__(self):
        return self.name
+
+
+class Pago(models.Model):
+  id_pago = models.IntegerField(primary_key=True)
+  fecha = models.DateField(auto_now_add=False)
+  periodo = models.IntegerField(blank=False)
+
+  class Meta:
+    db_table="Pago"
+    verbose_name="Pago suscripciones"
+    verbose_name_plural="Pagos"
+
+  def __unicode__(self):
+    return self.id_pago
+    
+  def __str__(self):
+    return self.id_pago
