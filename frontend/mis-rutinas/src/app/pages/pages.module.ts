@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
 import { ComponenteQuienesSomosComponent } from './componente-quienes-somos/componente-quienes-somos.component';
 import { ComponenteContactoComponent } from './componente-contacto/componente-contacto.component';
 import { ComponenteLoginComponent } from './componente-login/componente-login.component';
@@ -20,10 +21,12 @@ import { SuscripcionComponent } from './suscripcion/suscripcion.component';
     RegistroComponent,
     TarjetasIntegrantesComponent,
     SuscripcionComponent
+    
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    ReactiveFormsModule
   ],
   exports: [ComponenteContactoComponent, ComponenteQuienesSomosComponent,ComponenteLoginComponent,ComponenteLoginExitosoComponent, HomeComponent,
     RegistroComponent,SuscripcionComponent ],
