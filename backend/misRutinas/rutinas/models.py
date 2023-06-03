@@ -37,5 +37,25 @@ class Pago(models.Model):
   def __unicode__(self):
     return self.id_pago
     
-  def __str__(self):
+  def __int__(self):
     return self.id_pago
+  
+
+class Rutina(models.Model):
+  id_rutina = models.AutoField(primary_key=True)
+  nombre = models.CharField(max_length=25, blank=False)
+  serie = models.IntegerField()
+  repeticion = models.IntegerField()
+  duracion = models.TimeField()
+  descanso = models.CharField(max_length=45)
+
+  class Meta:
+    db_table="Rutina"
+    verbose_name="Rutina de ejercicios"
+    verbose_name_plural="Rutinas"
+
+  def __unicode__(self):
+    return self.nombre
+    
+  def __str__(self):
+    return self.nombre

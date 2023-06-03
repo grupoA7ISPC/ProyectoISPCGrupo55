@@ -12,3 +12,8 @@ class PagoAdmin(admin.ModelAdmin):
     list_display = ("id_pago","fecha","periodo")
 
 admin.site.register(Pago, PagoAdmin)
+
+class RutinaAdmin(admin.ModelAdmin):
+    list_display = ("id_rutina", "nombre", "serie", "repeticion", "duracion", "descanso")
+
+admin.site.register(Rutina, RutinaAdmin)
