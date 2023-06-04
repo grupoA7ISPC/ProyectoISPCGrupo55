@@ -8,4 +8,5 @@ import { FormControl } from '@angular/forms';
 })
 export class ComponenteLoginComponent {
   email = new FormControl('',[],[]);
+  password = new FormControl('',[],[]);
 }
