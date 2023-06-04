@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
-import { Validators } from '@angular/forms';
+import { Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
   selector: 'app-registro',
@@ -12,19 +12,30 @@ export class RegistroComponent {
   public registerForm;
   constructor(private formBuilder : FormBuilder){
     this.registerForm = this.formBuilder.group({
-      nombre : ['',[]],
-      apellido : ['',[]],
-      usuario : ['',[]],
-      email : ['',[]],
-      password1 :['',[]],
-      password2 : ['',[]],
-      fecha : ['',[]],
-      checkbox : ['',[]]
+      nombre : ['',[Validators.required]],
+      apellido : ['',[Validators.required]],
+      usuario : ['',[Validators.required]],
+      email : ['',[Validators.required, Validators.email]],
+      password1 :['',[Validators.required, Validators.pattern('/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/')]],
+      password2 : ['',[Validators.required, this.passwordMatchValidator]],
+      fecha : ['',[Validators.required, ]],
+      checkbox : ['',[Validators.required, Validators.requiredTrue]],
     })
   }
   sendForm(event:Event){
     event.preventDefault();
     this.registerForm.valid ? alert("Enviando al servidor...") : this.registerForm.markAllAsTouched();
+  }
+
+  passwordMatchValidator(): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const password1 = control.root.get('password1')?.value;  
+      const password2 = control.value;  
+      if (password1 == password2) {
+        return null; 
+      }
+      return { passwordMismatch: true }
+    }
   }
 }
 
