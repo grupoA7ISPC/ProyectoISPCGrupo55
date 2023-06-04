@@ -1,46 +1,46 @@
 <div class="form-container">
-           
-    <form  id="formulario">
+
+    <form  id="formulario" [formGroup]="registerForm" (ngSubmit)="sendForm($event)">
         <div class="form-header">
         <i class="fa-solid fa-user-plus icon1"></i>
         <h1>Registrate</h1>
         </div>
         <div class="input-container">
-            <input type="text"  placeholder="Nombre" id="nombre">
+            <input type="text"  placeholder="Nombre" id="nombre" formControlName="nombre">
             <p></p>
         </div>
         <div class="input-container">
-            <input type="text"  placeholder="Apellido" id="apellido" >
+            <input type="text"  placeholder="Apellido" id="apellido" formControlName = "apellido" >
             <p></p>
         </div>
         <div class="input-container">
-            <input type="text" placeholder="Nombre de Usuario" id="usuario" >
+            <input type="text" placeholder="Nombre de Usuario" id="usuario" formControlName = "usuario" >
             <p></p>
         </div>
         <div class="input-container">
-            <input type="email" placeholder="Correo Electronico" id="correo">
+            <input type="email" placeholder="Correo Electronico" id="correo" formControlName = "email">
             <p></p>
         </div>
         <div class="input-container">
-            <input type="password" placeholder="Ingrese su contraseña" id="password1">
+            <input type="password" placeholder="Ingrese su contraseña" id="password1" formControlName="password1">
             <p></p>
         </div>
         <div class="input-container">
-            <input type="password" placeholder="Confirme su contraseña" id="password2">
+            <input type="password" placeholder="Confirme su contraseña" id="password2" formControlName="password2">
             <p></p>
         </div>
         <div class="input-container">
             <label for="date">Fecha de nacimiento</label>
-            <input type="date" placeholder="Fecha de nacimiento" id="date">
+            <input type="date" placeholder="Fecha de nacimiento" id="date" formControlName = "fecha">
             <p></p>
         </div>
         <div class="form-footer">
-            <label class="agree" for="checkbox"> <input type="checkbox" name="checkbox" id="checkbox" >Acepto <a href="#" class="terminos">Términos y Condiciones</a></label>
+            <label class="agree" for="checkbox"> <input type="checkbox" name="checkbox" id="checkbox" formControlName = "checkbox">Acepto <a href="#" class="terminos">Términos y Condiciones</a></label>
             <!-- <p id="check-error">Acepte los términos y condiciones</p> -->
             <button type="submit" class="button-register">Registrarme</button>
         </div>
-        
-        
+
+
         <p class="return">¿Ya tienes una cuenta?<br><a href="">Ir a inicio de sesión</a></p>
     </form>
 </div>
