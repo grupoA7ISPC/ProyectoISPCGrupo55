@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-componente-login',
@@ -9,4 +10,6 @@ import { FormControl } from '@angular/forms';
 export class ComponenteLoginComponent {
   email = new FormControl('',[],[]);
   password = new FormControl('',[],[]);
+
+  constructor (private formBuilder: FormBuilder){}
 }
