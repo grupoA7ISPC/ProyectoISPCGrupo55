@@ -10,6 +10,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class ComponenteLoginComponent {
   email = new FormControl('',[],[]);
   password = new FormControl('',[],[]);
+   
+  public form;
+  constructor (private formBuilder: FormBuilder){
+    this.form = this.formBuilder.group({ 
+    password :['',[]],
+    email:['',[]]
+    }  
+    )
+  }
 
-  constructor (private formBuilder: FormBuilder){}
 }

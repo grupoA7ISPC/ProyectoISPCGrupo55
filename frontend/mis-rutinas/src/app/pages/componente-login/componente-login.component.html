@@ -8,8 +8,8 @@
       <h1 class="titulo">BIENVENIDO</h1>
       <img src="../../../assets/icon.png" alt="logo-misrutinas" class="logo">
     </div>
-
-      <form class="login-form">
+    
+      <form [formGroup]= "form" class="login-form">
         <!-- method="post" action="login-exitoso.html" -->
           <fieldset id="inputs">
               <legend class="legend-inicia">Inicia Sesión</legend>
@@ -19,13 +19,13 @@
                       <img src="../../../assets/user-icon.svg" class="user-icon">
                       <label for="username"> Nombre de Usuario o E-mail:</label>
                   </div>
-                  <input type="email" [formControl]="email" id="username" placeholder="misrutinas@ejemplo.com">
+                  <input type="email" [formControl]="email" formControlName="email" id="username" placeholder="misrutinas@ejemplo.com">
 
                   <div class="info">
                       <img src="../../../assets/lock-icon.svg" class="lock-icon">
                       <label for="password">Contraseña:</label>
                   </div>
-                  <input type="password" [formControl]="password" id="password" placeholder="*********">
+                  <input type="password" [formControl]="password" formControlName="password" id="password" placeholder="*********">
               </div>
           </fieldset>
 
