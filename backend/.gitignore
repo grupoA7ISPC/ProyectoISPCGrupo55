@@ -5,6 +5,7 @@
 .vscode
 
 local.py
+yourdatabasename.db
 
 # Entornos virtuales:
 proyectoMisRutinas
