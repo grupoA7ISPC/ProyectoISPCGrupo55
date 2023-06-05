@@ -28,8 +28,11 @@
         </div>
         <div class="input-container">
             <input type="password" placeholder="Confirme su contraseña" id="password2" formControlName="password2">
-            <div *ngIf="Password2?.errors && Password2?.touched"> <p *ngIf="Password2?.hasError('required')" class="text-danger"  >La contraseñas no coinciden</p></div>
-        </div>
+            <div *ngIf="Password2?.errors && Password2?.touched">
+                 <p *ngIf="Password2?.hasError('required')" class="text-danger"  >Este campo es requerido</p>
+            </div>
+            <p *ngIf="registerForm.hasError('passwordMismatch')">Las contraseñas no coinciden</p>
+      </div>
         <div class="input-container">
             <label for="date">Fecha de nacimiento</label>
             <input type="date" placeholder="Fecha de nacimiento" id="date" formControlName = "fecha">

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup } from '@angular/forms';
+import { FormControl, FormBuilder, FormGroup, MinLengthValidator } from '@angular/forms';
 import { Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 
 @Component({
@@ -10,32 +10,35 @@ import { Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@ang
 
 export class RegistroComponent {
   public registerForm;
-  constructor(private formBuilder : FormBuilder){
+ 
+  constructor(private formBuilder: FormBuilder) {
     this.registerForm = this.formBuilder.group({
       nombre : ['',[Validators.required]],
       apellido : ['',[Validators.required]],
       usuario : ['',[Validators.required]],
       email : ['',[Validators.required, Validators.email]],
-      password1 :['',[Validators.required, Validators.pattern('/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/')]],
-      password2 : ['',[Validators.required, this.passwordMatchValidator]],
-      fecha : ['',[Validators.required, ]],
-      checkbox : ['',[Validators.required, Validators.requiredTrue]],
-    })
+      password1: ['', Validators.required],
+      password2: ['', Validators.required],
+      fecha : ['',[Validators.required]],
+      checkbox : ['',[Validators.required, Validators.requiredTrue]]
+    }, { validator: this.passwordMatchValidator('password1', 'password2') });
   }
+
+  passwordMatchValidator(password1Key: string, password2Key: string): ValidatorFn {
+    return (control: AbstractControl): ValidationErrors | null => {
+      const password1 = control.get(password1Key)?.value;
+      const password2 = control.get(password2Key)?.value;
+  
+      if (password1 === password2) {
+        return null;
+      }
+      return { passwordMismatch: true };
+    };
+  }
+
   sendForm(event:Event){
     event.preventDefault();
     this.registerForm.valid ? alert("Enviando al servidor...") : this.registerForm.markAllAsTouched();
-  }
-
-  passwordMatchValidator(): ValidatorFn {
-    return (control: AbstractControl): ValidationErrors | null => {
-      const password1 = control.root.get('password1')?.value;  
-      const password2 = control.value;  
-      if (password1 == password2) {
-        return null; 
-      }
-      return { passwordMismatch: true }
-    }
   }
 
   get Nombre() {
