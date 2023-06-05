@@ -19,7 +19,7 @@
                       <img src="../../../assets/user-icon.svg" class="user-icon">
                       <label for="username"> Nombre de Usuario o E-mail:</label>
                   </div>
-                  <input type="email" [formControl]="email" formControlName="email" id="username" placeholder="misrutinas@ejemplo.com">
+                  <input type="email" formControlName="email" id="username" placeholder="misrutinas@ejemplo.com">
                   <div *ngIf="Email?.errors && Email?.touched">
                     
                     <p *ngIf="Email?.hasError('required')" class="text-danger">
@@ -33,14 +33,11 @@
                       <img src="../../../assets/lock-icon.svg" class="lock-icon">
                       <label for="password">Contraseña:</label>
                   </div>
-                  <input type="password" [formControl]="password" formControlName="password" id="password" placeholder="*********">
+                  <input type="password" formControlName="password" id="password" placeholder="*********">
                   <div *ngIf="Password?.errors && Password?.touched">
                     
                     <p *ngIf="Password?.hasError('required')" class="text-danger">
                       El password es requerido.
-                    </p>
-                    <p *ngIf="Password?.hasError('password')" class="text-danger">
-                      El pasword debe ser de 8 a 16 caracteres.
                     </p>
 
                   </div>

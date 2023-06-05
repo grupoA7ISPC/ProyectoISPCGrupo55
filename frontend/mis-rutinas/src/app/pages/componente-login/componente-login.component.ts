@@ -17,7 +17,7 @@ export class ComponenteLoginComponent {
   constructor (private formBuilder: FormBuilder){
     this.form = this.formBuilder.group({ 
     email:['',[Validators.required, Validators.email]],
-    password :['',[Validators.required, Validators.pattern('/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/')]]
+    password :['',[Validators.required]]
     
     }  
     )
