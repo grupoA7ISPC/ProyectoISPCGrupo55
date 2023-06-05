@@ -1,23 +1,50 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-componente-login',
   templateUrl: './componente-login.component.html',
   styleUrls: ['./componente-login.component.css']
 })
+
 export class ComponenteLoginComponent {
-  email = new FormControl('',[],[]);
-  password = new FormControl('',[],[]);
+  email = new FormControl('',[]);
+  password = new FormControl('',[]);
    
   public form;
   constructor (private formBuilder: FormBuilder){
     this.form = this.formBuilder.group({ 
-    password :['',[]],
-    email:['',[]]
+    email:['',[Validators.required, Validators.email]],
+    password :['',[Validators.required, Validators.pattern('/^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/')]]
+    
     }  
     )
   }
 
+  ngOnInit(): void{
+    
+  }
+  
+  get Email()
+  {
+    return this.form.get("email");
+  }
+  get Password()
+  {
+    return this.form.get("password");
+  }
+  
+  enviarformulario(event:Event){
+    event.preventDefault();
+    if(this.form.valid)
+    {
+      alert ("Enviando al servidor....")
+    }
+    else
+    {
+      this.form.markAllAsTouched();
+    }
+  }
 }
