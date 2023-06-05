@@ -8,8 +8,8 @@
       <h1 class="titulo">BIENVENIDO</h1>
       <img src="../../../assets/icon.png" alt="logo-misrutinas" class="logo">
     </div>
-
-      <form class="login-form">
+    
+      <form [formGroup]= "form" (ngSubmit)="enviarformulario($event)" >
         <!-- method="post" action="login-exitoso.html" -->
           <fieldset id="inputs">
               <legend class="legend-inicia">Inicia Sesión</legend>
@@ -19,14 +19,29 @@
                       <img src="../../../assets/user-icon.svg" class="user-icon">
                       <label for="username"> Nombre de Usuario o E-mail:</label>
                   </div>
-                  <input type="email" id="username" placeholder="misrutinas@ejemplo.com">
-
+                  <input type="email" formControlName="email" id="username" placeholder="misrutinas@ejemplo.com">
+                  <div *ngIf="Email?.errors && Email?.touched">
+                    
+                    <p *ngIf="Email?.hasError('required')" class="text-danger">
+                      El email es requerido.
+                    </p>
+                    <p *ngIf="Email?.hasError('email')" class="text-danger">
+                      El formato del email debe ser válido.
+                    </p>
+                  </div>
                   <div class="info">
                       <img src="../../../assets/lock-icon.svg" class="lock-icon">
                       <label for="password">Contraseña:</label>
                   </div>
-                  <input type="password" id="password" placeholder="*********">
-              </div>
+                  <input type="password" formControlName="password" id="password" placeholder="*********">
+                  <div *ngIf="Password?.errors && Password?.touched">
+                    
+                    <p *ngIf="Password?.hasError('required')" class="text-danger">
+                      El password es requerido.
+                    </p>
+
+                  </div>
+                </div>
           </fieldset>
 
           <div class="salida">
