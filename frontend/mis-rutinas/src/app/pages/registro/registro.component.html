@@ -7,40 +7,37 @@
         </div>
         <div class="input-container">
             <input type="text"  placeholder="Nombre" id="nombre" formControlName="nombre">
-            <p></p>
+           <div *ngIf="Nombre?.errors && Nombre?.touched"> <p *ngIf="Nombre?.hasError('required')" class="text-danger"  >Este campo es requerido.</p></div>
+            <!-- <p class="border-bottom border-danger  border-3"></p> -->
         </div>
         <div class="input-container">
             <input type="text"  placeholder="Apellido" id="apellido" formControlName = "apellido" >
-            <p></p>
+            <div *ngIf="Apellido?.errors && Apellido?.touched"> <p *ngIf="Apellido?.hasError('required')" class="text-danger"  >Este campo es requerido.</p></div>
         </div>
         <div class="input-container">
             <input type="text" placeholder="Nombre de Usuario" id="usuario" formControlName = "usuario" >
-            <p></p>
+            <div *ngIf="Usuario?.errors && Usuario?.touched"> <p *ngIf="Usuario?.hasError('required')" class="text-danger"  >Este campo es requerido.</p></div>
         </div>
         <div class="input-container">
             <input type="email" placeholder="Correo Electronico" id="correo" formControlName = "email">
-            <p></p>
+            <div *ngIf="Email?.errors && Email?.touched"> <p *ngIf="Email?.hasError('required')" class="text-danger"  >Este campo es requerido.</p></div>
         </div>
         <div class="input-container">
             <input type="password" placeholder="Ingrese su contraseña" id="password1" formControlName="password1">
-            <p></p>
+            <div *ngIf="Password1?.errors && Password1?.touched"> <p *ngIf="Password1?.hasError('required')" class="text-danger"  >Este campo es requerido.</p></div>
         </div>
         <div class="input-container">
             <input type="password" placeholder="Confirme su contraseña" id="password2" formControlName="password2">
-            <p></p>
+            <div *ngIf="Password2?.errors && Password2?.touched"> <p *ngIf="Password2?.hasError('required')" class="text-danger"  >La contraseñas no coinciden</p></div>
         </div>
         <div class="input-container">
             <label for="date">Fecha de nacimiento</label>
             <input type="date" placeholder="Fecha de nacimiento" id="date" formControlName = "fecha">
-            <p></p>
+            <div *ngIf="Fecha?.errors && Fecha?.touched"> <p *ngIf="Fecha?.hasError('required')" class="text-danger"  >Este campo es requerido.</p></div>
         </div>
         <div class="form-footer">
             <label class="agree" for="checkbox"> <input type="checkbox" name="checkbox" id="checkbox" formControlName = "checkbox">Acepto <a href="#" class="terminos">Términos y Condiciones</a></label>
+            <div *ngIf="Checkbox?.errors && Checkbox?.touched"> <p *ngIf="Checkbox?.hasError('required')" class="text-danger"  >Este campo es requerido.</p></div>
             <!-- <p id="check-error">Acepte los términos y condiciones</p> -->
             <button type="submit" class="button-register">Registrarme</button>
         </div>
-
-
-        <p class="return">¿Ya tienes una cuenta?<br><a href="">Ir a inicio de sesión</a></p>
-    </form>
-</div>

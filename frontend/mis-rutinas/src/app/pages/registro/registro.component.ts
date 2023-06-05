@@ -37,6 +37,38 @@ export class RegistroComponent {
       return { passwordMismatch: true }
     }
   }
+
+  get Nombre() {
+    return this.registerForm.get('nombre');
+  }
+
+  get Apellido() {
+    return this.registerForm.get('apellido');
+  }
+
+  get Usuario() {
+    return this.registerForm.get('usuario');
+  }
+
+  get Email() {
+    return this.registerForm.get('email');
+  }
+
+  get Password1() {
+    return this.registerForm.get('password1');
+  }
+
+  get Password2() {
+    return this.registerForm.get('password2');
+  }
+
+  get Fecha() {
+    return this.registerForm.get('fecha');
+  }
+
+  get Checkbox() {
+    return this.registerForm.get('checkbox');
+  }
 }
 
 
