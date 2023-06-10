@@ -1,3 +1,5 @@
+
+from datetime import date
 from django.db import models
 from django.utils import timezone
 from django.contrib.auth.hashers import make_password
@@ -43,10 +45,47 @@ class Usuario(models.Model):
       return self.nombre
     
     def __str__(self):
-       return self.nombre
+      return self.nombre
   
     def set_password(self, raw_password):
       self.password = make_password(raw_password)
 
     def check_password(self, raw_password):
       self.check_password(raw_password, self.password)
+      
+class Logro (models.Model):
+  id_logro =models.AutoField(primary_key=True)
+  titulo = models.CharField(max_length=25)
+  descripcion = models.TextField(max_length=250, blank=True,default='')
+  class Meta:
+    db_table="Logro"
+    verbose_name="Logro del sistema recompensas"
+    verbose_name_plural="Logros"
+
+  def __unicode__(self):
+    return self.titulo
+    
+  def __str__(self):
+    return self.titulo
+  
+class UsuarioLogro (models.Model):
+  id_userlogro = models.AutoField(primary_key=True)
+  fk_logro = models.ForeignKey(Logro,default=1,on_delete=models.CASCADE)
+  fk_user = models.ForeignKey(Usuario,on_delete=models.CASCADE)
+  status = models.BooleanField(default=False)
+  completed_at = models.DateField(blank=True, default=date.today)
+  class Meta:
+    db_table="UsuarioLogro"
+    verbose_name="Logro de Usuario"
+    verbose_name_plural="UsuariosLogros"
+
+  def __unicode__(self):
+    return self.id_userlogro
+    
+  def __int__(self):
+    return self.id_userlogro
+  
+  
+
+  
+    
