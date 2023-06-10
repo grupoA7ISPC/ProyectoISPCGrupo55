@@ -11,32 +11,32 @@
       </div>
       <div class="mb-3">
         <label for="serie" class="form-label">Serie</label>
-        <input type="number" class="form-control" id="id-serie" aria-describedby="serieAyuda">
+        <input type="number" formControlName="serie" class="form-control" id="id-serie" aria-describedby="serieAyuda">
         <div id="serieAyuda" class="form-text">Colocar serie</div>
       </div>
       <div class="mb-3">
         <label for="repeticion" class="form-label">Repetición</label>
-        <input type="number" class="form-control" id="id-repeticion" aria-describedby="repAyuda">
+        <input type="number" formControlName="repeticion" class="form-control" id="id-repeticion" aria-describedby="repAyuda">
         <div id="repAyuda" class="form-text">Colocar las repeticiones</div>
       </div>
       <div class="mb-3">
         <label for="duracion" class="form-label">Duración</label>
-        <input type="time" class="form-control" id="id-duracion" aria-describedby="durAyuda">
+        <input type="time" formControlName="duracion" class="form-control" id="id-duracion" aria-describedby="durAyuda">
         <div id="durAyuda" class="form-text">Colocar la duración</div>
       </div>
       <div class="mb-3">
         <label for="descanso" class="form-label">Descanso</label>
-        <input type="time" class="form-control" id="id-descanso" aria-describedby="descansoAyuda">
+        <input type="time" formControlName="descanso" class="form-control" id="id-descanso" aria-describedby="descansoAyuda">
         <div id="descansoAyuda" class="form-text">Colocar el descanso</div>
       </div>
       <div class="mb-3">
         <label for="nombreEjercicio" class="form-label">Nombre del Ejercicio</label>
-        <input type="text" class="form-control" id="id-nombreEj" aria-describedby="nombreEjAyuda">
+        <input type="text" formControlName="nombrerutina" class="form-control" id="id-nombreEj" aria-describedby="nombreEjAyuda">
         <div id="nombreEjAyuda" class="form-text">Colocar el nombre del ejercicio</div>
       </div>
       <div class="mb-3">
         <label for="zonaCuerpo" class="form-label">Zona del cuerpo</label>
-        <input type="text" class="form-control" id="id-zona" aria-describedby="zonaAyuda">
+        <input type="text" formControlName="nombrezcuerpo" class="form-control" id="id-zona" aria-describedby="zonaAyuda">
         <div id="zonaAyuda" class="form-text">Colocar la zona del cuerpo</div>
       </div>
     <button type="submit" class="btn btn-primary">Crear rutina</button>
