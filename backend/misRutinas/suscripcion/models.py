@@ -33,3 +33,20 @@ class Factura(models.Model):
     def __str__(self):
        return self.nro_comp
   
+class Pago(models.Model):
+  id_pago = models.AutoField(primary_key=True, default=1)
+  fk_id_factura = models.ForeignKey(Factura, on_delete=models.CASCADE, default=1)
+  fecha = models.DateField(auto_now_add=False)
+  subtotal = models.FloatField(blank=False, default=0)
+  detalle = models.TextField(max_length=100, blank=True,default='')
+
+  class Meta:
+    db_table="Pago"
+    verbose_name="Pago suscripciones"
+    verbose_name_plural="Pagos"
+
+  def unicode(self):
+    return self.id_pago
+
+  def int(self):
+    return self.id_pago

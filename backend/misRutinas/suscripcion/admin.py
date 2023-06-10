@@ -11,3 +11,8 @@ class FacturaAdmin(admin.ModelAdmin):
 
 admin.site.register(Factura, FacturaAdmin)
 
+class PagoAdmin(admin.ModelAdmin):
+    list_display = ('id_pago', 'fk_id_factura', 'fecha', 'subtotal','detalle')
+
+admin.site.register(Pago, PagoAdmin)
+
