@@ -17,3 +17,19 @@ class Suscripcion(models.Model):
     
   def __str__(self):
     return self.nombre
+  
+class Factura(models.Model):
+    nro_comp = models.CharField(max_length=13, primary_key=True)
+    fk_suscripcion = models.ForeignKey(Suscripcion, on_delete=models.CASCADE, default=1)
+    # fk_id_user = models.ForeignKey(Usuario, on_delete=models.CASCADE, default=1)
+    class Meta:
+      db_table="Factura"
+      verbose_name="Factura de MisRutinas"
+      verbose_name_plural="Facturas"
+
+    def __unicode__(self):
+      return self.nro_comp
+    
+    def __str__(self):
+       return self.nro_comp
+  
