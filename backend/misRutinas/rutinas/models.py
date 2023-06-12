@@ -2,23 +2,7 @@ from django.db import models
 
 
 # Create your models here.
-class Set(models.Model):
-  id_set = models.AutoField(primary_key=True)
-  serie = models.IntegerField()
-  repeticion = models.IntegerField(blank=True, default=0)
-  duracion = models.TimeField(blank=True, default="00:00:00")
-  descanso = models.TimeField()
 
-  class Meta:
-    db_table="Set"
-    verbose_name="Set de Rutinas"
-    verbose_name_plural="Sets"
-
-  def __unicode__(self):
-    return self.id_set
-    
-  def __int__(self):
-    return self.id_set
 
 class ZonaCuerpo(models.Model):
   id_zonacuerpo = models.AutoField(primary_key=True)
@@ -52,3 +36,39 @@ class Ejercicio(models.Model):
     
   def __int__(self):
     return self.id_ejerc
+  
+class Set(models.Model):
+  id_set = models.AutoField(primary_key=True)
+  fk_ejerc = models.ForeignKey(Ejercicio, on_delete=models.CASCADE, default=1)
+  serie = models.IntegerField()
+  repeticion = models.IntegerField(blank=True, default=0)
+  duracion = models.TimeField(blank=True, default="00:00:00")
+  descanso = models.TimeField()
+
+  class Meta:
+    db_table="Set"
+    verbose_name="Set de Rutinas"
+    verbose_name_plural="Sets"
+
+  def __unicode__(self):
+    return self.id_set
+    
+  def __int__(self):
+    return self.id_set
+  
+class Rutina(models.Model):
+  id_rut = models.AutoField(primary_key=True)
+  #fk_user = models.ForeignKey(Usuario, on_delete=models.CASCADE, default=1)
+  nombre = models.CharField(max_length=40)
+  descripcion = models.CharField(max_length=250)
+
+  class Meta:
+    db_table="Rutina"
+    verbose_name="Rutina de ejercicios"
+    verbose_name_plural="Rutinas"
+
+  def __unicode__(self):
+    return self.nombre
+    
+  def __str__(self):
+    return self.nombre
