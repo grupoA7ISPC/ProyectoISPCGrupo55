@@ -12,3 +12,8 @@ class ZonaCuerpoAdmin(admin.ModelAdmin):
     list_display = ("id_zonacuerpo", "nombre")
 
 admin.site.register(ZonaCuerpo, ZonaCuerpoAdmin)
+
+class EjercicioAdmin(admin.ModelAdmin):
+    list_display = ("id_ejerc", "nombre", "fk_zonacuerpo") #"fk_zonacuerpo"
+    
+admin.site.register(Ejercicio, EjercicioAdmin)

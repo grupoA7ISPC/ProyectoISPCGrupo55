@@ -1,10 +1,5 @@
 from django.db import models
 
-ZONACUERPO_CHOICES = [
-  ('Glúteos y Piernas', 'Buenos Aires'),
-  ('Zona media', 'Zona media'),
-  ('Pecho', 'Pecho')
-]
 
 # Create your models here.
 class Set(models.Model):
@@ -39,3 +34,21 @@ class ZonaCuerpo(models.Model):
     
   def __str__(self):
     return self.nombre
+  
+
+# Create your models here.
+class Ejercicio(models.Model):
+  id_ejerc = models.AutoField(primary_key=True, default=1)
+  nombre = models.CharField(max_length=50)
+  fk_zonacuerpo = models.ForeignKey(ZonaCuerpo, on_delete=models.CASCADE, default=1)  
+  
+  class Meta:
+    db_table="Ejercicio"
+    verbose_name="Ejercicio para una Zona"
+    verbose_name_plural="Ejercicios"
+
+  def __unicode__(self):
+    return self.id_ejerc
+    
+  def __int__(self):
+    return self.id_ejerc
