@@ -23,3 +23,8 @@ class RutinaAdmin(admin.ModelAdmin):
     list_display = ("id_rut", "nombre", "descripcion") #"fk_user"
     
 admin.site.register(Rutina, RutinaAdmin)
+
+class SetRutinaAdmin (admin.ModelAdmin):
+    list_display = ("id_setrut","fk_rut","fk_set")
+
+admin.site.register(SetRutina, SetRutinaAdmin)
