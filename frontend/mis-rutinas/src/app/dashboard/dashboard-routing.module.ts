@@ -1,9 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { DashboardMainComponent } from './components/dashboard-main/dashboard-main.component';
-import { FormRutinaComponent } from './components/form-rutina/form-rutina.component';
-import { CalendarComponent } from './components/calendar/calendar.component';
+import { DashboardComponent, DashboardMainComponent, TusRutinasComponent, FormRutinaComponent, MiSuscripcionComponent } from './pages'
 
 const routes: Routes = [
   {
@@ -11,8 +8,9 @@ const routes: Routes = [
     component: DashboardComponent,
     children: [
       { path: '', component: DashboardMainComponent},
+      { path: 'rutinas', component: TusRutinasComponent },
       { path: 'crear-rutina', component: FormRutinaComponent },
-      { path: 'calendario', component: CalendarComponent }
+      { path: 'mi-suscripcion', component:  MiSuscripcionComponent}
     ]
   }
 ];
