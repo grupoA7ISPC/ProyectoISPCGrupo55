@@ -65,7 +65,7 @@ class Set(models.Model):
   
 class Rutina(models.Model):
   id_rut = models.AutoField(primary_key=True)
-  #fk_user = models.ForeignKey(Usuario, on_delete=models.CASCADE, default=1)
+  fk_user = models.ForeignKey('usuarios.Usuario', on_delete=models.CASCADE, default=1)
   nombre = models.CharField(max_length=40)
   descripcion = models.CharField(max_length=250)
 

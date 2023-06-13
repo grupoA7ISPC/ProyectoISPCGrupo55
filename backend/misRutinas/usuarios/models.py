@@ -24,7 +24,7 @@ class Alimentacion(models.Model):
 class Usuario(models.Model):
     id_user = models.AutoField(primary_key=True)
     id_alim = models.ForeignKey(Alimentacion, on_delete=models.CASCADE, default=1)
-    # id_sub = models.ForeignKey(Suscripcion, on_delete=models.CASCADE, default=1)
+    id_sub = models.ForeignKey('suscripcion.Suscripcion', on_delete=models.CASCADE, default=1)
     created_at = models.DateTimeField(default=timezone.now)
     nombre = models.CharField(max_length=45)
     apellido = models.CharField(max_length=45)
