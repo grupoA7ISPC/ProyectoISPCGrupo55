@@ -10,6 +10,8 @@ import { Validators } from '@angular/forms';
 })
 export class FormRutinaComponent {
   titulo = 'Formulario';
+  nombre = new FormControl('',[]);
+  descripcion = new FormControl('',[]);
     
   public form;
   constructor(private formBuilder: FormBuilder) {
@@ -24,5 +26,26 @@ export class FormRutinaComponent {
     nombrezcuerpo: ['',[Validators.required, Validators.maxLength(60)]],
   });
   }
+  get Nombre()
+  {
+    return this.form.get("nombre");
+  }
+  get Descripcion()
+  {
+    return this.form.get("descripcion");
+  }
+  get Serie()
+  {
+    return this.form.get("serie");
+  }
+  get Repeticion()
+  {
+    return this.form.get("repeticion");
+  }
+  get Duracion()
+  {
+    return this.form.get("duracion");
+  }
+  
     
   }

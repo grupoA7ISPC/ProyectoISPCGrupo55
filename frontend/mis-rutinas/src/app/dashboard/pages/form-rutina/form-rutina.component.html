@@ -2,27 +2,67 @@
     <div class="mb-3">
       <label for="nombre" class="form-label">Nombre</label>
       <input type="text" formControlName="nombre" class="form-control" id="nombre" aria-describedby="nombreAyuda">
-      <div id="nombreAyuda" class="form-text">Colocar el nombre de la rutina</div>
+      <div *ngIf="Nombre?.errors && Nombre?.touched">
+                    
+        <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+          El nombre es requerido.
+        </p>
+        <p *ngIf="Nombre?.hasError('nombre')" class="text-danger">
+          El formato del nombre debe ser válido.
+        </p>
+      </div>
     </div>
     <div class="mb-3">
         <label for="descripcion" class="form-label">Descripción</label>
-        <input type="text" class="form-control" id="id-descripcion" aria-describedby="descAyuda">
-        <div id="descAyuda" class="form-text">Colocar la descripción</div>
+        <input type="text" formControlName="descripcion" class="form-control" id="id-descripcion" aria-describedby="descAyuda">
+        <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+                    
+          <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+            La descripcion es requerido.
+          </p>
+          <p *ngIf="Descripcion?.hasError('descripcion')" class="text-danger">
+            El formato de la descripcion debe ser válido.
+          </p>
+        </div>
       </div>
       <div class="mb-3">
         <label for="serie" class="form-label">Serie</label>
         <input type="number" formControlName="serie" class="form-control" id="id-serie" aria-describedby="serieAyuda">
-        <div id="serieAyuda" class="form-text">Colocar serie</div>
+        <div *ngIf="Serie?.errors && Serie?.touched">
+                    
+          <p *ngIf="Serie?.hasError('required')" class="text-danger">
+            La serie es requerido.
+          </p>
+          <p *ngIf="Serie?.hasError('serie')" class="text-danger">
+            El formato de la serie debe ser válido.
+          </p>
+        </div>
       </div>
       <div class="mb-3">
         <label for="repeticion" class="form-label">Repetición</label>
         <input type="number" formControlName="repeticion" class="form-control" id="id-repeticion" aria-describedby="repAyuda">
-        <div id="repAyuda" class="form-text">Colocar las repeticiones</div>
+        <div *ngIf="Repeticion?.errors && Repeticion?.touched">
+                    
+          <p *ngIf="Repeticion?.hasError('required')" class="text-danger">
+            La repetición es requerido.
+          </p>
+          <p *ngIf="Repeticion?.hasError('repeticion')" class="text-danger">
+            El formato de la Repetición debe ser válido.
+          </p>
+        </div>
       </div>
       <div class="mb-3">
         <label for="duracion" class="form-label">Duración</label>
         <input type="time" formControlName="duracion" class="form-control" id="id-duracion" aria-describedby="durAyuda">
-        <div id="durAyuda" class="form-text">Colocar la duración</div>
+        <div *ngIf="Duracion?.errors && Duracion?.touched">
+                    
+          <p *ngIf="Duracion?.hasError('required')" class="text-danger">
+            La duración es requerido.
+          </p>
+          <p *ngIf="Duracion?.hasError('duracion')" class="text-danger">
+            El formato de la duración debe ser válido.
+          </p>
+        </div>
       </div>
       <div class="mb-3">
         <label for="descanso" class="form-label">Descanso</label>
