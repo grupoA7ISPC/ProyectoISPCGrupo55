@@ -46,6 +46,17 @@ export class FormRutinaComponent {
   {
     return this.form.get("duracion");
   }
-  
+  get Descanso()
+  {
+    return this.form.get("descanso");
+  }
+  get NombreRutina()
+  {
+    return this.form.get("nombrerutina");
+  }
+  get NombreZCuerpo()
+  {
+    return this.form.get("nombrezcuerpo");
+  }
     
   }

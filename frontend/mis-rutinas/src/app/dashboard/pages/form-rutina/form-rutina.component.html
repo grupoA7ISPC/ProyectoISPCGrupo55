@@ -67,17 +67,41 @@
       <div class="mb-3">
         <label for="descanso" class="form-label">Descanso</label>
         <input type="time" formControlName="descanso" class="form-control" id="id-descanso" aria-describedby="descansoAyuda">
-        <div id="descansoAyuda" class="form-text">Colocar el descanso</div>
+        <div *ngIf="Descanso?.errors && Descanso?.touched">
+                    
+          <p *ngIf="Descanso?.hasError('required')" class="text-danger">
+            El descanso es requerido.
+          </p>
+          <p *ngIf="Descanso?.hasError('descanso')" class="text-danger">
+            El formato del descanso debe ser válido.
+          </p>
+        </div>
       </div>
       <div class="mb-3">
         <label for="nombreEjercicio" class="form-label">Nombre del Ejercicio</label>
         <input type="text" formControlName="nombrerutina" class="form-control" id="id-nombreEj" aria-describedby="nombreEjAyuda">
-        <div id="nombreEjAyuda" class="form-text">Colocar el nombre del ejercicio</div>
+        <div *ngIf="NombreRutina?.errors && NombreRutina?.touched">
+                    
+          <p *ngIf="NombreRutina?.hasError('required')" class="text-danger">
+            El nombre del ejercicio es requerido.
+          </p>
+          <p *ngIf="NombreRutina?.hasError('nombrerutina')" class="text-danger">
+            El formato del nombre del ejercicio debe ser válido.
+          </p>
+        </div>
       </div>
       <div class="mb-3">
         <label for="zonaCuerpo" class="form-label">Zona del cuerpo</label>
         <input type="text" formControlName="nombrezcuerpo" class="form-control" id="id-zona" aria-describedby="zonaAyuda">
-        <div id="zonaAyuda" class="form-text">Colocar la zona del cuerpo</div>
+        <div *ngIf="NombreZCuerpo?.errors && NombreZCuerpo?.touched">
+                    
+          <p *ngIf="NombreZCuerpo?.hasError('required')" class="text-danger">
+            El nombre de la zona del cuerpo es requerido.
+          </p>
+          <p *ngIf="NombreZCuerpo?.hasError('nombrezcuerpo')" class="text-danger">
+            El formato del nombre de la zona del cuerpo debe ser válido.
+          </p>
+        </div>
       </div>
     <button type="submit" class="btn btn-primary">Crear rutina</button>
   </form>
