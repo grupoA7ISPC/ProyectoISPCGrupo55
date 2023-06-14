@@ -9,9 +9,6 @@ import { Validators } from '@angular/forms';
   styleUrls: ['./form-rutina.component.css']
 })
 export class FormRutinaComponent {
-  titulo = 'Formulario';
-  nombre = new FormControl('',[]);
-  descripcion = new FormControl('',[]);
     
   public form;
   constructor(private formBuilder: FormBuilder) {
@@ -57,6 +54,18 @@ export class FormRutinaComponent {
   get NombreZCuerpo()
   {
     return this.form.get("nombrezcuerpo");
+  }
+
+  enviarformulario(event:Event){
+    event.preventDefault();
+    if(this.form.valid)
+    {
+      alert ("Enviando al servidor....")
+    }
+    else
+    {
+      this.form.markAllAsTouched();
+    }
   }
     
   }

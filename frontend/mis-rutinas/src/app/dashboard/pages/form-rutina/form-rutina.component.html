@@ -1,4 +1,4 @@
-<form [formGroup]="form">
+<form [formGroup]="form" (ngSubmit)="enviarformulario($event)">
     <div class="mb-3">
       <label for="nombre" class="form-label">Nombre</label>
       <input type="text" formControlName="nombre" class="form-control" id="nombre" aria-describedby="nombreAyuda">
