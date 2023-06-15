@@ -1,0 +1,31 @@
+.card-rutina {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 16px;
+  max-width: 360px;
+  min-height: 480px;
+  border-radius: 32px;
+  background: #262632;
+  box-shadow: 6px 5px 16px #20202b, -10px -5px 16px #2c2c3a;
+  padding: 32px;
+}
+
+.card-rutina h3 {
+  color: #ff6600;
+  font-size: 2.8rem;
+}
+
+.card-rutina__actions {
+  display: flex;
+  justify-content: space-around;
+  background-color: #ffa456;
+  border-radius: 0 0 16px 16px;
+  padding: 8px 16px;
+  color: #121218;
+}
+
+button {
+  background-color:transparent;
+  border-radius: 100%;
+}

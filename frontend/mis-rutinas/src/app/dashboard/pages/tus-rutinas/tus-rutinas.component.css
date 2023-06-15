@@ -1,0 +1,21 @@
+.cards-container {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin: 4px 16px;
+}
+
+.create {
+  background-color: #ffa456;
+  border-radius: 32px;
+  font-weight: bold;
+  padding: 8px 16px;
+}
+.create:hover{
+  background-color: #ffb575;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end;
+}
