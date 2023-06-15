@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, MinLengthValidator } from '@angular/forms';
 import { Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
-
+import { UsuarioService, Usuario } from 'src/app/service/auth/usuario.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -10,8 +11,9 @@ import { Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@ang
 
 export class RegistroComponent {
   public registerForm;
-
-  constructor(private formBuilder: FormBuilder) {
+  usuario: Usuario = new Usuario();
+  
+  constructor(private formBuilder: FormBuilder, private UsuarioService: UsuarioService, private router: Router) {
     this.registerForm = this.formBuilder.group({
       nombre : ['',[Validators.required]],
       apellido : ['',[Validators.required]],
@@ -23,6 +25,7 @@ export class RegistroComponent {
       checkbox : ['',[Validators.required, Validators.requiredTrue]]
     }, { validator: this.passwordMatchValidator('password1', 'password2')});
   }
+
 
   passwordMatchValidator(password1Key: string, password2Key: string): ValidatorFn {
     return (control: AbstractControl): ValidationErrors | null => {
@@ -58,9 +61,30 @@ export class RegistroComponent {
     }
   }
 
-  sendForm(event:Event){
+ /* sendForm(event:Event){
     event.preventDefault();
     this.registerForm.valid ? alert("Enviando al servidor...") : this.registerForm.markAllAsTouched();
+  }*/
+  sendForm(event:Event, usuario:Usuario): void{
+    event.preventDefault();
+    if (this.registerForm.valid){
+        console.log("Enviando al servidor...");
+        console.log(usuario);
+        this.UsuarioService.onCrearUsuario(usuario).subscribe(
+          data => {
+            console.log(data.id);
+            if (data.id>0){
+              alert(`Se ha creado el nuevo Usuario con id ${data.id}`);
+              
+              this.router.navigate(['/login'])    
+            }
+          }
+          )
+    }
+    else{
+      this.registerForm.markAllAsTouched();
+    }
+   
   }
 
   get Nombre() {
