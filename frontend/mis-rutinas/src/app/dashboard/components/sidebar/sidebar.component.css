@@ -2,6 +2,15 @@
   background-color: #ff9b44;
 }
 
+.custom-toggler  {
+  background-color: #262632;
+}
+
+ul {
+  gap: 16px;
+  padding: 8px;
+}
+
 a {
   color: black;
   font-weight: bold;
