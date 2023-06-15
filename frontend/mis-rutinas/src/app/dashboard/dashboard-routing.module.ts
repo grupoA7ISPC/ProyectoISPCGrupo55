@@ -7,8 +7,9 @@ const routes: Routes = [
     path: 'dashboard',
     component: DashboardComponent,
     children: [
-      { path: '', component: DashboardMainComponent},
-      { path: 'rutinas', component: TusRutinasComponent },
+      // { path: '', component: DashboardMainComponent},
+      // { path: 'rutinas', component: TusRutinasComponent },
+      { path: '', component: TusRutinasComponent },
       { path: 'crear-rutina', component: FormRutinaComponent },
       { path: 'mi-suscripcion', component:  MiSuscripcionComponent}
     ]
