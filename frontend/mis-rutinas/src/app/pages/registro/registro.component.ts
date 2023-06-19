@@ -3,6 +3,8 @@ import { FormControl, FormBuilder, FormGroup, MinLengthValidator } from '@angula
 import { Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
 import { UsuarioService, Usuario } from 'src/app/service/auth/usuario.service';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
+
 @Component({
   selector: 'app-registro',
   templateUrl: './registro.component.html',
@@ -64,27 +66,40 @@ export class RegistroComponent {
     event.preventDefault();
     this.registerForm.valid ? alert("Enviando al servidor...") : this.registerForm.markAllAsTouched();
   }*/
-  sendForm(event:Event, usuario:Usuario): void{
+  sendForm(event: Event, usuario: Usuario): void {
     event.preventDefault();
-    if (this.registerForm.valid){
-        console.log("Enviando al servidor...");
-        console.log(usuario);
-        this.UsuarioService.onCrearUsuario(usuario).subscribe(
-          data => {
-            console.log(data.id);
-            if (data.id>0){
-              alert(`Se ha creado el nuevo Usuario con id ${data.id}`);
-              
-              this.router.navigate(['/login'])    
-            }
+    if (this.registerForm.valid) {
+      console.log("Enviando al servidor...");
+      console.log(usuario);
+      this.UsuarioService.onCrearUsuario(usuario).subscribe(
+        data => {
+          console.log(data.id);
+          if (data.id > 0) {
+            Swal.fire({
+              title: '¡REGISTRO EXITOSO!',
+              text: `Se ha creado el nuevo Usuario con id ${data.id}`,
+              width: '800',
+              padding: '3em',
+              icon: 'success',
+              confirmButtonText: 'Aceptar',
+              backdrop: `
+              rgba(255, 102, 0, 0.4)
+   
+                      left top
+                      no-repeat
+                      `,
+              confirmButtonColor:'#262632'
+            }).then(() => {
+              this.router.navigate(['/login']);
+            });
           }
-          )
-    }
-    else{
+        }
+      );
+    } else {
       this.registerForm.markAllAsTouched();
     }
-   
   }
+  
 
   get Nombre() {
     return this.registerForm.get('nombre');
