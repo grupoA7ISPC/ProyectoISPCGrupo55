@@ -6,22 +6,33 @@
         <h1>Registrate</h1>
         </div>
         <div class="input-container">
-            <input type="text"  placeholder="Nombre" id="nombre" formControlName="nombre">
-           <div *ngIf="Nombre?.errors && Nombre?.touched"> <p *ngIf="Nombre?.hasError('required')" class="text-danger"  >Este campo es requerido.</p></div>
-            <!-- <p class="border-bottom border-danger  border-3"></p> -->
-        </div>
-        <div class="input-container">
-            <input type="text"  placeholder="Apellido" id="apellido" formControlName = "apellido" >
-            <div *ngIf="Apellido?.errors && Apellido?.touched"> <p *ngIf="Apellido?.hasError('required')" class="text-danger"  >Este campo es requerido.</p></div>
-        </div>
+            <input type="text" placeholder="Nombre" id="nombre" formControlName="nombre">
+            <div *ngIf="Nombre?.errors && Nombre?.touched">
+              <p *ngIf="Nombre?.hasError('required')" class="text-danger">Este campo es requerido.</p>
+              <p *ngIf="Nombre?.hasError('minlength') || Nombre?.hasError('maxlength')" class="text-danger">El nombre debe tener entre 2 y 15 caracteres.</p>
+            </div>
+          </div>
+          
+          
+          <div class="input-container">
+            <input type="text" placeholder="Apellido" id="apellido" formControlName="apellido">
+            <div *ngIf="Apellido?.errors && Apellido?.touched">
+              <p *ngIf="Apellido?.hasError('required')" class="text-danger">Este campo es requerido.</p>
+              <p *ngIf="Apellido?.hasError('minlength') || Apellido?.hasError('maxlength')" class="text-danger">El apellido debe tener entre 2 y 15 caracteres.</p>
+            </div>
+          </div>
+          
         <div class="input-container">
             <input type="text" placeholder="Nombre de Usuario" id="usuario" formControlName = "usuario" >
             <div *ngIf="Usuario?.errors && Usuario?.touched"> <p *ngIf="Usuario?.hasError('required')" class="text-danger"  >Este campo es requerido.</p></div>
         </div>
         <div class="input-container">
-            <input type="email" placeholder="Correo Electronico" id="correo" formControlName = "email">
-            <div *ngIf="Email?.errors && Email?.touched"> <p *ngIf="Email?.hasError('required')" class="text-danger"  >Este campo es requerido.</p></div>
-        </div>
+            <input type="email" placeholder="Correo Electrónico" id="correo" formControlName="email">
+            <div *ngIf="Email?.errors && Email?.touched">
+              <p *ngIf="Email?.hasError('required')" class="text-danger">Este campo es requerido.</p>
+              <p *ngIf="Email?.hasError('email')" class="text-danger">Ingrese un correo electrónico válido.</p>
+            </div>
+          </div>
         <div class="input-container">
             <input type="password" placeholder="Ingrese su contraseña" id="password1" formControlName="password1">
             <div *ngIf="Password1?.errors && Password1?.touched"> <p *ngIf="Password1?.hasError('required')" class="text-danger"  >Este campo es requerido.</p></div>
