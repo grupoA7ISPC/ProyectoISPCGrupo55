@@ -18,7 +18,7 @@ class RegistroViewSet(viewsets.ModelViewSet):
     
         username = Usuario.objects.create_user(username=username, email=email, password=password)
         username.save()
-        username_usuario = Usuario.suario.objects.create(username=Usuario)
+        username_usuario = Usuario.objects.create(username=Usuario)
         username_usuario.save()
         Usuario (request, Usuario)
         return redirect('home')
