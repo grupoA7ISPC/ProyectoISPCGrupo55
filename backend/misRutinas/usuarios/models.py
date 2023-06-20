@@ -50,8 +50,15 @@ class Usuario(models.Model):
     def set_password(self, raw_password):
       self.password = make_password(raw_password)
 
-    def check_password(self, raw_password):
-      self.check_password(raw_password, self.password)
+    def check_credentials(self, raw_username, raw_password):
+        try:
+            usuario = Usuario.objects.get(username=raw_username, password=raw_password)
+        except Usuario.DoesNotExist:
+            # Si no se encuentra el usuario en la base de datos, devuelve False
+            return False
+        
+        # Si el usuario existe y las credenciales coinciden, devuelve True
+        return True
       
 class Logro (models.Model):
   id_logro =models.AutoField(primary_key=True)

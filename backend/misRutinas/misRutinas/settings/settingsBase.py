@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'suscripcion',
     'usuarios',
     'rest_framework',
-    'corsheaders'
+    'corsheaders',
+    'login'
 ]
 
 MIDDLEWARE = [
