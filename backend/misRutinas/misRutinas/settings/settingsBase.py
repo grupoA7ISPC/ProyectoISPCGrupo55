@@ -42,7 +42,8 @@ INSTALLED_APPS = [
     'usuarios',
     'rest_framework',
     'corsheaders',
-    'login'
+    'login',
+    'registro'
 ]
 
 MIDDLEWARE = [
