@@ -1,0 +1,107 @@
+<form [formGroup]="form" (ngSubmit)="enviarformulario($event)">
+    <div class="mb-3">
+      <label for="nombre" class="form-label">Nombre</label>
+      <input type="text" formControlName="nombre" class="form-control" id="nombre" aria-describedby="nombreAyuda">
+      <div *ngIf="Nombre?.errors && Nombre?.touched">
+                    
+        <p *ngIf="Nombre?.hasError('required')" class="text-danger">
+          El nombre es requerido.
+        </p>
+        <p *ngIf="Nombre?.hasError('nombre')" class="text-danger">
+          El formato del nombre debe ser válido.
+        </p>
+      </div>
+    </div>
+    <div class="mb-3">
+        <label for="descripcion" class="form-label">Descripción</label>
+        <input type="text" formControlName="descripcion" class="form-control" id="id-descripcion" aria-describedby="descAyuda">
+        <div *ngIf="Descripcion?.errors && Descripcion?.touched">
+                    
+          <p *ngIf="Descripcion?.hasError('required')" class="text-danger">
+            La descripcion es requerido.
+          </p>
+          <p *ngIf="Descripcion?.hasError('descripcion')" class="text-danger">
+            El formato de la descripcion debe ser válido.
+          </p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="serie" class="form-label">Serie</label>
+        <input type="number" formControlName="serie" class="form-control" id="id-serie" aria-describedby="serieAyuda">
+        <div *ngIf="Serie?.errors && Serie?.touched">
+                    
+          <p *ngIf="Serie?.hasError('required')" class="text-danger">
+            La serie es requerido.
+          </p>
+          <p *ngIf="Serie?.hasError('serie')" class="text-danger">
+            El formato de la serie debe ser válido.
+          </p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="repeticion" class="form-label">Repetición</label>
+        <input type="number" formControlName="repeticion" class="form-control" id="id-repeticion" aria-describedby="repAyuda">
+        <div *ngIf="Repeticion?.errors && Repeticion?.touched">
+                    
+          <p *ngIf="Repeticion?.hasError('required')" class="text-danger">
+            La repetición es requerido.
+          </p>
+          <p *ngIf="Repeticion?.hasError('repeticion')" class="text-danger">
+            El formato de la Repetición debe ser válido.
+          </p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="duracion" class="form-label">Duración</label>
+        <input type="time" formControlName="duracion" class="form-control" id="id-duracion" aria-describedby="durAyuda">
+        <div *ngIf="Duracion?.errors && Duracion?.touched">
+                    
+          <p *ngIf="Duracion?.hasError('required')" class="text-danger">
+            La duración es requerido.
+          </p>
+          <p *ngIf="Duracion?.hasError('duracion')" class="text-danger">
+            El formato de la duración debe ser válido.
+          </p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="descanso" class="form-label">Descanso</label>
+        <input type="time" formControlName="descanso" class="form-control" id="id-descanso" aria-describedby="descansoAyuda">
+        <div *ngIf="Descanso?.errors && Descanso?.touched">
+                    
+          <p *ngIf="Descanso?.hasError('required')" class="text-danger">
+            El descanso es requerido.
+          </p>
+          <p *ngIf="Descanso?.hasError('descanso')" class="text-danger">
+            El formato del descanso debe ser válido.
+          </p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="nombreEjercicio" class="form-label">Nombre del Ejercicio</label>
+        <input type="text" formControlName="nombrerutina" class="form-control" id="id-nombreEj" aria-describedby="nombreEjAyuda">
+        <div *ngIf="NombreRutina?.errors && NombreRutina?.touched">
+                    
+          <p *ngIf="NombreRutina?.hasError('required')" class="text-danger">
+            El nombre del ejercicio es requerido.
+          </p>
+          <p *ngIf="NombreRutina?.hasError('nombrerutina')" class="text-danger">
+            El formato del nombre del ejercicio debe ser válido.
+          </p>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label for="zonaCuerpo" class="form-label">Zona del cuerpo</label>
+        <input type="text" formControlName="nombrezcuerpo" class="form-control" id="id-zona" aria-describedby="zonaAyuda">
+        <div *ngIf="NombreZCuerpo?.errors && NombreZCuerpo?.touched">
+                    
+          <p *ngIf="NombreZCuerpo?.hasError('required')" class="text-danger">
+            El nombre de la zona del cuerpo es requerido.
+          </p>
+          <p *ngIf="NombreZCuerpo?.hasError('nombrezcuerpo')" class="text-danger">
+            El formato del nombre de la zona del cuerpo debe ser válido.
+          </p>
+        </div>
+      </div>
+    <button type="submit" class="btn btn-primary">Crear rutina</button>
+  </form>

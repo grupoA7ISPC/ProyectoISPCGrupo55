@@ -1,0 +1,8 @@
+#dashboard {
+  background-color: #262632;
+  color: white;
+}
+
+.dashboard__page {
+  padding: 32px;
+}
