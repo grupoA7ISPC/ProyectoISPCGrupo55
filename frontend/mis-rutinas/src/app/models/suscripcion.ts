@@ -1,8 +1,8 @@
 export interface Suscripcion {
     id: number,
     name:string;
-    benefits:string[];
-    duration:string;
+    descripcion:string;
+    dur_dias:string;
     price: number;
   }
   
