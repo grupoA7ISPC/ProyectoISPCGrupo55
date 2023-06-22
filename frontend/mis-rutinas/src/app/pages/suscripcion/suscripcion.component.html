@@ -1,14 +1,9 @@
 
 <div class="container">
     <div *ngFor="let suscripcion of suscripciones" class="box basic">
-        
-
         <h2>{{suscripcion.nombre}}</h2>
-        
         <p>{{ suscripcion.descripcion }}<p>
-            
-
-        <p>{{suscripcion.dur_dias}} dias</p>
+        <!-- <p>{{suscripcion.dur_dias}} dias</p> -->
         <p>Precio: {{ suscripcion.price |currency }}</p>
         <button class="subscribe-button">Suscribirse</button>
     </div>  
