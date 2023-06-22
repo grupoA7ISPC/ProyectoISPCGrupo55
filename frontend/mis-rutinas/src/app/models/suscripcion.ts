@@ -1,6 +1,6 @@
 export interface Suscripcion {
     id: number,
-    name:string;
+    nombre:string;
     descripcion:string;
     dur_dias:string;
     price: number;
