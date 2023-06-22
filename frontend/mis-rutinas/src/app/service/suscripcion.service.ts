@@ -10,7 +10,7 @@ export class SuscripcionService {
 
   constructor(private http: HttpClient) { }
 
-  private urlApi: string = 'http://localhost:3000/suscripciones';
+  private urlApi: string = 'http://127.0.0.1:8000/api/v1/suscripcion/suscripcion';
 
   getAllSubscriptions(): Observable <any> {
     return this.http.get<Suscripcion[]>(this.urlApi);
