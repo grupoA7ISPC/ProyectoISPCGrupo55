@@ -15,7 +15,7 @@
     width: 300px;
     border:none;
     border-radius: 10px;
-    padding: 20px;
+    padding: 20px 20px 0px 20px;
     color: white;
     background-color:#262632;
     text-align: center;
@@ -58,7 +58,7 @@
   
   
 h2 {
-    margin-top: 0;
+    
     font-size: 2em;
     font-weight: bold;
     text-shadow: 2px 2px 4px black;
@@ -66,7 +66,7 @@ h2 {
 
 p {
     font-size: 1.2em;
-    margin-top: 20px;
+    margin-top: 10px;
     line-height: 1.5em;
     text-shadow: 2px 2px 4px black;
 }
@@ -80,24 +80,30 @@ p {
     border-radius: 4px;
     font-size: 16px;
     cursor: pointer;
-    margin-top:60px;
+    
   }
   
   .subscribe-button:hover {
     background-color:#FF8E28;
   }
 
-  .box:nth-child(1)  h2  {
-  margin-bottom: 60px;
-  align-items: center;
   
-  }
-  .box:nth-child(1) .subscribe-button{
-    margin-top:80px;
+  .box:nth-child(1) p{
+    margin-bottom: 50px;
+    
   }
 
-  .box:nth-child(3) h2{
-    margin-bottom:40px;
+  .box:nth-child(2) .subscribe-button{
+    margin-bottom: 50px;
+    
+  }
+
+  .box:nth-child(2) h2{
+    margin-top: 30px;
+    
+  }
+  .box:nth-child(3) .subscribe-button{
+    margin-bottom: 50px;
   }
 
 @media (max-width: 768px) {
