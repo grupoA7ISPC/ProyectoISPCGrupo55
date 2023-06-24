@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from "@angular/common/http";
-import { Observable } from 'rxjs';
-import { DatePipe } from '@angular/common';
-
+import { HttpClient, HttpHeaders, HttpErrorResponse} from "@angular/common/http";
+import { Observable, throwError } from 'rxjs';
+import { catchError } from 'rxjs/operators';
+// import { DatePipe } from '@angular/common';
 
 export class Usuario {
   id:number=0;
@@ -15,16 +15,24 @@ export class Usuario {
   fecha : string="";
   checkbox : string="";
 }
+
 @Injectable({
   providedIn: 'root'
 })
+
 export class UsuarioService {
   url="http://127.0.0.1:8000/api/v1/registro/";
+
   constructor(private http:HttpClient){
-    console.log("Servicio de Usuarios está corriendo");
-    
+    console.log("Servicio de Usuarios está corriendo...");
   }
-  onCrearUsuario(Usuario:Usuario):Observable<Usuario>{
-    return this.http.post<Usuario>(this.url, Usuario);
+
+  onCrearUsuario(usuario:Usuario):Observable<Usuario>{
+    return this.http.post<Usuario>(this.url, usuario).pipe(
+      catchError((error: HttpErrorResponse) => {
+        console.error(error);
+        return throwError(null);
+      })
+    );
   }
 }

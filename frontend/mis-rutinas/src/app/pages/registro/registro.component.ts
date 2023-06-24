@@ -14,7 +14,7 @@ import Swal from 'sweetalert2';
 export class RegistroComponent {
   public registerForm;
   usuario: Usuario = new Usuario();
-  
+
   constructor(private formBuilder: FormBuilder, private UsuarioService: UsuarioService, private router: Router) {
     this.registerForm = this.formBuilder.group({
       nombre: ['', [Validators.required, Validators.minLength(2), Validators.maxLength(15)]],
@@ -41,65 +41,58 @@ export class RegistroComponent {
     };
   }
 
-  
   fechaValidator(control: FormControl) {
     const fechaNacimiento = new Date(control.value);
     const fechaMinima = new Date();
     fechaMinima.setFullYear(fechaMinima.getFullYear() - 13); // Restar 13 años a la fecha actual
-  
+
     if (isNaN(fechaNacimiento.getTime())) {
       return { fechaInvalida: true }; // Retorna una clave personalizada para el error
     }
-  
+
     if (fechaNacimiento > fechaMinima) {
       return { fechaMinima: true }; // Retorna una clave personalizada para el error
     }
-  
+
     if (fechaNacimiento.getFullYear() < fechaMinima.getFullYear() - 99) {
       return { fechaInvalida: true }; // Retorna una clave personalizada para el error
     }
-  
+
     return null; // Retorna null si la validación es exitosa
   }
-  
- /* sendForm(event:Event){
-    event.preventDefault();
-    this.registerForm.valid ? alert("Enviando al servidor...") : this.registerForm.markAllAsTouched();
-  }*/
-  sendForm(event: Event, usuario: Usuario): void {
+
+  sendForm(event: Event): void {
     event.preventDefault();
     if (this.registerForm.valid) {
       console.log("Enviando al servidor...");
-      console.log(usuario);
-      this.UsuarioService.onCrearUsuario(usuario).subscribe(
+      this.usuario = Object.assign({}, this.registerForm.value);
+      console.log("this.usuario => ", this.usuario);
+      this.UsuarioService.onCrearUsuario(this.usuario).subscribe(
         data => {
           console.log(data.id);
           if (data.id > 0) {
             Swal.fire({
               title: '¡REGISTRO EXITOSO!',
-              text: `Se ha creado el nuevo Usuario con id ${data.id}`,
+              text: `Se ha creado tu usuario`,
               width: '800',
               padding: '3em',
               icon: 'success',
               confirmButtonText: 'Aceptar',
-              backdrop: `
-              rgba(255, 102, 0, 0.4)
-   
-                      left top
-                      no-repeat
-                      `,
+              backdrop: `rgba(255, 102, 0, 0.4) left top no-repeat`,
               confirmButtonColor:'#262632'
             }).then(() => {
               this.router.navigate(['/login']);
             });
           }
+        },
+        error => {
+          console.error(error);
         }
       );
     } else {
       this.registerForm.markAllAsTouched();
     }
   }
-  
 
   get Nombre() {
     return this.registerForm.get('nombre');

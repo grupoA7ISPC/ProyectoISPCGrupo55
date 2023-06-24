@@ -1,6 +1,6 @@
 <div class="form-container">
 
-    <form  id="formulario" [formGroup]="registerForm" (ngSubmit)="sendForm($event, usuario)">
+    <form  id="formulario" [formGroup]="registerForm" (ngSubmit)="sendForm($event)">
         <div class="form-header">
         <i class="fa-solid fa-user-plus icon1"></i>
         <h1>Registrate</h1>
@@ -12,8 +12,8 @@
               <p *ngIf="Nombre?.hasError('minlength') || Nombre?.hasError('maxlength')" class="text-danger">El nombre debe tener entre 2 y 15 caracteres.</p>
             </div>
           </div>
-          
-          
+
+
           <div class="input-container">
             <input type="text" placeholder="Apellido" id="apellido" formControlName="apellido">
             <div *ngIf="Apellido?.errors && Apellido?.touched">
@@ -21,7 +21,7 @@
               <p *ngIf="Apellido?.hasError('minlength') || Apellido?.hasError('maxlength')" class="text-danger">El apellido debe tener entre 2 y 15 caracteres.</p>
             </div>
           </div>
-          
+
         <div class="input-container">
             <input type="text" placeholder="Nombre de Usuario" id="usuario" formControlName = "usuario" >
             <div *ngIf="Usuario?.errors && Usuario?.touched"> <p *ngIf="Usuario?.hasError('required')" class="text-danger"  >Este campo es requerido.</p></div>
