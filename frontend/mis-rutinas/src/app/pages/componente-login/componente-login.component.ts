@@ -41,13 +41,27 @@ export class ComponenteLoginComponent {
     return this.form.get("password");
   }
   
-  enviarformulario(event:Event, usuario:Usuario): void{
+  // enviarformulario(event:Event, usuario:Usuario): void{
+  //   event.preventDefault();
+  //   this.authService.login(this.usuario).subscribe(data => {
+  //     console.log("DATA"+ JSON.stringify( data));
+  //     this.router.navigate(['/dashboard']);
+  //   },error => {
+  //     this.error = error;
+  //   });}
+  enviarformulario(event:Event, user: Usuario): void{
     event.preventDefault();
-    this.authService.login(this.usuario).subscribe(data => {
-      console.log("DATA"+ JSON.stringify( data));
-      this.router.navigate(['/dashboard']);
-    },error => {
-      this.error = error;
+    this.usuario.email=user.email;
+    this.usuario.password1=user.password1;
+    console.log(this.usuario, user);
+    this.authService.login(this.usuario).subscribe({
+      next: (data) => {
+        console.log("DATA: " + JSON.stringify(data));
+        // Redirigir al dashboard u otra página después del inicio de sesión exitoso
+      },
+      error: (error) => {
+        this.error = error;
+      }
     });}
     /*if(this.form.valid)
     {

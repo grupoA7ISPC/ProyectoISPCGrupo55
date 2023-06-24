@@ -11,7 +11,8 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class AuthService {
-  url="http://reqres.in/api/login";
+  //url="http://127.0.0.1:8000/api/v1/registro/registro/";
+  url ="http://127.0.0.1:8000/api/v1/login/";
   currentUserSubject: BehaviorSubject<Usuario>;
   currentUser: Observable<Usuario>;
   public loggedIn:any;
@@ -22,14 +23,29 @@ export class AuthService {
     this.currentUser = this.currentUserSubject.asObservable();
 
    }
-  login(usuario: Usuario): Observable<any> {
-    return this.http.post<any>(this.url, usuario).pipe(map(data => {
-    localStorage.setItem('currentUser', JSON.stringify(data));
+  // login(usuario: Usuario): Observable<any> {
+  //   return this.http.post<any>(this.url, usuario).pipe(map(data => {
+  //   localStorage.setItem('currentUser', JSON.stringify(data));
 
-    this.currentUserSubject.next(data);
-    this.loggedIn.next(true);
-    return data;
-    }));
+  //   this.currentUserSubject.next(data);
+  //   this.loggedIn.next(true);
+  //   return data;
+  //   }));
+  // }
+  login(usuario: any): Observable<any> {
+    const formData = new FormData();
+    
+    formData.append('email', usuario.email);
+    formData.append('password', usuario.password1);
+    console.log(formData);
+    return this.http.post<any>(this.url, formData).pipe(
+      map(data => {
+        localStorage.setItem('currentUser', JSON.stringify(data));
+        this.currentUserSubject.next(data);
+        this.loggedIn.next(true);
+        return data;
+      })
+    );
   }
   logout(): void{
     localStorage.removeItem('currentUser');

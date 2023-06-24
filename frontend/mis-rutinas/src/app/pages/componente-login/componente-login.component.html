@@ -9,8 +9,9 @@
       <img src="../../../assets/icon.png" alt="logo-misrutinas" class="logo">
     </div>
     
-      <form [formGroup]= "form" (ngSubmit)="enviarformulario($event, usuario)" >
-        <!-- method="post" action="login-exitoso.html" -->
+      <!-- <form [formGroup]= "form" (ngSubmit)="enviarformulario($event, usuario)" > -->
+      <form [formGroup]= "form" (ngSubmit)="enviarformulario($event, usuario)">
+        <!--method="post" action="login-exitoso.html" -->
           <fieldset id="inputs">
               <legend class="legend-inicia">Inicia Sesión</legend>
 
@@ -19,7 +20,7 @@
                       <img src="../../../assets/user-icon.svg" class="user-icon">
                       <label for="username"> Nombre de Usuario o E-mail:</label>
                   </div>
-                  <input type="email" formControlName="email" id="username" placeholder="misrutinas@ejemplo.com">
+                  <input type="email" formControlName="email" id="username" placeholder="misrutinas@ejemplo.com" [(ngModel)]="usuario.email" >
                   <div *ngIf="Email?.errors && Email?.touched">
                     
                     <p *ngIf="Email?.hasError('required')" class="text-danger">
@@ -33,7 +34,7 @@
                       <img src="../../../assets/lock-icon.svg" class="lock-icon">
                       <label for="password">Contraseña:</label>
                   </div>
-                  <input type="password" formControlName="password" id="password" placeholder="*********">
+                  <input type="password" formControlName="password" id="password" placeholder="*********" [(ngModel)]="usuario.password1">
                   <div *ngIf="Password?.errors && Password?.touched">
                     
                     <p *ngIf="Password?.hasError('required')" class="text-danger">

@@ -19,7 +19,7 @@ export class Usuario {
   providedIn: 'root'
 })
 export class UsuarioService {
-  url="https://reqres.in/api/users/1";
+  url="http://127.0.0.1:8000/api/v1/registro/";
   constructor(private http:HttpClient){
     console.log("Servicio de Usuarios está corriendo");
     
