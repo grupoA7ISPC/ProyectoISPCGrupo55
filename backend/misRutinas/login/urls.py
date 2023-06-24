@@ -6,8 +6,10 @@ from login import views
 #from .views import login_view
 
 router= routers.DefaultRouter()
-router.register(r'login', views.LoginViewSet)
+#router.register('', views.LoginViewSet)
 #----
 urlpatterns = [
-     path('', include(router.urls)),
+#path('', include(router.urls)),
+path('',views.login_view),
+     
 ]

@@ -6,7 +6,7 @@ from registro import views
 #from .views import login_view
 
 router= routers.DefaultRouter()
-router.register(r'registro', views.RegistroViewSet)
+router.register('', views.RegistroViewSet)
 #----
 urlpatterns = [
      path('', include(router.urls)),

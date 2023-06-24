@@ -5,4 +5,4 @@ from usuarios.models import Usuario
 class LoginSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        fields = ['username', 'password'] 
+        fields = ['email', 'password'] 
