@@ -5,4 +5,4 @@ from usuarios.models import Usuario
 class RegistroSerializer(serializers.ModelSerializer):
     class Meta:
         model = Usuario
-        fields = '__all__' 
+        fields = ['nombre', 'apellido', 'username', 'fec_nac', 'email', 'password']
