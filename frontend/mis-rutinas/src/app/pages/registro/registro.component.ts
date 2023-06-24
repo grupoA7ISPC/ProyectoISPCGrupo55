@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormBuilder, FormGroup, MinLengthValidator } from '@angular/forms';
 import { Validators, ValidatorFn, AbstractControl, ValidationErrors } from '@angular/forms';
-import { UsuarioService, Usuario } from 'src/app/service/auth/usuario.service';
+import { UsuarioService, Usuario, UsuarioDTO } from 'src/app/service/auth/usuario.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
 
@@ -65,25 +65,30 @@ export class RegistroComponent {
     event.preventDefault();
     if (this.registerForm.valid) {
       console.log("Enviando al servidor...");
-      this.usuario = Object.assign({}, this.registerForm.value);
-      console.log("this.usuario => ", this.usuario);
-      this.UsuarioService.onCrearUsuario(this.usuario).subscribe(
+      const usuarioDTO: UsuarioDTO = {
+        nombre: this.registerForm.value.nombre,
+        apellido: this.registerForm.value.apellido,
+        username: this.registerForm.value.usuario,
+        email: this.registerForm.value.email,
+        password: this.registerForm.value.password1,
+        fec_nac: this.registerForm.value.fecha
+      };
+      console.log("usuarioDTO => ", usuarioDTO);
+      this.UsuarioService.onCrearUsuario(usuarioDTO).subscribe(
         data => {
-          console.log(data.id);
-          if (data.id > 0) {
-            Swal.fire({
-              title: '¡REGISTRO EXITOSO!',
-              text: `Se ha creado tu usuario`,
-              width: '800',
-              padding: '3em',
-              icon: 'success',
-              confirmButtonText: 'Aceptar',
-              backdrop: `rgba(255, 102, 0, 0.4) left top no-repeat`,
-              confirmButtonColor:'#262632'
-            }).then(() => {
-              this.router.navigate(['/login']);
-            });
-          }
+          console.log(data);
+          Swal.fire({
+            title: '¡REGISTRO EXITOSO!',
+            text: `Se ha creado tu usuario`,
+            width: '800',
+            padding: '3em',
+            icon: 'success',
+            confirmButtonText: 'Aceptar',
+            backdrop: `rgba(255, 102, 0, 0.4) left top no-repeat`,
+            confirmButtonColor:'#262632'
+          }).then(() => {
+            this.router.navigate(['/login']);
+          });
         },
         error => {
           console.error(error);

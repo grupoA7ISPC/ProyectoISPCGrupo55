@@ -16,6 +16,15 @@ export class Usuario {
   checkbox : string="";
 }
 
+export class UsuarioDTO {
+  nombre: string = "";
+  apellido: string = "";
+  username: string = "";
+  email: string = "";
+  password: string = "";
+  fec_nac: string = "";
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -27,8 +36,8 @@ export class UsuarioService {
     console.log("Servicio de Usuarios está corriendo...");
   }
 
-  onCrearUsuario(usuario:Usuario):Observable<Usuario>{
-    return this.http.post<Usuario>(this.url, usuario).pipe(
+  onCrearUsuario(usuario: UsuarioDTO): Observable<UsuarioDTO>{
+    return this.http.post<UsuarioDTO>(this.url, usuario).pipe(
       catchError((error: HttpErrorResponse) => {
         console.error(error);
         return throwError(null);
