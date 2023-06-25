@@ -15,18 +15,17 @@ import { Usuario } from 'src/app/service/auth/usuario.service';
 export class ComponenteLoginComponent {
   email = new FormControl('',[]);
   password = new FormControl('',[]);
-  usuario:Usuario = new Usuario();
+  usuario: Usuario = new Usuario();
+
   public form;
   public error:any;
+
   constructor (private formBuilder: FormBuilder, private authService: AuthService, private router: Router){
-    
     this.form = this.formBuilder.group({ 
-    email:['',[Validators.required, Validators.email]],
-    password :['',[Validators.required]]
-    
+      email:['',[Validators.required, Validators.email]],
+      password :['',[Validators.required]]
     }  
-    )
-  }
+  )}
 
   ngOnInit(): void{
     
@@ -41,35 +40,16 @@ export class ComponenteLoginComponent {
     return this.form.get("password");
   }
   
-  // enviarformulario(event:Event, usuario:Usuario): void{
-  //   event.preventDefault();
-  //   this.authService.login(this.usuario).subscribe(data => {
-  //     console.log("DATA"+ JSON.stringify( data));
-  //     this.router.navigate(['/dashboard']);
-  //   },error => {
-  //     this.error = error;
-  //   });}
-  enviarformulario(event:Event, user: Usuario): void{
+  enviarFormulario(event:Event, user: Usuario): void {
     event.preventDefault();
-    this.usuario.email=user.email;
-    this.usuario.password1=user.password1;
-    console.log(this.usuario, user);
-    this.authService.login(this.usuario).subscribe({
+    this.authService.login(user).subscribe({
       next: (data) => {
         console.log("DATA: " + JSON.stringify(data));
-        // Redirigir al dashboard u otra página después del inicio de sesión exitoso
+        this.router.navigate(['/dashboard']);
       },
       error: (error) => {
         this.error = error;
       }
-    });}
-    /*if(this.form.valid)
-    {
-      alert ("Enviando al servidor....")
-    }
-    else
-    {
-      this.form.markAllAsTouched();
-    }
-  }*/
+    });
+  }
 }
