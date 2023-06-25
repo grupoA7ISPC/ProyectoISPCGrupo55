@@ -3,7 +3,10 @@ from rest_framework import viewsets
 from .serializers import LoginSerializer
 from usuarios.models import Usuario
 from django.shortcuts import redirect, render
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
+from django.contrib.auth import authenticate
+from rutinas.models import Rutina
+from rest_framework import serializers
 #from .models import Login, SetLogin
 
 # class LoginViewSet(viewsets.ModelViewSet):
@@ -28,25 +31,19 @@ from django.http import HttpResponse
 #     login = Usuario.objects.all()
 #     return HttpResponse('Hello World!')
 
-from django.contrib.auth import authenticate
-from django.http import JsonResponse
-
 def login_view(request):
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
-        print(request.POST)
-
+        # print(request.POST)
         #user = authenticate(request, email=email, password=password)
-        print("Email:", email,"Password", password)
+        # print("Email:", email,"Password", password)
         user = Usuario.check_credentials(email, password)
         print("User: ", user)
-        if user is not None:
-            # Usuario y contraseña válidos
-            # Aquí puedes realizar otras acciones que necesites, como generar un token de autenticación
-
-            # Retornar todos los datos del usuario
-            return JsonResponse({
+        if user is not None:       
+            rutinas = Rutina.objects.filter(fk_user=user.id_user) 
+            
+            user_data = {
                 'username': user.username,
                 'email': user.email,
                 'id' : user.id_user,
@@ -56,10 +53,19 @@ def login_view(request):
                 'peso' : user.peso,
                 'altura' : user.altura,
                 'imc' : user.imc
-                # Agrega otros campos que desees retornar
-            })
+            }
+            
+            rutinas_data = serializers.serialize('json', rutinas)
+            
+            data = {
+                'user': user_data,
+                'rutinas': rutinas_data
+            }
+            
+            print(data)
+            return JsonResponse(data)
         else:
             # Usuario o contraseña inválidos
             return JsonResponse({'error': 'Credenciales inválidas'}, status=400)
-
+        
     return JsonResponse({'error': 'Metodo no permitido'}, status=405)
