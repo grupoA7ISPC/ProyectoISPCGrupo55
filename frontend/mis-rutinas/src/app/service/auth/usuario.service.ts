@@ -25,6 +25,11 @@ export class UsuarioDTO {
   fec_nac: string = "";
 }
 
+export class UsuarioLoginDTO{
+  email: string = "";
+  password: string = "";
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -44,4 +49,7 @@ export class UsuarioService {
       })
     );
   }
+
+
+
 }
