@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { RegistroComponent } from './registro/registro.component';
 import { TarjetasIntegrantesComponent } from './componente-quienes-somos/tarjetas-integrantes/tarjetas-integrantes.component';
 import { SuscripcionComponent } from './suscripcion/suscripcion.component';
+import { PagoComponent } from './pago/pago.component';
+
 
 @NgModule({
   declarations: [
@@ -20,8 +22,9 @@ import { SuscripcionComponent } from './suscripcion/suscripcion.component';
     HomeComponent,
     RegistroComponent,
     TarjetasIntegrantesComponent,
-    SuscripcionComponent
-    
+    SuscripcionComponent,
+    PagoComponent
+
   ],
   imports: [
     CommonModule,
@@ -29,6 +32,6 @@ import { SuscripcionComponent } from './suscripcion/suscripcion.component';
     ReactiveFormsModule
   ],
   exports: [ComponenteContactoComponent, ComponenteQuienesSomosComponent,ComponenteLoginComponent,ComponenteLoginExitosoComponent, HomeComponent,
-    RegistroComponent,SuscripcionComponent ],
+    RegistroComponent,SuscripcionComponent, PagoComponent],
 })
 export class PagesModule { }

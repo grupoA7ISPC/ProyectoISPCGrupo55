@@ -5,3 +5,4 @@ export * from './componente-login-exitoso/componente-login-exitoso.component';
 export * from './registro/registro.component';
 export * from './componente-quienes-somos/componente-quienes-somos.component';
 export * from './suscripcion/suscripcion.component';
+export * from './pago/pago.component';
