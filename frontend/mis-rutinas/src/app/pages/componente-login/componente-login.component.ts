@@ -41,19 +41,27 @@ export class ComponenteLoginComponent {
     return this.form.get("password");
   }
 
-  enviarFormulario(event:Event, user: UsuarioLoginDTO): void {
+  enviarFormulario(event:Event): void {
     event.preventDefault();
 
-    console.log("usuarioDTO => ", this.usuario);
-
-    this.authService.login(user).subscribe({
-      next: (data) => {
-        console.log("DATA: " + JSON.stringify(data));
-        this.router.navigate(['/dashboard']);
-      },
-      error: (error) => {
-        this.error = error;
-      }
-    });
+    if (this.form.valid) {
+      console.log("this.form.value => ", this.form.value);
+      let user: UsuarioLoginDTO = {
+        email: this.form.value.email,
+        password: this.form.value.password
+      };
+      console.log("user => ", user);
+      this.authService.login(user).subscribe({
+        next: (data) => {
+          console.log("DATA: " + JSON.stringify(data));
+          // this.router.navigate(['/dashboard']);
+        },
+        error: (error) => {
+          this.error = error;
+        }
+      });
+    } else {
+      console.log("Datos incompletos");
+    }
   }
 }

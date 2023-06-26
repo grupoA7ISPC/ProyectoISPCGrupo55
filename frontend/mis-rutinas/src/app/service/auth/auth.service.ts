@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { Usuario } from './usuario.service';
+import { Usuario, UsuarioLoginDTO } from './usuario.service';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -30,13 +30,8 @@ export class AuthService {
   //   }));
   // }
 
-  login(usuario: any): Observable<any> {
-    const body = {
-      email: usuario.email,
-      password: usuario.password1
-    };
-    
-    return this.http.post<any>(this.url, body).pipe(
+  login(usuario: UsuarioLoginDTO): Observable<any> {
+    return this.http.post<any>(this.url, usuario).pipe(
       map(data => {
         console.log(data)
         localStorage.setItem('currentUser', JSON.stringify(data));

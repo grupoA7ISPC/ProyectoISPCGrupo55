@@ -26,8 +26,8 @@ export class UsuarioDTO {
 }
 
 export class UsuarioLoginDTO{
-  email: string = "";
-  password: string = "";
+  email: string | null | undefined = "";
+  password: string | null | undefined = "";
 }
 
 @Injectable({
@@ -35,7 +35,7 @@ export class UsuarioLoginDTO{
 })
 
 export class UsuarioService {
-  url="http://127.0.0.1:8000/api/v1/registro/";
+  url: string = "http://127.0.0.1:8000/api/v1/registro"; // Añadir / si se necesita*
 
   constructor(private http:HttpClient){
     console.log("Servicio de Usuarios está corriendo...");
