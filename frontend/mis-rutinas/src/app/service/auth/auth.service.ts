@@ -3,6 +3,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { Usuario, UsuarioLoginDTO } from './usuario.service';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -14,36 +15,21 @@ export class AuthService {
   currentUserSubject: BehaviorSubject<Usuario>;
   currentUser: Observable<Usuario>;
   public loggedIn:any;
-  constructor(private http:HttpClient) {
+  constructor(private http:HttpClient, private router: Router) {
     console.log("Servicio de autenticación está corriendo");
     this.currentUserSubject = new BehaviorSubject<Usuario>(JSON.parse(localStorage.getItem('currentUser') || '{}'));
     this.currentUser = this.currentUserSubject.asObservable();
   }
 
-  // login(usuario: Usuario): Observable<any> {
-  //   return this.http.post<any>(this.url, usuario).pipe(map(data => {
-  //   localStorage.setItem('currentUser', JSON.stringify(data));
-
-  //   this.currentUserSubject.next(data);
-  //   this.loggedIn.next(true);
-  //   return data;
-  //   }));
-  // }
-
   login(usuario: UsuarioLoginDTO): Observable<any> {
     return this.http.post<any>(this.url, usuario).pipe(
       map(data => {
-        console.log(data)
+        this.router.navigate(['/dashboard']);
+        console.log("Data desde login service: ")
+        console.log(data);
         localStorage.setItem('currentUser', JSON.stringify(data));
         this.currentUserSubject.next(data);
         this.loggedIn.next(true);
-
-        const idUsuario = data.id;
-        const rutinas = data.rutinas;
-
-        console.log("id user => ", idUsuario);
-        console.log("rutinas => ", rutinas);
-
         return data;
       })
     );

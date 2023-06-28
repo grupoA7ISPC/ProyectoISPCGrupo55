@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Validators } from '@angular/forms';
-import { Router } from '@angular/router';
 import { AuthService } from 'src/app/service/auth/auth.service';
 import { Usuario, UsuarioDTO, UsuarioLoginDTO} from 'src/app/service/auth/usuario.service';
 
@@ -21,7 +20,7 @@ export class ComponenteLoginComponent {
   public form;
   public error:any;
 
-  constructor (private formBuilder: FormBuilder, private authService: AuthService, private router: Router){
+  constructor (private formBuilder: FormBuilder, private authService: AuthService){
     this.form = this.formBuilder.group({
       email:['',[Validators.required, Validators.email]],
       password :['',[Validators.required]]
@@ -45,7 +44,6 @@ export class ComponenteLoginComponent {
     event.preventDefault();
 
     if (this.form.valid) {
-      console.log("this.form.value => ", this.form.value);
       let user: UsuarioLoginDTO = {
         email: this.form.value.email,
         password: this.form.value.password
@@ -54,7 +52,6 @@ export class ComponenteLoginComponent {
       this.authService.login(user).subscribe({
         next: (data) => {
           console.log("DATA: " + JSON.stringify(data));
-          // this.router.navigate(['/dashboard']);
         },
         error: (error) => {
           this.error = error;
