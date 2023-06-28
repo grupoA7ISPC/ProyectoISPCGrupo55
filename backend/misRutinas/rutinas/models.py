@@ -57,11 +57,11 @@ class Set(models.Model):
   def __unicode__(self):
       return self.id_set
     
+  def __str__(self):
+    return str(self.id_set)
+    
   def __int__(self):
       return self.id_set
-  
-  
-
   
 class Rutina(models.Model):
   id_rut = models.AutoField(primary_key=True)
@@ -93,6 +93,9 @@ class SetRutina(models.Model):
 
   def __unicode__(self):
     return self.id_setrut
+  
+  def __str__(self):
+    return str(self.id_setrut)
     
   def __int__(self):
     return self.id_setrut
