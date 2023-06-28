@@ -1,6 +1,5 @@
 from rest_framework import serializers
-from .models import Rutina
-from .models import SetRutina
+from .models import Rutina, Set, SetRutina
 
 class RutinaSerializer (serializers.ModelSerializer):
     class Meta:
@@ -9,7 +8,7 @@ class RutinaSerializer (serializers.ModelSerializer):
         
 class SetSerializer (serializers.ModelSerializer):
     class Meta:
-        model = SetRutina
+        model = Set
         fields = "__all__"
 
 class SetRutinaSerializer(serializers.ModelSerializer):
